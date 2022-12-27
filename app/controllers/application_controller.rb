@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
     before_action :snake_case_params
-
+    
     private
 
     def snake_case_params
