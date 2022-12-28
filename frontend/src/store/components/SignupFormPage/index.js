@@ -47,7 +47,7 @@ const SignupFormPage = () => {
       </ul>
 
       <label>Email
-        <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} required/>
+        <input type="text" value={email} placeholderText="Email" onChange={(e) => setEmail(e.target.value)} required/>
       </label>
       
       <label>Username
