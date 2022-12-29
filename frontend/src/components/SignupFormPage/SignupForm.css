@@ -1,0 +1,25 @@
+form { 
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #e0e0e0;
+    border-radius: 4.5px;
+    width: 400px; 
+   
+}
+
+label { 
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+button { 
+    width: 80px;
+}
+
+.form-container { 
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+
+}
