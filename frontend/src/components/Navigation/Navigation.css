@@ -1,8 +1,9 @@
 nav { 
     display: flex;
     width: 100vw;
-    height: 80px;
+    height: 70px;
     justify-content: space-between;
+    padding-bottom: 8px;
     border-bottom: 2px solid black;
     font-family: proxima-nova, sans-serif;
 }
@@ -16,7 +17,11 @@ button {
     font-weight: bold;
     width: 120px;
     height: 40px;
-    border-radius: 5px;
+    border-radius: 2px;
+}
+
+button:hover { 
+    cursor: pointer;
 }
 
 .navbar { 
@@ -41,28 +46,48 @@ button {
     font-size: 18px;
 }
 
+#search-box { 
+    width: 350px;
+    height: 37px;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 3px;
+
+}
+
 #search-bar { 
     font-size: 14px;
-    border-radius: 3px;
+    border: none;
     width: 300px;
 }
 
+#search-bar:focus { 
+    outline: none;
+}
+
 #login-button { 
-    background-color: black;
-    color: whitesmoke
+    background-color: white;
+    color: black;
+    transition: all ease-in 500ms;
 }
 
 #signup-button { 
-    background-color: grey;
+    background-color: rgb(50, 49, 49);
     color: white;
+    transition: all ease-in 500ms;
+}
+
+#login-button:hover, #signup-button:hover { 
+    background-color: black;
+    color: whitesmoke;
 }
 
 #browse-link, #about-link { 
-    font-size: 20px;
+    font-size: 18px;
+    width: 70px;
     text-decoration: none;
     color: black;
     padding: 15px;
-    font-weight: bold;
     transition: all ease-in 200ms;
 }
 
@@ -74,7 +99,7 @@ button {
 #browse-link:hover, #about-link:hover { 
     transform: translateX(-1px);
     transform: translateY(-1px);
-    font-size: 22px;
+    font-size: 20px;
     color: #2a4e49;
     cursor: pointer;
 }
@@ -85,6 +110,7 @@ button {
 
 #profile-button, #shopping-button { 
     border: none;
+    width: 70px;
     background: none;
     cursor: pointer;
     font-size: 20px;
@@ -94,4 +120,9 @@ button {
 #shopping-button:hover { 
     font-size: 24px;
     color: #2a4e49
+}
+
+#search-icon { 
+    margin-top: 5px;
+    margin-left: 5px;
 }
