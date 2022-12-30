@@ -4,6 +4,8 @@ nav {
     height: 80px;
     justify-content: space-between;
     border-bottom: 2px solid black;
+    font-family: proxima-nova, sans-serif;
+
 }
 
 Link { 
@@ -22,6 +24,7 @@ button {
     font-weight: bold;
     width: 120px;
     height: 40px;
+    border-radius: 5px;
 }
 
 .navbar { 
@@ -50,7 +53,15 @@ button {
 #browse-link, #about-link { 
     font-size: 20px;
     text-decoration: none;
-    padding: 15px
+    padding: 15px;
+    font-weight: bold;
+    transition: all ease-in 200ms;
+}
+
+#browse-link:hover, #about-link:hover { 
+    transform: translateX(-1px);
+    transform: translateY(-1px);
+    cursor: pointer;
 }
 
 #stockx-logo { 

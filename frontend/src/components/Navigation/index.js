@@ -1,4 +1,5 @@
 import React from 'react';
+import { AiOutlineShoppingCart } from "react-icons/ai"
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -30,6 +31,7 @@ function Navigation() {
         <input type="text" placeholder='Search for Brand, Color, etc.' id="search-bar"/>
         <NavLink id="browse-link" to="/">Browse</NavLink>
         <NavLink id="about-link" to="/">About</NavLink>
+        <AiOutlineShoppingCart />
         {sessionLinks}
       </div>
     </nav>

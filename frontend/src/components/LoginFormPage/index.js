@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../../store/session";
-import { Redirect } from "react-router-dom";
+//import { login } from "../../store/session";
+import { Redirect, useHistory } from "react-router-dom";
 import * as sessionActions from '../../store/session'
 import './LoginForm.css'
 
@@ -10,6 +10,7 @@ const LoginFormPage = () => {
   const [password, setPassword] = useState("");
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+  const history = useHistory()
   const [errors, setErrors] = useState([])
 
   if (sessionUser) return <Redirect to="/" />;
@@ -33,6 +34,13 @@ const LoginFormPage = () => {
       });
   }
 
+  const demoLogin = e => { 
+    e.preventDefault()
+
+    return dispatch(sessionActions.login({credential:'demo@user.io', password:'password'}))
+    .then(()=> history.pushState('/'))
+  }
+
 
   return(
     <form onSubmit={handleSubmit}>
@@ -48,6 +56,7 @@ const LoginFormPage = () => {
       </label>
 
       <button>Login</button>
+      <button onClick={demoLogin}>Demo Login</button>
     </form>
   )
 }
