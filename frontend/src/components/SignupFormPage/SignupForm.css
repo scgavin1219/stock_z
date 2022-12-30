@@ -2,6 +2,7 @@ form {
     display: flex;
     flex-direction: column;
     border: 2px solid #e0e0e0;
+    background-color: white;
     border-radius: 4.5px;
     width: 400px; 
     align-items: center;
@@ -10,19 +11,24 @@ form {
 input { 
     font-size: 16px;
     font-family: proxima-nova, sans-serif;
+    background-color: #f8f6f6;
     padding: 10px;
     width: 300px;
+    border: solid 0.5px lightgrey;
+    border-radius: 3px;;
 }
 
 label { 
-    margin-left: 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
-button { 
-    width: 80px;
-    margin: 10px;
+.btn { 
+    width: 320px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: black;
+    color: lightgray
 }
 
 .form-container { 
@@ -30,5 +36,22 @@ button {
     justify-content: center;
     margin-top: 200px;
 
+}
+
+.login-type { 
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.login-type button { 
+    border: none;
+    background: none;
+    font-size: 20px;
+}
+
+#demo-user { 
+    margin-bottom: 20px;
 }
 

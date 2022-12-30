@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import * as sessionActions from "../../store/session";
+import { Link } from "react-router-dom";
 import './SignupForm.css'
 
 
@@ -12,8 +13,8 @@ const SignupFormPage = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState("");
-    const [loginForm, setLoginForm] = useState(false)
     const [errors, setErrors] = useState([]);
+    const history = useHistory();
 
     if (sessionUser) return <Redirect to="/" />;
 
@@ -38,6 +39,13 @@ const SignupFormPage = () => {
     return setErrors(['Confirm Password field must be the same as the Password field']);
   };
 
+    const demoLogin = e => { 
+    e.preventDefault()
+
+    return dispatch(sessionActions.login({credential:'demo@user.io', password:'password'}))
+    .then(()=> history.pushState('/'))
+  }
+
     
 
 
@@ -46,7 +54,7 @@ const SignupFormPage = () => {
       
       <form onSubmit={handleSubmit}>
         <div className="login-type">
-          <button>Login</button>
+          <Link to='/login'><button>Login</button></Link>
           <button>Sign Up</button>
         </div>
         <ul>
@@ -69,7 +77,8 @@ const SignupFormPage = () => {
           <input type="password" value={confirmPassword} placeholder="Confirm Password" onChange={(e) => setConfirmPassword(e.target.value)} required />
         </label>
 
-        <button type="submit">Sign Up</button>
+        <button className="btn" type="submit">Sign Up</button>
+        <button id='demo-user' className='btn'onClick={demoLogin}>Demo User</button>
       </form>
     </div>
   );  

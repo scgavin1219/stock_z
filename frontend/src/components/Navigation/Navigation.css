@@ -1,5 +1,6 @@
 nav { 
     display: flex;
+    background-color: white;
     width: 100vw;
     height: 70px;
     justify-content: space-between;
@@ -39,6 +40,17 @@ button:hover {
     align-items: center;
 }
 
+.nav-login {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav-login button { 
+    width: 90px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .drowdown-menu { 
     position: relative;
 }
@@ -56,7 +68,7 @@ button:hover {
     width: 350px;
     flex: 1;
     height: 37px;
-    background-color: white;
+    background-color: #f8f6f6;
     border: solid 1px black;
     border-radius: 3px;
 

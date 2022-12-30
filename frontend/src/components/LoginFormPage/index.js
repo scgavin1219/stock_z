@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 //import { login } from "../../store/session";
 import { Redirect, useHistory } from "react-router-dom";
 import * as sessionActions from '../../store/session'
+import { Link } from "react-router-dom";
 import './LoginForm.css'
 
 const LoginFormPage = () => {
@@ -43,21 +44,27 @@ const LoginFormPage = () => {
 
 
   return(
-    <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map(error => <li key={error}>{error}</li>)}
-      </ul>
-      <label>Username or Email
-        <input type="text" value={credential} onChange={e=>setCredential(e.target.value)} required />
-      </label>
+    <div className="form-container">
+      <form onSubmit={handleSubmit}>
+        <div className="login-type">
+            <button>Login</button>
+            <Link to='/signup'><button>Sign Up</button></Link>
+        </div>
+        <ul>
+          {errors.map(error => <li key={error}>{error}</li>)}
+        </ul>
+        <label>
+          <input type="text" placeholder="Username or Email" value={credential} onChange={e=>setCredential(e.target.value)} required />
+        </label>
 
-      <label>Password
-        <input type="password" value={password} onChange={e=>setPassword(e.target.value)} required />
-      </label>
+        <label>
+          <input type="password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)} required />
+        </label>
 
-      <button>Login</button>
-      <button onClick={demoLogin}>Demo Login</button>
-    </form>
+        <button className="btn">Login</button>
+        <button className="btn" id="demo-user" onClick={demoLogin}>Demo Login</button>
+      </form>
+    </div>
   )
 }
 

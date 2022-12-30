@@ -22,10 +22,10 @@ function Navigation() {
     );
   } else {
     sessionLinks = (
-      <>
+      <div className='nav-login'>
         <Link to="/login"><button id='login-button'>Log In</button></Link>
         <Link to="/signup"><button id='signup-button'>Sign Up</button></Link>
-      </>
+      </div>
     );
   }
 
