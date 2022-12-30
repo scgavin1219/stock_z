@@ -1,6 +1,7 @@
 import React from 'react';
 import { AiOutlineShoppingCart } from "react-icons/ai"
 import { GoSearch } from 'react-icons/go'
+import { useLocation } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -10,6 +11,9 @@ import './Navigation.css';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
+  let location = useLocation();
+  console.log(location, 'location')
+
 
   let sessionLinks;
   if (sessionUser) {
@@ -28,15 +32,19 @@ function Navigation() {
   return (
     <nav>
       <div className='navbar'>
-        <NavLink id="stockx-logo" exact to="/"><img src={stockx}/></NavLink>
-        <div id='search-box'>
-          < GoSearch id='search-icon' />
-          <input type="text" placeholder='Search for Brand, Color, etc.' id="search-bar"/>
+        <div className='nav-left'>
+          <NavLink id="stockx-logo" exact to="/"><img src={stockx}/></NavLink>
+          <div id='search-box'>
+            < GoSearch id='search-icon' />
+            <input type="text" placeholder='Search for Brand, Color, etc.' id="search-bar"/>
+          </div>
         </div>
-        <NavLink id="browse-link" to="/">Browse</NavLink>
-        <NavLink id="about-link" to="/">About</NavLink>
-        <button id='shopping-button'><AiOutlineShoppingCart /></button>
-        {sessionLinks}
+        <div className='nav-right'>
+          <NavLink id="browse-link" to="/">Browse</NavLink>
+          <NavLink id="about-link" to="/">About</NavLink>
+          <button id='shopping-button'><AiOutlineShoppingCart /></button>
+          {sessionLinks}
+        </div>
       </div>
     </nav>
   );

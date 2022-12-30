@@ -9,7 +9,6 @@ function App() {
   return (
     <>
       <Navigation />
-      {/* <BrowserRouter> */}
         <Switch>
           <Route path="/login" exact >
             <LoginFormPage />
@@ -19,7 +18,7 @@ function App() {
           </Route>
           {/* <Route component={PageNotFound} /> */}
         </Switch>
-      {/* </BrowserRouter> */}
+     
     </>
 
   );
