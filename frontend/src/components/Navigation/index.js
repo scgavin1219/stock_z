@@ -13,7 +13,7 @@ function Navigation() {
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <ProfileButton id='profile-button' user={sessionUser} />
     );
   } else {
     sessionLinks = (
@@ -31,7 +31,7 @@ function Navigation() {
         <input type="text" placeholder='Search for Brand, Color, etc.' id="search-bar"/>
         <NavLink id="browse-link" to="/">Browse</NavLink>
         <NavLink id="about-link" to="/">About</NavLink>
-        <AiOutlineShoppingCart />
+        <button id='shopping-button'><AiOutlineShoppingCart /></button>
         {sessionLinks}
       </div>
     </nav>

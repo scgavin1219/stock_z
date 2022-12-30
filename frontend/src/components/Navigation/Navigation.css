@@ -5,18 +5,10 @@ nav {
     justify-content: space-between;
     border-bottom: 2px solid black;
     font-family: proxima-nova, sans-serif;
-
 }
 
-Link { 
-    text-decoration: none;
-    font-size: 14px;
-}
-
-NavLink { 
-    text-decoration: none;
-    padding: 10px;
-    font-size: 14px;
+ul { 
+    list-style: none;
 }
 
 button {
@@ -28,10 +20,25 @@ button {
 }
 
 .navbar { 
+    max-width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
+}
+
+.drowdown-menu { 
+    position: relative;
+}
+
+.profile-dropdown { 
+    position: absolute;
+    background-color: white;
+    padding: 0.75rem;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    font-size: 18px;
 }
 
 #search-bar { 
@@ -53,17 +60,38 @@ button {
 #browse-link, #about-link { 
     font-size: 20px;
     text-decoration: none;
+    color: black;
     padding: 15px;
     font-weight: bold;
     transition: all ease-in 200ms;
 }
 
+#browse-link:visited, #about-link:visited {
+    text-decoration: none; 
+}
+
+
 #browse-link:hover, #about-link:hover { 
     transform: translateX(-1px);
     transform: translateY(-1px);
+    font-size: 22px;
+    color: #2a4e49;
     cursor: pointer;
 }
 
 #stockx-logo { 
     padding-right: 30px;
+}
+
+#profile-button, #shopping-button { 
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all ease-in 200ms;
+}
+
+#shopping-button:hover { 
+    font-size: 24px;
+    color: #2a4e49
 }

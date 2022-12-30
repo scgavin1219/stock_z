@@ -12,6 +12,7 @@ const SignupFormPage = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [loginForm, setLoginForm] = useState(false)
     const [errors, setErrors] = useState([]);
 
     if (sessionUser) return <Redirect to="/" />;
