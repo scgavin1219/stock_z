@@ -26,10 +26,10 @@ function Navigation() {
   return (
     <nav>
       <div className='navbar'>
-        <NavLink exact to="/"><img src={stockx}/></NavLink>
-        <input type="text" placeholder='Search for brand, corlor, etc.' id="search-bar"/>
-        <NavLink to="/">Browse</NavLink>
-        <NavLink to="/">About</NavLink>
+        <NavLink id="stockx-logo" exact to="/"><img src={stockx}/></NavLink>
+        <input type="text" placeholder='Search for Brand, Color, etc.' id="search-bar"/>
+        <NavLink id="browse-link" to="/">Browse</NavLink>
+        <NavLink id="about-link" to="/">About</NavLink>
         {sessionLinks}
       </div>
     </nav>

@@ -57,15 +57,15 @@ const SignupFormPage = () => {
         </label>
 
         <label>
-          <input type="text" value={username} placeholder="username" onChange={(e) => setUsername(e.target.value)} required />
+          <input type="text" value={username} placeholder="Username" onChange={(e) => setUsername(e.target.value)} required />
         </label>
 
         <label>
-          <input type="password" value={password} placeholder="password" onChange={(e) => setPassword(e.target.value)} required />
+          <input type="password" value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)} required />
         </label>
 
         <label>
-          <input type="password" value={confirmPassword} placeholder="confirm password" onChange={(e) => setConfirmPassword(e.target.value)} required />
+          <input type="password" value={confirmPassword} placeholder="Confirm Password" onChange={(e) => setConfirmPassword(e.target.value)} required />
         </label>
 
         <button type="submit">Sign Up</button>
