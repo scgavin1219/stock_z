@@ -4,7 +4,13 @@ form {
     border: 2px solid #e0e0e0;
     border-radius: 4.5px;
     width: 400px; 
-   
+    align-items: center;
+}
+
+input { 
+    font-size: 16px;
+    font-family: proxima-nova, sans-serif;
+    padding: 10px;
 }
 
 label { 
@@ -15,6 +21,7 @@ label {
 
 button { 
     width: 80px;
+    margin: 10px;
 }
 
 .form-container { 
@@ -23,3 +30,4 @@ button {
     margin-top: 200px;
 
 }
+

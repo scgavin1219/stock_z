@@ -1,0 +1,38 @@
+nav { 
+    display: flex;
+    
+    
+}
+
+Link { 
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.navbar { 
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#search-bar { 
+    font-size: 14px;
+    border-radius: 3px;
+    width: 300px;
+}
+
+button { 
+    font-size: 16px;
+    font-weight: bold;
+    width: 120px;
+    height: 40px;
+}
+
+#login-button { 
+    background-color: black;
+    color: whitesmoke
+}
+
+#signup-button { 
+    background-color: grey;
+    color: white;
+}

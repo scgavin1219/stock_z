@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../../session";
+import { login } from "../../store/session";
 import { Redirect } from "react-router-dom";
-import * as sessionActions from '../../session'
+import * as sessionActions from '../../store/session'
 import './LoginForm.css'
 
 const LoginFormPage = () => {
