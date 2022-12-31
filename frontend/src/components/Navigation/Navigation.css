@@ -5,7 +5,6 @@ nav {
     height: 70px;
     justify-content: space-between;
     padding-bottom: 8px;
-    border-bottom: 2px solid black;
     font-family: proxima-nova, sans-serif;
 }
 
@@ -32,6 +31,7 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    box-shadow: 0 5px 15px #777777;
 }
 
 .nav-left, .nav-right { 
