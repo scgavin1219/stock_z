@@ -48,16 +48,22 @@ label {
 }
 
 .login-type { 
+    display: flex;
     padding-top: 15px;
     padding-bottom: 15px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .login-type button { 
-    border: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
     background: none;
     font-size: 20px;
+    justify-content: space-between;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 #demo-user { 
@@ -66,5 +72,16 @@ label {
 
 #demo-user:hover, #signup-user:hover { 
     background-color: #2a4e49;
+}
+
+#signup-login { 
+    color: lightgray;
+    border-bottom: solid 1px lightgray;
+    transition: all ease-in 500ms
+}
+
+#signup-login:hover { 
+    color: #2a4e49;
+    border-bottom: solid 3px #2a4e49;;
 }
 

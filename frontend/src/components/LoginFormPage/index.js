@@ -47,8 +47,8 @@ const LoginFormPage = () => {
     <div className="form-container">
       <form onSubmit={handleSubmit}>
         <div className="login-type">
-            <button>Login</button>
-            <Link to='/signup'><button>Sign Up</button></Link>
+            <button id="login-login">Login</button>
+            <Link to='/signup'><button id="login-signup">Sign Up</button></Link>
         </div>
         <ul>
           {errors.map(error => <li key={error}>{error}</li>)}
