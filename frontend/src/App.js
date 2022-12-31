@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import PageNotFound from './components/PageNotFound';
@@ -16,7 +16,13 @@ function App() {
           <Route path="/signup" exact>
             <SignupFormPage />
           </Route>
-          {/* <Route component={PageNotFound} /> */}
+          <Route path="/error" exact>
+            <PageNotFound />
+          </Route>
+          <Route path="/" exact>
+            {/* route to splash page */}
+          </Route>
+          <Redirect to="/error"/>
         </Switch>
      
     </>
