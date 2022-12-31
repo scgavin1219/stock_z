@@ -5,6 +5,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import PageNotFound from './components/PageNotFound';
 import Navigation from "./components/Navigation";
 import LoginNavigation from './components/LoginNavigation';
+import './index.css'
 
 function App() {
   return (
