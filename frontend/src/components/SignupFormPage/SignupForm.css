@@ -28,7 +28,16 @@ label {
     margin: 5px;
     border-radius: 5px;
     background-color: black;
-    color: lightgray
+    color: lightgray;
+    transition: all ease-in 500ms;
+}
+
+.login-btn { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .form-container { 
@@ -53,5 +62,9 @@ label {
 
 #demo-user { 
     margin-bottom: 20px;
+}
+
+#demo-user:hover, #signup-user:hover { 
+    background-color: #2a4e49;
 }
 

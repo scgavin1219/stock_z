@@ -76,9 +76,10 @@ const SignupFormPage = () => {
         <label>
           <input type="password" value={confirmPassword} placeholder="Confirm Password" onChange={(e) => setConfirmPassword(e.target.value)} required />
         </label>
-
-        <button className="btn" type="submit">Sign Up</button>
-        <button id='demo-user' className='btn'onClick={demoLogin}>Demo User</button>
+        <div className="login-btn">
+          <button id="signup-user" className="btn" type="submit">Sign Up</button>
+          <button id='demo-user' className='btn'onClick={demoLogin}>Demo User</button>
+        </div>
       </form>
     </div>
   );  

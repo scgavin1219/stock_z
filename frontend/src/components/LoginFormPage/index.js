@@ -61,7 +61,7 @@ const LoginFormPage = () => {
           <input type="password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)} required />
         </label>
 
-        <button className="btn">Login</button>
+        <button id="signup-user" className="btn">Login</button>
         <button className="btn" id="demo-user" onClick={demoLogin}>Demo Login</button>
       </form>
     </div>
