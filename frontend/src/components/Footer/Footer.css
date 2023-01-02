@@ -1,11 +1,8 @@
 h3 { 
     font-size: 24px;
     font-weight: 300;
-    margin-bottom: 5px;;    
-}
-
-p { 
-    padding: 2px;
+    margin-bottom: 5px;
+    transition: all ease-in 200ms;    
 }
 
 .footer { 
@@ -26,4 +23,32 @@ p {
     height: 70px;
     width: 70px
 }
+
+p { 
+    transition: all ease-in 200ms;
+    padding: 2px;
+    
+}
+
+p:hover, h3:hover { 
+    transform: translateX(-1px);
+    transform: translateY(-1px);
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+h3:hover { 
+    transform: translateX(-1px);
+    transform: translateY(-1px);
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+.footer-left, .footer-middle-left,
+.footer-middle-right, .footer-right { 
+    min-width: 250px;
+}
+
 

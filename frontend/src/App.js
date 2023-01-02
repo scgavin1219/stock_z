@@ -26,11 +26,12 @@ function App() {
           </Route>
           <Route path="/" exact>
             <Navigation />
-            <Footer />
+            {/* <Footer /> */}
             {/* route to splash page */}
           </Route>
           <Redirect to="/error"/>
         </Switch>
+        <Footer/>
      
     </>
 
