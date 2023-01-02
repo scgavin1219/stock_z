@@ -1,10 +1,11 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import PageNotFound from './components/PageNotFound';
 import Navigation from "./components/Navigation";
 import LoginNavigation from './components/LoginNavigation';
+import Footer from './components/Footer';
 import './index.css'
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           </Route>
           <Route path="/" exact>
             <Navigation />
+            <Footer />
             {/* route to splash page */}
           </Route>
           <Redirect to="/error"/>
