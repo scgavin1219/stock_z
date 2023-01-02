@@ -1,0 +1,10 @@
+
+.jordan { 
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.jordan img { 
+    width: 90%;
+}

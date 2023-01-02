@@ -6,6 +6,7 @@ import PageNotFound from './components/PageNotFound';
 import Navigation from "./components/Navigation";
 import LoginNavigation from './components/LoginNavigation';
 import Footer from './components/Footer';
+import Splash from './components/Splash';
 import './index.css'
 
 function App() {
@@ -26,8 +27,7 @@ function App() {
           </Route>
           <Route path="/" exact>
             <Navigation />
-            {/* <Footer /> */}
-            {/* route to splash page */}
+            <Splash />
           </Route>
           <Redirect to="/error"/>
         </Switch>
