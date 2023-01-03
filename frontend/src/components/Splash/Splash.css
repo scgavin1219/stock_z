@@ -8,6 +8,7 @@ h5 {
     color: rgb(74, 74, 74);
     margin: 0 20px;
     width: 130px;
+    transition: all ease-in 500ms;
 }
 
 h5:hover { 
