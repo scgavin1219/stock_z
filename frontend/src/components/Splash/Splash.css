@@ -1,8 +1,40 @@
+h5 { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-family: proxima-nova, sans-serif;
+    font-weight: 600;
+    color: rgb(74, 74, 74);
+    margin: 0 20px;
+    width: 130px;
+}
+
+h5:hover { 
+  
+    transform: translateX(-1px);
+    transform: translateY(-1px);
+    font-size: 20px;
+    color: #2a4e49;
+    cursor: pointer;
+}
+
+.product-type { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 25px;
+    margin: 30px 0;
+    padding: 10px;
+    background-color: rgb(232, 230, 230);
+}
+
 
 .jordan { 
     display: flex;
     justify-content: center;
-    padding: 20px;
+    
 }
 
 .jordan img { 
