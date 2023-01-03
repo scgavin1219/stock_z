@@ -85,3 +85,20 @@ label {
     border-bottom: solid 3px #2a4e49;;
 }
 
+#error-holder { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    margin: 0 15px;
+}
+
+#login-error {
+    color: red;
+    font-family: proxima-nova, sans-serif;
+    font-size: 15px;
+    margin: 3px;
+    padding: 2px;
+}
+    
+

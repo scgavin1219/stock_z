@@ -50,8 +50,8 @@ const LoginFormPage = () => {
             <button id="login-login">Login</button>
             <Link to='/signup'><button id="login-signup">Sign Up</button></Link>
         </div>
-        <ul>
-          {errors.map(error => <li key={error}>{error}</li>)}
+        <ul id="error-holder">
+          {errors.map(error => <li id='login-error' key={error}>{error}</li>)}
         </ul>
         <label>
           <input type="text" placeholder="Username or Email" value={credential} onChange={e=>setCredential(e.target.value)} required />

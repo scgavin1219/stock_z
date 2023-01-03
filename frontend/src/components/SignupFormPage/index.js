@@ -57,8 +57,8 @@ const SignupFormPage = () => {
           <Link to='/login'><button id="signup-login">Login</button></Link>
           <button id="signup-signup">Sign Up</button>
         </div>
-        <ul>
-          {errors.map(error => <li key={error}>{error}</li>)}
+        <ul id="error-holder">
+          {errors.map(error => <li id="login-error" key={error}>{error}</li>)}
         </ul>
 
         <label>
