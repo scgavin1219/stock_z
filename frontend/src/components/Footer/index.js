@@ -7,7 +7,7 @@ function Footer() {
   return (
     <div className='footer'>
         <div className='footer-left'>
-            <h3>Dylan Gavin's Socials</h3>
+            <h3>by Dylan Gavin</h3>
             <a href="https://github.com/scgavin1219"><img id="github" src={github} /></a>
             <a href="https://www.linkedin.com/in/dylan-gavin-a9595150/"><img id ="linkedin" src={linkedIn} /></a>
         </div>
