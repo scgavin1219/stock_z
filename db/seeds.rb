@@ -5,10 +5,13 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "open-uri"
+
 ApplicationRecord.transaction do 
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
   User.destroy_all
+  Listing.destroy_all
 
   puts "Resetting primary keys..."
   # For easy testing, so that after seeding, the first `User` has `id` of 1
@@ -33,3 +36,16 @@ ApplicationRecord.transaction do
 
   puts "Done!"
 end
+
+shoe_1 = Listing.create!({
+  name: 'AJ1', 
+  brand: 'Jordan',
+  style: 'n/a', 
+  colorway: 'red/white/black',
+  description: 'test', 
+  old_price: 123.33,
+  price: 145.59,
+  category: "sneakers"
+})
+
+shoe_1.photos.attach(io: URI.open("https://stockz-dev.s3.us-west-1.amazonaws.com/addidas1-4.png"), filename: "addidas1-4.png")
