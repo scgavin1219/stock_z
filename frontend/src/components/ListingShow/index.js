@@ -13,8 +13,9 @@ function ListingShow() {
         dispatch(fetchListing(listingId))
     }, [listingId])
 
-
-
+    if (!listing) { 
+        return null
+    }
 
   return (
     <div id="show" className='show-container'>
