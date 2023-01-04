@@ -1,0 +1,27 @@
+.show-container { 
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    margin: 120px;
+    width: 60vw;
+    height: 60vh;
+    border: 1px solid lightgray;
+}
+
+h1 { 
+    font-size: 36px;
+    font-family: proxima-nova, sans-serif;
+}
+
+.show-bottom { 
+    display: flex;
+}
+
+.show-pic { 
+    width: 60%;
+}
+
+.show-information { 
+    width: 40%;
+}
