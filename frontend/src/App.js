@@ -8,6 +8,7 @@ import LoginNavigation from './components/LoginNavigation';
 import Footer from './components/Footer';
 import Splash from './components/Splash';
 import './index.css'
+import ListingsIndex from './components/ListingsIndex';
 
 function App() {
   return (
@@ -20,6 +21,10 @@ function App() {
           <Route path="/signup" exact>
             <LoginNavigation />
             <SignupFormPage />
+          </Route>
+          <Route path="/listings" exact>
+            <Navigation />
+            <ListingsIndex />
           </Route>
           <Route path="/error" exact>
             <LoginNavigation />

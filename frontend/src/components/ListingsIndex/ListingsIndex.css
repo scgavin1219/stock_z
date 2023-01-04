@@ -1,0 +1,34 @@
+.listings-container { 
+    margin: 120px 60px 200px;
+    display: flex;
+    flex-wrap: wrap;
+
+
+}
+
+.product-container { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 230px;
+    width: 230px;
+    border: 1px solid rgb(224, 219, 219);
+    border-radius: 3px;
+    margin: 20px;
+}
+
+ #bottombox { 
+    padding: 10px;
+ }
+
+#listing-price { 
+    margin-top: 4px;
+    text-align: center;
+}
+
+#listing-title { 
+    background-color: rgb(235, 232, 232);
+    width: 100%;
+}
+
