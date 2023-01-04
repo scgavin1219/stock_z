@@ -22,6 +22,7 @@ h5:hover {
 
 .splash-container { 
     margin-top: 100px;
+    margin-bottom: -100px;
 }
 
 .product-type { 

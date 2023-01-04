@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import Splash from './components/Splash';
 import './index.css'
 import ListingsIndex from './components/ListingsIndex';
+import ListingShow from './components/ListingShow';
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
             <Navigation />
             <ListingsIndex />
           </Route>
+          <Route path="/listings/:listingId" exact>
+            <Navigation />
+            <ListingShow />
+          </Route>
           <Route path="/error" exact>
             <LoginNavigation />
             <PageNotFound />
@@ -33,6 +38,7 @@ function App() {
           <Route path="/" exact>
             <Navigation />
             <Splash />
+            <ListingsIndex />
           </Route>
           <Redirect to="/error"/>
         </Switch>

@@ -18,7 +18,6 @@ const  ListingsIndex =() => {
   return (
     <div className='listings-container'>
         {listings.map((listing, idx) => <ListingsIndexItem listing={listing} key={idx} />)}
-        <p>hello from the listings</p>
     </div>
   )
 }

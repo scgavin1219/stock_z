@@ -40,7 +40,7 @@ function Navigation() {
           </div>
         </div>
         <div className='nav-right'>
-          <NavLink id="browse-link" to="/">Browse</NavLink>
+          <NavLink id="browse-link" to="/listings">Browse</NavLink>
           <NavLink id="about-link" to="/">About</NavLink>
           <button id='shopping-button'><AiOutlineShoppingCart /></button>
           {sessionLinks}

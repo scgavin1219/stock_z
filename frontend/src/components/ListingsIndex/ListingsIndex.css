@@ -1,9 +1,13 @@
+h6 { 
+    font-size: 18px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
 .listings-container { 
     margin: 120px 60px 200px;
     display: flex;
     flex-wrap: wrap;
-
-
 }
 
 .product-container { 
@@ -21,6 +25,18 @@
  #bottombox { 
     padding: 10px;
  }
+
+ #bottombox-left, #bottombox-right { 
+    display: flex;
+ }
+
+#bottombox-left { 
+    justify-content: space-between;
+}
+
+#bottombox-right { 
+    justify-content: center;
+}
 
 #listing-price { 
     margin-top: 4px;

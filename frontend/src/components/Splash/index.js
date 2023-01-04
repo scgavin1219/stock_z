@@ -19,10 +19,10 @@ function Splash() {
         <div className='jordan'> 
              <img src={dunk} alt="Air Jordan 1"/>
         </div>
-        <div className='products'>
+        {/* <div className='products'>
           <h1>All of the products will go here</h1>
           <h2>Not sure, but maybe sort by category</h2>
-        </div>
+        </div> */}
     </div>
   )
 }

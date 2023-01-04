@@ -2,6 +2,10 @@ import React from 'react'
 // import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import './ListingsIndex.css'
+import { GrFavorite } from 'react-icons/gr'
+import { HiTrendingUp } from 'react-icons/hi'
+import { HiTrendingDown } from 'react-icons/hi'
+
 
 const ListingsIndexItem= ({listing}) => {
     // const dispatch = useDispatch()
@@ -13,8 +17,14 @@ const ListingsIndexItem= ({listing}) => {
         </div>
         <div id='listing-title'>
             <div id="bottombox">
-                <Link to={`listings/${listing.id}`}>{listing.name}</Link>
-                <h6 id="listing-price">${listing.price}</h6>
+                <div id="bottombox-left">
+                    <Link to={`listings/${listing.id}`}>{listing.name}</Link>
+                    <GrFavorite />
+                </div>
+                <div id="bottombox-right">
+                    <h6 id="listing-price">${listing.price}</h6>
+                    {listing.price > listing.oldPrice ? <HiTrendingUp /> : <HiTrendingDown />}
+                </div>
             </div>
         </div>
     </div>
