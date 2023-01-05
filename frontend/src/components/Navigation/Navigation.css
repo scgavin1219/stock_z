@@ -134,7 +134,7 @@ button:hover {
 }
 
 #login-button:hover, #signup-button:hover { 
-    background-color: black;
+    background-color: rgb(1 99 62);
     color: whitesmoke;
 }
 

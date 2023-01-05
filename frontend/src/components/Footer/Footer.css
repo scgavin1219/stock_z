@@ -24,13 +24,18 @@ h3 {
     width: 70px
 }
 
-p { 
+#footer-link { 
     transition: all ease-in 200ms;
     padding: 2px;
-    
+    text-decoration: none;
+    color: whitesmoke
 }
 
-p:hover, h3:hover { 
+#footer-link:visited { 
+    color: inherit;
+}
+
+#footer-link:hover, h3:hover { 
     transform: translateX(-1px);
     transform: translateY(-1px);
     font-size: 20px;

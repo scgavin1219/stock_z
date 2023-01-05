@@ -63,3 +63,16 @@ h1 {
     height: 400px;
     width: auto;
 }
+
+#show-button { 
+    background-color: rgb(50, 49, 49);
+    color: white;
+    transition: all ease-in 500ms;
+}
+
+
+
+#show-button:hover {
+    background-color: rgb(1 99 62);
+    color: whitesmoke;
+}

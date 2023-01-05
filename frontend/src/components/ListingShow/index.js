@@ -49,9 +49,9 @@ function ListingShow() {
                         <br/>
                     </ul>
                     <div id="purchase-container">
-                        <button>Add to Cart</button>
+                        <button id="show-button">Add to Cart</button>
                         <br/>
-                        <button>Purchase Now</button>
+                        <button id="show-button">Purchase Now</button>
                     </div>
                 </div>
             </div>
