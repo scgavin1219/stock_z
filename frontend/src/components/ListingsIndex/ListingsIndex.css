@@ -50,6 +50,6 @@ h6 {
 
 #test-img { 
     height: 200px;
-    width: 200px;
+    width: auto;
 }
 

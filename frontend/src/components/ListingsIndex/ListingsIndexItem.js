@@ -14,7 +14,7 @@ const ListingsIndexItem= ({listing}) => {
     // console.log(listing.photoUrls[0])
 
     const url = listing.photoUrls[0]
-    console.log(listing.photoUrl)
+    // console.log(listing.photoUrl)
 
   return (
     <div className='product-container'>

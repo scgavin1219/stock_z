@@ -8,6 +8,8 @@ function ListingShow() {
     const dispatch = useDispatch()
     const {listingId} = useParams();
     const listing = useSelector(getListing(listingId))
+    const url = listing.photoUrls[0]
+    const url1 = listing.photoUrls[1]
 
     useEffect(() => { 
         dispatch(fetchListing(listingId))
@@ -24,7 +26,8 @@ function ListingShow() {
         </div>
         <div className='show-bottom'>
             <div className='show-pic'>
-                <p>pic goes here</p>
+                <img src={url} alt="" id="show-img" />
+                <img src={url1} alt="" id="show-img" />
             </div>
             <div className='show-information'>
                 <ul>
