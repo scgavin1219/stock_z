@@ -12,7 +12,7 @@ function ListingShow() {
     const {listingId} = useParams();
     const listing = useSelector(getListing(listingId))
     
-    // const url1 = listing.photoUrls[1]
+    
 
     useEffect(() => { 
         dispatch(fetchListing(listingId))
@@ -23,6 +23,10 @@ function ListingShow() {
     }
 
     const url = listing.photoUrls[0]
+    // const url1 = listing.photoUrls[1]
+    // const priceChange = Math.abs(listing.price - listing.oldPrice)
+    // const pricePercent = (priceChange / listing.oldPrice) * 100 
+    // const priceLi = <li>{priceChange}({pricePercent})</li>
 
   return (
     <>
@@ -39,15 +43,19 @@ function ListingShow() {
                 </div>
                 <div className='show-information'>
                     <ul>
-                        <li id="show-li">DESCRIPTION: {listing.description}</li>
+                        <li id="show-li"><span id="bold">DESCRIPTION:</span> {listing.description}</li>
                         <br/>
-                        <li id="show-li">STYLE: {listing.style}</li>
+                        <li id="show-li"><span id="bold">STYLE:</span> {listing.style}</li>
                         <br/>
-                        <li id="show-li">COLORWAY: {listing.colorway}</li>
+                        <li id="show-li"><span id="bold">COLORWAY:</span> {listing.colorway}</li>
                         <br/>
-                        <li id="show-li">PRICE: ${listing.price}</li>
+                        <li id="show-li"><span id="bold">PRICE:</span> ${listing.price}</li>
                         <br/>
-                        {listing.price > listing.oldPrice ? <li id="show-li">Above Retail <HiTrendingUp /></li> : <li id="show-li">Below Retail <HiTrendingDown /></li>}
+                        {listing.price > listing.oldPrice ? 
+                
+                             <li id="show-li"><span id="bold">PRICE INCREASE: </span>({(((Math.abs(listing.price - listing.oldPrice))/ listing.oldPrice) * 100 ).toFixed(2)}%)<HiTrendingUp /></li>
+                        : 
+                            <li id="show-li"><span id="bold">PRICE DECREASE: </span>({(((Math.abs(listing.price - listing.oldPrice))/ listing.oldPrice) * 100 ).toFixed(2)}%)<HiTrendingDown /></li> }
                         <br/>
                     </ul>
                     <div id="purchase-container">

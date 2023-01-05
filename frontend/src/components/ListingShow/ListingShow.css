@@ -6,6 +6,7 @@
     background-color: white;
     margin: 120px;
     width: 60vw;
+    min-width: 600px;
     border: 2px solid lightgray;
     border-radius: 8px;
     padding: 20px;
@@ -25,6 +26,8 @@ h1 {
     display: flex;
     flex-direction: column;
     margin: 30px;
+    height: 80%;
+    width: auto;
 }
 
 .review-container { 
@@ -75,4 +78,8 @@ h1 {
 #show-button:hover {
     background-color: rgb(1 99 62);
     color: whitesmoke;
+}
+
+#bold { 
+    font-weight: bold;
 }
