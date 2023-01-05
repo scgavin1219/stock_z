@@ -11,6 +11,7 @@ import './index.css'
 import ListingsIndex from './components/ListingsIndex';
 import ListingShow from './components/ListingShow';
 
+
 function App() {
   return (
     <>
@@ -27,6 +28,10 @@ function App() {
             <Navigation />
             <ListingsIndex />
           </Route>
+          {/* <Route path="/tradingcards" exact>
+            <Navigation />
+            <CardIndex /> */}
+          {/* </Route> */}
           <Route path="/listings/:listingId" exact>
             <Navigation />
             <ListingShow />
