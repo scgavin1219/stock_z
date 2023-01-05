@@ -131,6 +131,7 @@ button:hover {
     background-color: rgb(50, 49, 49);
     color: white;
     transition: all ease-in 500ms;
+    margin-right: 70px;
 }
 
 #login-button:hover, #signup-button:hover { 
@@ -145,6 +146,7 @@ button:hover {
     width: 100px;
     min-width: 60px;
     text-decoration: none;
+    font-weight: 600;
     color: black;
     transition: all ease-in 200ms;
 }
@@ -158,7 +160,7 @@ button:hover {
     transform: translateX(-1px);
     transform: translateY(-1px);
     font-size: 20px;
-    color: #2a4e49;
+    color:rgb(1 99 62);
     cursor: pointer;
 }
 
@@ -177,7 +179,7 @@ button:hover {
 
 #shopping-button:hover { 
     font-size: 24px;
-    color: #2a4e49
+    color: rgb(1 99 62)
 }
 
 #search-icon { 

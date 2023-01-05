@@ -1,17 +1,18 @@
-h5 { 
+#splash-links { 
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 18px;
     font-family: proxima-nova, sans-serif;
     font-weight: 600;
+    text-decoration: none;
     color: rgb(74, 74, 74);
     margin: 0 20px;
     width: 130px;
     transition: all ease-in 500ms;
 }
 
-h5:hover { 
+#splash-links:hover { 
   
     transform: translateX(-1px);
     transform: translateY(-1px);

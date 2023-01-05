@@ -11,9 +11,7 @@ import './Navigation.css';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
-  let location = useLocation();
-  console.log(location, 'location')
-
+  // let location = useLocation();
 
   let sessionLinks;
   if (sessionUser) {
