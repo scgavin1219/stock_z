@@ -1,7 +1,7 @@
 import React from 'react'
 import './Splash.css'
 import { Link } from 'react-router-dom'
-import jordan from './AJ1.png'
+// import jordan from './AJ1.png'
 import dunk from './dunk.png'
 
 function Splash() {

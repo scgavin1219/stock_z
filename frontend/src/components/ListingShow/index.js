@@ -11,16 +11,18 @@ function ListingShow() {
     const dispatch = useDispatch()
     const {listingId} = useParams();
     const listing = useSelector(getListing(listingId))
-    const url = listing.photoUrls[0]
-    const url1 = listing.photoUrls[1]
+    
+    // const url1 = listing.photoUrls[1]
 
     useEffect(() => { 
         dispatch(fetchListing(listingId))
-    }, [listingId])
+    }, [listingId, dispatch])
 
     if (!listing) { 
         return null
     }
+
+    const url = listing.photoUrls[0]
 
   return (
     <>

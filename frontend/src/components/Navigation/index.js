@@ -1,7 +1,7 @@
 import React from 'react';
 import { AiOutlineShoppingCart } from "react-icons/ai"
 import { GoSearch } from 'react-icons/go'
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -31,7 +31,7 @@ function Navigation() {
     <nav>
       <div className='navbar'>
         <div className='nav-left'>
-          <NavLink id="stockx-logo" exact to="/"><img src={stockx}/></NavLink>
+          <NavLink id="stockx-logo" exact to="/"><img src={stockx}alt="stockx logo"/></NavLink>
           <div id='search-box'>
             < GoSearch id='search-icon' />
             <input type="text" placeholder='Search for Brand, Color, etc.' id="search-bar"/>

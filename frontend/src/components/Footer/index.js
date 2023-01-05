@@ -9,8 +9,8 @@ function Footer() {
     <div className='footer'>
         <div className='footer-left'>
             <h3>by Dylan Gavin</h3>
-            <a href="https://github.com/scgavin1219"><img id="github" src={github} /></a>
-            <a href="https://www.linkedin.com/in/dylan-gavin-a9595150/"><img id ="linkedin" src={linkedIn} /></a>
+            <a href="https://github.com/scgavin1219"><img id="github" src={github} alt="github link" /></a>
+            <a href="https://www.linkedin.com/in/dylan-gavin-a9595150/"><img id ="linkedin" src={linkedIn} alt="linkedin link" /></a>
         </div>
         <div className='footer-middle-left'>
             <h3>Air Jordan</h3>

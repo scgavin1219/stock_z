@@ -8,11 +8,14 @@ import './ListingsIndex.css'
 const  ListingsIndex =() => {
     const dispatch = useDispatch();
     const listings = useSelector(getListings)
-   
 
     useEffect(() => {
         dispatch(fetchListings())
-    }, [])
+    }, [dispatch])
+
+    if (!listings) { 
+        return null
+    }
 
   return (
     <div className='listings-container'>
