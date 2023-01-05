@@ -19,12 +19,12 @@ const ListingsIndexItem= ({listing}) => {
   return (
     <div className='product-container'>
         <div className='listing-pic'>
-            <img src={url} alt="" id="test-img" />
+            <Link to={`listings/${listing.id}`}><img src={url} alt="" id="test-img" /></Link>
         </div>
         <div id='listing-title'>
             <div id="bottombox">
                 <div id="bottombox-left">
-                    <Link to={`listings/${listing.id}`}>{listing.name}</Link>
+                    <Link to={`listings/${listing.id}`} id="index-title">{listing.name}</Link>
                     <GrFavorite />
                 </div>
                 <div id="bottombox-right">

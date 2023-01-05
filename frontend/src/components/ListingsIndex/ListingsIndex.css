@@ -6,6 +6,7 @@ h6 {
 
 .listings-container { 
     margin: 120px 60px 200px;
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
 }
@@ -15,11 +16,18 @@ h6 {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 230px;
-    width: 230px;
+    height: 270px;
+    width: 270px;
     border: 1px solid rgb(224, 219, 219);
+    background-color: white;
     border-radius: 3px;
     margin: 20px;
+}
+
+.listing-pic { 
+    height: 200px;
+    width: 200px;
+    background-color: white;
 }
 
  #bottombox { 
@@ -49,7 +57,18 @@ h6 {
 }
 
 #test-img { 
-    height: 200px;
-    width: auto;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#index-title { 
+    text-decoration: none;
+    font-family: proxima-nova, sans-serif;
+    color: black
+}
+
+#index-title:visited { 
+    color: inherit;
 }
 
