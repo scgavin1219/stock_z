@@ -10,10 +10,16 @@ import { HiTrendingDown } from 'react-icons/hi'
 const ListingsIndexItem= ({listing}) => {
     // const dispatch = useDispatch()
 
+    // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
+    // console.log(listing.photoUrls[0])
+
+    const url = listing.photoUrls[0]
+    console.log(listing.photoUrl)
+
   return (
     <div className='product-container'>
         <div className='listing-pic'>
-            <p>picture here</p>
+            <img src={url} alt="" id="test-img" />
         </div>
         <div id='listing-title'>
             <div id="bottombox">

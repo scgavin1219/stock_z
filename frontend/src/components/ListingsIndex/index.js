@@ -8,7 +8,7 @@ import './ListingsIndex.css'
 const  ListingsIndex =() => {
     const dispatch = useDispatch();
     const listings = useSelector(getListings)
-    console.log(listings)
+   
 
     useEffect(() => {
         dispatch(fetchListings())
@@ -16,7 +16,7 @@ const  ListingsIndex =() => {
 
   return (
     <div className='listings-container'>
-        {listings.map((listing, idx) => <ListingsIndexItem listing={listing} key={idx} />)}
+        {listings.map((listing) => <ListingsIndexItem listing={listing} key={listing.id} />)}
     </div>
   )
 }
