@@ -17,23 +17,26 @@ const ListingsIndexItem= ({listing}) => {
     // console.log(listing.photoUrl)
 
   return (
-    <div className='product-container'>
-        <div className='listing-pic'>
-            <Link to={`listings/${listing.id}`}><img src={url} alt="" id="test-img" /></Link>
-        </div>
-        <div id='listing-title'>
-            <div id="bottombox">
-                <div id="bottombox-left">
-                    <Link to={`listings/${listing.id}`} id="index-title">{listing.name}</Link>
-                    <GrFavorite />
-                </div>
-                <div id="bottombox-right">
-                    <h6 id="listing-price">${listing.price}</h6>
-                    {listing.price > listing.oldPrice ? <HiTrendingUp /> : <HiTrendingDown />}
+    <>
+        <div className='product-container'>
+            <div className='listing-pic'>
+                <Link to={`listings/${listing.id}`}><img src={url} alt="" id="test-img" /></Link>
+            </div>
+            <div id='listing-title'>
+                <div id="bottombox">
+                    <div id="bottombox-left">
+                        <Link to={`listings/${listing.id}`} id="index-title">{listing.name}</Link>
+                        <GrFavorite />
+                    </div>
+                    <div id="bottombox-right">
+                        <h6 id="listing-price">${listing.price}</h6>
+                        {listing.price > listing.oldPrice ? <HiTrendingUp /> : <HiTrendingDown />}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    
+    </>
   )
 }
 
