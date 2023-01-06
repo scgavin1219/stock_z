@@ -53,9 +53,9 @@ function ListingShow() {
                         <br/>
                         {listing.price > listing.oldPrice ? 
                 
-                             <li id="show-li"><span id="bold">PRICE INCREASE: </span>({(((Math.abs(listing.price - listing.oldPrice))/ listing.oldPrice) * 100 ).toFixed(2)}%)<HiTrendingUp /></li>
+                             <li id="show-li"><span id="bold">PRICE INCREASE: </span><span id="up">({(((Math.abs(listing.price - listing.oldPrice))/ listing.oldPrice) * 100 ).toFixed(2)}%)<HiTrendingUp /></span></li>
                         : 
-                            <li id="show-li"><span id="bold">PRICE DECREASE: </span>({(((Math.abs(listing.price - listing.oldPrice))/ listing.oldPrice) * 100 ).toFixed(2)}%)<HiTrendingDown /></li> }
+                            <li id="show-li"><span id="bold">PRICE DECREASE: </span><span id="down">({(((Math.abs(listing.price - listing.oldPrice))/ listing.oldPrice) * 100 ).toFixed(2)}%)<HiTrendingDown /></span></li> }
                         <br/>
                     </ul>
                     <div id="purchase-container">

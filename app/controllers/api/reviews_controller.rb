@@ -15,23 +15,17 @@ class Api::ReviewsController < ApplicationController
     def index
         incoming_listing_id = params[:listing_id]
         # @reviews(listing_id: incoming_listing_id)
-        @reviews = Review.find_by(listing_id: incoming_listing_id)
+        @reviews = Review.where(listing_id: incoming_listing_id)
         render :index
     end
 
-    # def edit 
-    #     @review = Review.find_by(id: params[:id])
-    #     render :edit
-    # end
 
     def update
         @review = Review.find_by(id: params[:id])
-        # if @review && current_user.id = @review.user_id
-            if @review.update(review_params)
-                render :index #not sure
-            else
-                render json: @review.errors.full_messages, status: 422
-            end
+        if @review.update(review_params)
+            render :index #not sure
+        else
+            render json: @review.errors.full_messages, status: 422
         end
     end 
     
@@ -40,7 +34,8 @@ class Api::ReviewsController < ApplicationController
         if @review.destroy!
             render :index
         else 
-            render json: status: 422
+            render json:  @review.errors.full_messages, status: 422
+        end
     end
    
 

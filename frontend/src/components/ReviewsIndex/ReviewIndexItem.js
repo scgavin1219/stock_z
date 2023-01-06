@@ -13,7 +13,7 @@ const ReviewIndexItem = ({review}) => {
             <h4>{review.rating}</h4>
         </div>
         <div className='text-rating'>
-            <p>{review.text_rating}</p>
+            <p>{review.textRating}</p>
         </div>
         {/* {sessionUser.id === review.user_id &&
         <div className='edit-rating'>

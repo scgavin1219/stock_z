@@ -26,7 +26,7 @@ export const getReview = reviewId => store => {
 }
 
 export const fetchReviews = (listingId) => async dispatch => {
-    const res = await fetch(`/api/reviews/${listingId}`)
+    const res = await fetch(`/api/listings/${listingId}/reviews`)
     if (res.ok) { 
         const reviews = await res.json();
         dispatch(receiveReviews(reviews))

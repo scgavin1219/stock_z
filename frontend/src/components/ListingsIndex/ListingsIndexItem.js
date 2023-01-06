@@ -28,7 +28,7 @@ const ListingsIndexItem= ({listing}) => {
                     </div>
                     <div id="bottombox-right">
                         <h6 id="listing-price">${listing.price}</h6>
-                        {listing.price > listing.oldPrice ? <HiTrendingUp /> : <HiTrendingDown />}
+                        {listing.price > listing.oldPrice ? <span id="up"><HiTrendingUp /></span> : <span id="down"><HiTrendingDown /></span>}
                          {/* <h6>({(((Math.abs(listing.price - listing.oldPrice))/ listing.oldPrice) * 100 ).toFixed(2)}%)<HiTrendingDown /></h6> */}
                     </div>
                 </div>

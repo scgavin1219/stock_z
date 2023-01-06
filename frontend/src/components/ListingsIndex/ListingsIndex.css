@@ -22,6 +22,7 @@ h6 {
     background-color: white;
     border-radius: 9px;
     margin: 20px;
+    transition: all ease-in 800ms;
 }
 
 .product-container:hover { 
@@ -84,4 +85,13 @@ h6 {
     height: 100%;
     width: 100%;
     
+}
+
+#up { 
+    color: rgb(1 99 62);
+    /* font-size: 20px; */
+}
+
+#down { 
+    color: rgb(204, 21, 21)
 }

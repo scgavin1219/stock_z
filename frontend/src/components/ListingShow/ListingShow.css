@@ -4,9 +4,9 @@
     /* justify-content: center; */
     align-items: center;
     background-color: white;
-    margin: 120px;
+    
     width: 60vw;
-    min-width: 600px;
+    min-width: 900px;
     border: 2px solid lightgray;
     border-radius: 8px;
     padding: 20px;
@@ -45,6 +45,7 @@ h1 {
     margin-right: 30px; 
     margin-left: 10px;
     width: 40%;
+    min-width: 300px;
 }
 
 #show-li { 
