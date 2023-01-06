@@ -66,18 +66,7 @@ function ListingShow() {
                 </div>
             </div>
         </div>
-        <div className='review-container'>
-            <div className='review-head'>
-                <h1>Reviews</h1>
-                <h3>Average Rating</h3>
-                <p>only see button if logged in</p>
-                <button>Leave a Review</button>
-            </div>
-            <div className='listing-reviews'>
-                <p>Reviews Index goes here</p>
-            </div>
-            
-        </div>
+        
     </>
   )
 }

@@ -17,6 +17,13 @@ const ReviewsIndex = () => {
 
   return (
     <div className='reviews-container'>
+        <div className='review-container'>
+            <div className='review-head'>
+                <h1>Reviews</h1>
+                <h4>Average Rating</h4>
+                <button>Leave a Review</button>
+            </div>
+        </div>
         {reviews.map(review => <ReviewIndexItem review={review} key={review.id}  />)}
         
     </div>
