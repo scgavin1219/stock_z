@@ -49,8 +49,10 @@ h1 {
 
 #show-li { 
     margin: 5px;
+    color:rgb(53, 53, 53);
     font-family: proxima-nova, sans-serif;
     font-size: 20px;
+    line-height: 1.5rem;
 }
 
 #purchase-container {
@@ -82,4 +84,5 @@ h1 {
 
 #bold { 
     font-weight: bold;
+    color: black;
 }

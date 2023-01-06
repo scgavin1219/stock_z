@@ -13,15 +13,16 @@ const ReviewsIndex = () => {
 
     useEffect(() => { 
         dispatch(fetchReviews(listingId))
-    }, [dispatch])
+    }, [dispatch, listingId])
 
-    if (!reviews) { 
-        return null
-    }
+    // if (!reviews) { 
+    //     return null
+    // }
 
   return (
     <div className='reviews-container'>
         {reviews.map(review => <ReviewIndexItem review={review} key={review.id}  />)}
+        <p>Hello from the Review Index</p>
     </div>
   )
 }

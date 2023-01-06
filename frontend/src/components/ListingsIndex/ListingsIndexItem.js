@@ -23,7 +23,7 @@ const ListingsIndexItem= ({listing}) => {
             <div id='listing-title'>
                 <div id="bottombox">
                     <div id="bottombox-left">
-                        <Link to={`listings/${listing.id}`} id="index-title">{listing.name}</Link>
+                        <Link to={`listings/${listing.id}`} id="index-title"><span id="bold">{listing.name}</span></Link>
                         <GrFavorite />
                     </div>
                     <div id="bottombox-right">

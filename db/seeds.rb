@@ -109,7 +109,7 @@ shoe_5.photos.attach(io: URI.open("https://stockz-dev.s3.us-west-1.amazonaws.com
 shoe_5.photos.attach(io: URI.open("https://stockz-dev.s3.us-west-1.amazonaws.com/newbalance1-2.png"), filename: "newbalance1-2.png")
 
 shoe_6 = Listing.create!({
-  name: 'NB Numeric Tiago Lemos 808', 
+  name: 'Numeric Tiago Lemos 808', 
   brand: 'New Balance',
   style: 'NM808WBY', 
   colorway: 'White/Blue', 
@@ -123,7 +123,7 @@ shoe_6.photos.attach(io: URI.open("https://stockz-dev.s3.us-west-1.amazonaws.com
 shoe_6.photos.attach(io: URI.open("https://stockz-dev.s3.us-west-1.amazonaws.com/newbalance2-2.png"), filename: "newbalance2-2.png")
 
 shoe_7 = Listing.create!({
-  name: 'PUMA x POKÉMON Rider FV Pikachu Sneakers', 
+  name: ' Rider FV Pikachu', 
   brand: 'Puma',
   style: '387688_01', 
   colorway: 'Empire Yellow/Pale Lemon', 
@@ -165,7 +165,7 @@ shoe_9.photos.attach(io: URI.open("https://stockz-dev.s3.us-west-1.amazonaws.com
 shoe_9.photos.attach(io: URI.open("https://stockz-dev.s3.us-west-1.amazonaws.com/puma3-2.png"), filename: "puma3-2.png")
 
 shoe_10 = Listing.create!({
-  name: 'Space Fight Shadow 6000', 
+  name: 'Space Shadow 6000', 
   brand: 'Saucony',
   style: 'S70703-1', 
   colorway: 'Multi/Multi/Multi', 
@@ -197,7 +197,7 @@ shoe_12 = Listing.create!({
   brand: 'Vans',
   style: 'N/A', 
   colorway: 'White/Floral-Mushroom', 
-  description: 'The Authentic VR3 SF combines our original low profile silhouette with the Vans Surf SF build to create an upgraded, comfortable lace-up style. Featuring sturdy canvas uppers with collapsible heels for versatility, the Authentic VR3 SF fuses modern and vintage detailing for a twist on the ultimate heritage style. This classic low top shoe also includes new EcoCush™ footbed for elevated cushioning and new EcoWaffle™ rubber outsole with the Vans classic waffle pattern. In order to reduce the overall footprint of Vans, our team has set ambitious sustainability goals. Big or small, all of our efforts add up to positive change. VR3 is the Vans commitment to sourcing 100% of our top 4 CO2 impact materials (cotton, leather, rubber and polyester) from Regenerative, Responsibly Sourced Renewable, and/or Recycled sources by 2030.', 
+  description: 'The Authentic VR3 SF combines our original low profile silhouette with the Vans Surf SF build to create an upgraded, comfortable lace-up style. Featuring sturdy canvas uppers with collapsible heels for versatility, the Authentic VR3 SF fuses modern and vintage detailing for a twist on the ultimate heritage style. This classic low top shoe also includes new EcoCush™ footbed for elevated cushioning and new EcoWaffle™ rubber outsole with the Vans classic waffle pattern.', 
   old_price: 85, 
   price: 60, 
   category: 'Sneakers' 
@@ -213,7 +213,7 @@ watch_1 = Listing.create!({
   colorway: 'Turquoise/Blue', 
   description: 'Introducing the GA-B001 line of G-SHOCK watches — Featuring a new toughness-driven design and Smartphone Link functionality
                 Bold color schemes take you from stylish urban streets. More than just fashion, these timepieces also deliver full functionality. Sync with your smartphone via Bluetooth® and tap into the dedicated app to access the functions you need.
-                The GA-B001 line features an innovative construction, with two separate top and bottom bezel components that connect at the 9 and 3 o’clock positions. This ingenuity is complemented by a meticulous attention to detail, with index markings and a uniquely shaped LCD designed as never before on a G-SHOCK.', 
+                The GA-B001 line features an innovative construction, with two separate top and bottom bezel components that connect at the 9 and 3 o’clock positions.', 
   old_price: 150, 
   price: 160, 
   category: 'Watches'
@@ -273,7 +273,7 @@ electronic_1 = Listing.create!({
   brand: 'Valve',
   style: 'V004287-30', 
   colorway: 'Black', 
-  description: 'Valve shocked the gaming world when it announced the Valve Steam Deck in mid-July, launching the company into the handheld gaming market. The Valve Steam Deck 512GB will bring a PC gamers Steam library to the handheld console, which Valve says will provide a seamless transition between both platforms. Like the name suggests, the Steam Deck 512GB will include 512GB NVMe SSD internal storage, and will include a carrying case and an exclusive steam community profile bundle. The Valve Steam Deck 512GB model will also include anti-glare etched glass, and an exclusive virtual keyboard theme. A micro SD slot will also enable expanded storage. The Steam Deck can also be docked to a monitor, and used as a PC, or docked to a TV. Valve partnered with AMD to create a specialized APU optimized for handheld gaming, and Valve says the chip will deliver performance to run AAA gaming titles. The Steam Deck 512GB is outfitted with a 7-inch touchscreen, and two trackpads under the control sticks that allow gamers to operate games never designed outside of mouse and keyboard capabilities.', 
+  description: 'Valve shocked the gaming world when it announced the Valve Steam Deck in mid-July, launching the company into the handheld gaming market. The Valve Steam Deck 512GB will bring a PC gamers Steam library to the handheld console, which Valve says will provide a seamless transition between both platforms. Like the name suggests, the Steam Deck 512GB will include 512GB NVMe SSD internal storage, and will include a carrying case and an exclusive steam community profile bundle.', 
   old_price: 649, 
   price: 899, 
   category: 'Electronics' 
@@ -297,12 +297,12 @@ electronic_2.photos.attach(io: URI.open("https://stockz-dev.s3.us-west-1.amazona
 electronic_2.photos.attach(io: URI.open("https://stockz-dev.s3.us-west-1.amazonaws.com/ps52.png"), filename: "ps52.png")
 
 electronic_3 = Listing.create!({
-  name: 'Apple Airpods Pro(2nd Generation)', 
+  name: 'Apple Airpods Pro', 
   brand: 'Apple',
   style: 'MQD83AM/A', 
   colorway: 'White', 
   description: 'The Apple Airpods Pro 2nd Gen 2022 MQD83AM A White is the brand´s 2nd generation Bluetooth earbuds.
-                This Airpods Pro comes with a MagSafe Charging Case, silicone ear tips, and a USB-C to Lightning cable. It features 2x Active Noise Cancellation, personalized spatial audio, audio quality powered by the H2 Chip, adaptive transparency, seamless switching, dynamic head tracking, audio switching, and touch control. In addition, these Airpods in white offer up to 6 hours of playback when fully charged, with another 30 hours within the charging case.', 
+                This Airpods Pro comes with a MagSafe Charging Case, silicone ear tips, and a USB-C to Lightning cable. It features 2x Active Noise Cancellation, personalized spatial audio, audio quality powered by the H2 Chip, adaptive transparency, seamless switching, dynamic head tracking, audio switching, and touch control.', 
   old_price: 229, 
   price: 199, 
   category: 'Electronics' 
