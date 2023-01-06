@@ -53,8 +53,6 @@ const ReviewsIndex = () => {
                 <>
                     {reviewForm ? <ReviewForm /> : "" }
                 </>
-
-            
         </div>
         {reviews.map(review => <ReviewIndexItem review={review} key={review.id}  />)}
         

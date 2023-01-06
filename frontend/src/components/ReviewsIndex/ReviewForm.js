@@ -36,7 +36,7 @@ function ReviewForm() {
             setTextRating(review.textRating)
             dispatch(fetchReview(reviewId))
         }
-    }, [dispatch])
+    }, [reviewId, dispatch])
 
   return (
     <div className='review-form'>

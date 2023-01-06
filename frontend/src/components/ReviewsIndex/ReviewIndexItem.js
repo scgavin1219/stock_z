@@ -2,38 +2,34 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { deleteReview } from '../../store/reviews.js';
-import ReviewForm from './ReviewForm.js';
+// import ReviewForm from './ReviewForm.js';
 import './ReviewIndexItem.js'
 import ReviewFormEdit from './ReviewFormEdit'
 
 
 const ReviewIndexItem = ({review}) => {
-  const [edit, setEdit] = useState(false)
+  // const [edit, setEdit] = useState(false)
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch()
   const [updateForm, setUpdateForm] = useState(false)
 
-  const formSwitch =() => { 
-        edit ? setEdit(false) : setEdit(true)
-    }
+  // const formSwitch =() => { 
+  //       edit ? setEdit(false) : setEdit(true)
+  //   }
 
-     const editSwitch = () => { 
+    const editSwitch = () => { 
         updateForm ? setUpdateForm(false) : setUpdateForm(true)
     }
 
-  // console.log(review.user)
-  // console.log(review.createdAt)
 
   return (
     <div className='rating-container'>
         <div className='user-rating'>
-            <h4 id="bold">username: {review.userId}</h4>
+            <h4><span id="bold">username:</span> {review.user.username}</h4>
             <h4>{review.rating} STARS</h4>
         </div>
         <div className='star-rating'>
             <h6>{review.createdAt}</h6>
-            <h6>placeholder created at: 4 days ago</h6>
-
         </div>
         <div className='text-rating'>
             <p>{review.textRating}</p>

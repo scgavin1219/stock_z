@@ -2,7 +2,7 @@
 import { useParams } from 'react-router-dom'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { createReview, fetchReview, getReview, updateReview } from '../../store/reviews'
+import { fetchReview, getReview, updateReview } from '../../store/reviews'
 import { useState } from 'react'
 import './ReviewForm.css'
 
@@ -13,21 +13,23 @@ function ReviewFormEdit() {
     const review = useSelector(getReview(reviewId))
     const [rating, setRating] = useState('')
     const [textRating, setTextRating] = useState('')
-    // const [edit, setEdit] = useState(false)
+
 
     const sessionUser = useSelector(state => state.session.user);
 
     const handleSubmit = (e) => { 
         e.preventDefault()
-        if (reviewId) { 
             const payload = { 
-                id: reviewId,
+                // id: listingId,
                 rating: rating, 
                 textRating: textRating,
-                user_id: sessionUser.id
+                user_id: sessionUser.id,
+                listing_id: listingId
             }
             dispatch(updateReview(payload))
-        }
+            console.log(payload)
+            console.log(review)
+            console.log(reviewId)
     }
 
     useEffect(() => { 
