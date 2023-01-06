@@ -37,9 +37,6 @@ require "open-uri"
   puts "Done!"
 # end
 
-review_1 = Review.create!({
-  
-})
 
 shoe_1 = Listing.create!({
   name: 'Air Jordan 1 Mid', 
@@ -397,3 +394,32 @@ card_5 = Listing.create!({
 
 card_5.photos.attach(io: URI.open("https://stockz-dev.s3.us-west-1.amazonaws.com/shininggyarados1.png"), filename: "shininggyarados1.png")
 card_5.photos.attach(io: URI.open("https://stockz-dev.s3.us-west-1.amazonaws.com/shininggyarados2.png"), filename: "shininggyarados2.png")
+
+
+review_1 = Review.create!({
+  rating: 5, 
+  text_rating: "I love being able to take all of my games on the go!",
+  user_id: 1,
+  listing_id: 17
+})
+
+review_2 = Review.create!({
+  rating: 4, 
+  text_rating: "Pretty sweet! Wish I could play Halo on it though",
+  user_id: 2,
+  listing_id: 17
+})
+
+review_3 = Review.create!({
+  rating: 0, 
+  text_rating: "I dropped it and StockZ didn't accept my return",
+  user_id: 3,
+  listing_id: 17
+})
+
+review_4 = Review.create!({
+  rating: 5, 
+  text_rating: "The SteamDeck is the quintessential mobile gaming device.",
+  user_id: 4,
+  listing_id: 17
+})

@@ -11,6 +11,8 @@ import './index.css'
 import ListingsIndex from './components/ListingsIndex';
 import ListingShow from './components/ListingShow';
 import ReviewForm from './components/ReviewsIndex/ReviewForm';
+import ReviewsIndex from './components/ReviewsIndex';
+
 
 
 function App() {
@@ -40,6 +42,7 @@ function App() {
           <Route path="/listings/:listingId" exact>
             <Navigation />
             <ListingShow />
+            <ReviewsIndex />
           </Route>
           <Route path="/error" exact>
             <LoginNavigation />
