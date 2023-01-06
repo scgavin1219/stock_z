@@ -10,6 +10,7 @@ import Splash from './components/Splash';
 import './index.css'
 import ListingsIndex from './components/ListingsIndex';
 import ListingShow from './components/ListingShow';
+import ReviewForm from './components/ReviewsIndex/ReviewForm';
 
 
 function App() {
@@ -27,6 +28,10 @@ function App() {
           <Route path="/listings" exact>
             <Navigation />
             <ListingsIndex />
+          </Route>
+          <Route path="/review/:listingId" exact>
+            <Navigation />
+            <ReviewForm />
           </Route>
           {/* <Route path="/tradingcards" exact>
             <Navigation />

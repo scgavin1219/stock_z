@@ -37,6 +37,10 @@ require "open-uri"
   puts "Done!"
 # end
 
+review_1 = Review.create!({
+  
+})
+
 shoe_1 = Listing.create!({
   name: 'Air Jordan 1 Mid', 
   brand: 'Jordan',

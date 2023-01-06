@@ -13,7 +13,9 @@ class Api::ReviewsController < ApplicationController
     end
 
     def index
-        @reviews = Review.all
+        incoming_listing_id = params[:listing_id]
+        # @reviews(listing_id: incoming_listing_id)
+        @reviews = Review.find_by(listing_id: incoming_listing_id)
         render :index
     end
 

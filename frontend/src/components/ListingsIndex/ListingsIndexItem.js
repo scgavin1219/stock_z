@@ -12,9 +12,7 @@ const ListingsIndexItem= ({listing}) => {
 
     // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
     // console.log(listing.photoUrls[0])
-
     const url = listing.photoUrls[0]
-    // console.log(listing.photoUrl)
 
   return (
     <>
