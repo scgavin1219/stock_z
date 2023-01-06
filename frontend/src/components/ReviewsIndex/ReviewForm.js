@@ -19,15 +19,6 @@ function ReviewForm() {
 
     const handleSubmit = (e) => { 
         e.preventDefault()
-        // if (reviewId) { 
-        //     const payload = { 
-        //         id: reviewId,
-        //         rating, 
-        //         textRating,
-        //         user_id: sessionUser.id
-        //     }
-        //     dispatch(updateReview(payload))
-        // } else { 
             const payload = {
                 rating: rating, 
                 text_rating: textRating,

@@ -8,11 +8,13 @@ import ReviewForm from './ReviewForm'
 import ReviewIndexItem from './ReviewIndexItem'
 import './ReviewsIndex.css'
 
+
 const ReviewsIndex = () => {
     const dispatch = useDispatch();
     const reviews = useSelector(getReviews)
     const {listingId} = useParams()
     const [reviewForm, setReviewForm] = useState(false)
+    
 
     useEffect(() => { 
         dispatch(fetchReviews(listingId))
@@ -38,6 +40,8 @@ const ReviewsIndex = () => {
         reviewForm ? setReviewForm(false) : setReviewForm(true)
     }
 
+   
+
   return (
     <div className='reviews-container'>
         <div className='review-container'>
@@ -47,7 +51,7 @@ const ReviewsIndex = () => {
                 <button onClick={()=>formSwitch()}>Leave a Review</button>
             </div>
                 <>
-                    {reviewForm ? <ReviewForm /> : ""}
+                    {reviewForm ? <ReviewForm /> : "" }
                 </>
 
             

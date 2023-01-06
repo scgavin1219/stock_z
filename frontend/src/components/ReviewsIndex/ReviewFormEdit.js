@@ -6,14 +6,14 @@ import { createReview, fetchReview, getReview, updateReview } from '../../store/
 import { useState } from 'react'
 import './ReviewForm.css'
 
-function ReviewForm() {
+function ReviewFormEdit() {
     const dispatch = useDispatch()
     const { reviewId } = useParams()
     const { listingId } = useParams()
     const review = useSelector(getReview(reviewId))
     const [rating, setRating] = useState('')
     const [textRating, setTextRating] = useState('')
-    const [edit, setEdit] = useState(false)
+    // const [edit, setEdit] = useState(false)
 
     const sessionUser = useSelector(state => state.session.user);
 
@@ -27,16 +27,8 @@ function ReviewForm() {
                 user_id: sessionUser.id
             }
             dispatch(updateReview(payload))
-        // } else { 
-        //     const payload = {
-        //         rating: rating, 
-        //         text_rating: textRating,
-        //         user_id: sessionUser.id,
-        //         listing_id: listingId
-        //     }
-        //     dispatch(createReview(payload))
-        // }
-    
+        }
+    }
 
     useEffect(() => { 
         if (reviewId) { 
@@ -64,4 +56,4 @@ function ReviewForm() {
   )
 }
 
-export default ReviewForm
+export default ReviewFormEdit
