@@ -16,7 +16,7 @@ const ReviewsIndex = () => {
 
     useEffect(() => { 
         dispatch(fetchReviews(listingId))
-    }, [listingId, dispatch])
+}, [listingId, dispatch])
 
     const avgRating = () => { 
         let sum = 0 
@@ -28,6 +28,10 @@ const ReviewsIndex = () => {
         } else { 
             return "No Reviews"
         }
+    }
+
+     if (!reviews) { 
+        return null
     }
 
     const formSwitch =() => { 

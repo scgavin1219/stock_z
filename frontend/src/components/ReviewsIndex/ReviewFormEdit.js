@@ -19,28 +19,27 @@ function ReviewForm() {
 
     const handleSubmit = (e) => { 
         e.preventDefault()
-        // if (reviewId) { 
-        //     const payload = { 
-        //         id: reviewId,
-        //         rating, 
-        //         textRating,
-        //         user_id: sessionUser.id
-        //     }
-        //     dispatch(updateReview(payload))
-        // } else { 
-            const payload = {
+        if (reviewId) { 
+            const payload = { 
+                id: reviewId,
                 rating: rating, 
-                text_rating: textRating,
-                user_id: sessionUser.id,
-                listing_id: listingId
+                textRating: textRating,
+                user_id: sessionUser.id
             }
-            dispatch(createReview(payload))
-        }
+            dispatch(updateReview(payload))
+        // } else { 
+        //     const payload = {
+        //         rating: rating, 
+        //         text_rating: textRating,
+        //         user_id: sessionUser.id,
+        //         listing_id: listingId
+        //     }
+        //     dispatch(createReview(payload))
+        // }
     
 
     useEffect(() => { 
         if (reviewId) { 
-            setEdit(true)
             setRating(review.rating)
             setTextRating(review.textRating)
             dispatch(fetchReview(reviewId))
@@ -52,14 +51,13 @@ function ReviewForm() {
         <div className='review-create'>
            
             <form onSubmit={handleSubmit}>
-                 <h1 id="review-title">{edit ? "Update Review" : "Create Review"}</h1>
+                 <h1 id="review-title">Update Review</h1>
                 <label>
                     <input type="text" value={rating} placeholder="Enter a Rating from 1 to 5" onChange={e => setRating(e.target.value)} />
                 </label>
-                    {/* <input type="text" value={textRating} onChange={e => setTextRating(e.target.value)} /> */}
                     <textarea id="textarea" placeholder="Leave a Review" value={textRating} onChange={e => setTextRating(e.target.value)}></textarea>
                 
-                <button id="review-button">{edit ? "Update Review" : "Create Review"}</button>
+                <button id="review-button">Update Review</button>
             </form>
         </div>
     </div>

@@ -1,3 +1,5 @@
+import csrfFetch, { storeCSRFToken } from "./csrf"
+
 export const RECEIVE_REVIEW = "reviews/RECEIVE_REVIEW"
 export const RECEIVE_REVIEWS = "reviews/RECEIVE_REVIEWS"
 export const REMOVE_REVIEW = "reviews/REMOVE_REVIEW"
@@ -26,7 +28,7 @@ export const getReview = reviewId => store => {
 }
 
 export const fetchReviews = (listingId) => async dispatch => {
-    const res = await fetch(`/api/listings/${listingId}/reviews`)
+    const res = await csrfFetch(`/api/listings/${listingId}/reviews`)
     if (res.ok) { 
         const reviews = await res.json();
         dispatch(receiveReviews(reviews))
@@ -34,7 +36,7 @@ export const fetchReviews = (listingId) => async dispatch => {
 }
 
 export const fetchReview = (reviewId) => async dispatch => { 
-    const res = await fetch(`api/reviews/${reviewId}`)
+    const res = await csrfFetch(`api/reviews/${reviewId}`)
     if (res.ok) { 
         const review = await res.json();
         dispatch(receiveReview(review))
@@ -42,7 +44,7 @@ export const fetchReview = (reviewId) => async dispatch => {
 }
 
 export const createReview = (review) => async dispatch => { 
-    const res = await fetch(`/api/reviews`, { 
+    const res = await csrfFetch(`/api/reviews`, { 
         method: "POST",
         body: JSON.stringify(review),
         headers: {
@@ -57,7 +59,7 @@ export const createReview = (review) => async dispatch => {
 }
 
 export const updateReview =(review) => async dispatch => {
-    const res = await fetch(`/api/reviews`, {
+    const res = await csrfFetch(`/api/reviews`, {
         method: "PUT", 
         body: JSON.stringify(review), 
         headers: { 
@@ -70,7 +72,7 @@ export const updateReview =(review) => async dispatch => {
 }
 
 export const deleteReview = (reviewId) => async dispatch => { 
-    const res = await fetch(`/api/reviews/${reviewId}`, { 
+    const res = await csrfFetch(`/api/reviews/${reviewId}`, { 
         method: "DELETE"
     })
     if (res.ok) dispatch(removeReview(reviewId))

@@ -14,8 +14,8 @@ const ReviewIndexItem = ({review}) => {
         edit ? setEdit(false) : setEdit(true)
     }
 
-  console.log(review.user)
-  console.log(review.createdAt)
+  // console.log(review.user)
+  // console.log(review.createdAt)
 
   return (
     <div className='rating-container'>

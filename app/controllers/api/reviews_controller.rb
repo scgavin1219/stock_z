@@ -6,7 +6,7 @@ class Api::ReviewsController < ApplicationController
         # @review.user_id = current_user.id
         # @review.listing_id = params[:listing_id]
         if @review && @review.save
-            render :index
+            render :show
         else
             render json: @review.errors.full_messages, status: 422
         end
@@ -32,7 +32,7 @@ class Api::ReviewsController < ApplicationController
     def destroy
         @review = Review.find_by(id: params[:id])
         if @review.destroy!
-            render :index
+            # render :index
         else 
             render json:  @review.errors.full_messages, status: 422
         end
