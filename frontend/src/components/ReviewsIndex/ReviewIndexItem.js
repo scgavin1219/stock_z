@@ -1,17 +1,26 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+import { deleteReview } from '../../store/reviews.js';
+import ReviewForm from './ReviewForm.js';
 import './ReviewIndexItem.js'
 
 const ReviewIndexItem = ({review}) => {
-
+  const [edit, setEdit] = useState(false)
   const sessionUser = useSelector(state => state.session.user);
+  const dispatch = useDispatch()
+
+  const formSwitch =() => { 
+        edit ? setEdit(false) : setEdit(true)
+    }
+
+  console.log(review.user)
   console.log(review.createdAt)
-  console.log(sessionUser.id)
-  console.log(review)
+
   return (
     <div className='rating-container'>
         <div className='user-rating'>
-            <h4 id="bold">username: {sessionUser.username}</h4>
+            <h4 id="bold">username: {review.userId}</h4>
             <h4>{review.rating} STARS</h4>
         </div>
         <div className='star-rating'>
@@ -22,12 +31,13 @@ const ReviewIndexItem = ({review}) => {
         <div className='text-rating'>
             <p>{review.textRating}</p>
         </div>
-        {sessionUser.id === review.userId &&
+        {sessionUser?.id === review.userId &&
         <div className='edit-rating'>
-            <button id="rating-button">Edit</button> 
-            <button id="rating-button">Delete</button>
+            <button id="rating-button" onClick={()=> formSwitch()}>Edit</button> 
+            <button id="rating-button" onClick={() => dispatch(deleteReview(review.id))}>Delete</button>
         </div>
           }
+          {edit ? <ReviewForm /> : ""}
     </div>
   )
 }
