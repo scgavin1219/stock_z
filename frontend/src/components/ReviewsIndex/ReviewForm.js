@@ -6,7 +6,7 @@ import { createReview, fetchReview, getReview, updateReview } from '../../store/
 import { useState } from 'react'
 import './ReviewForm.css'
 
-function ReviewForm() {
+function ReviewForm({setReviewForm}) {
     const dispatch = useDispatch()
     const { reviewId } = useParams()
     const { listingId } = useParams()
@@ -26,6 +26,9 @@ function ReviewForm() {
                 listing_id: listingId
             }
             dispatch(createReview(payload))
+            setRating("")
+            setTextRating("")
+            setReviewForm(false)
         }
     
 

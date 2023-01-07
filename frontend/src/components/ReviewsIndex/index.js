@@ -18,7 +18,7 @@ const ReviewsIndex = () => {
 
     useEffect(() => { 
         dispatch(fetchReviews(listingId))
-}, [listingId, dispatch])
+    }, [listingId, dispatch])
 
     const avgRating = () => { 
         let sum = 0 
@@ -51,7 +51,7 @@ const ReviewsIndex = () => {
                 <button onClick={()=>formSwitch()}>Leave a Review</button>
             </div>
                 <>
-                    {reviewForm ? <ReviewForm /> : "" }
+                    {reviewForm ? <ReviewForm setReviewForm={setReviewForm} /> : "" }
                 </>
         </div>
         {reviews.map(review => <ReviewIndexItem review={review} key={review.id}  />)}

@@ -61,13 +61,14 @@ export const createReview = (review) => async dispatch => {
 export const updateReview =(review) => async dispatch => {
     const res = await csrfFetch(`/api/reviews/${review.id}`, {
         method: "PUT", 
-        body: JSON.stringify(review), 
+        body: JSON.stringify({review}), 
         headers: { 
             "Content-Type": "application/json",
             "Accept": "application/json"
         }
     })
     const updatedReview = await res.json();
+    debugger
     dispatch(receiveReview(updatedReview))
 }
 
@@ -84,7 +85,7 @@ const reviewsReducer = (state = {}, action) => {
         case RECEIVE_REVIEW:
             return {...newState, [action.review.id]: action.review }
         case RECEIVE_REVIEWS: 
-            return {...newState, ...action.reviews}
+            return { ...action.reviews}
         case REMOVE_REVIEW: 
             delete newState[action.reviewId]
             return newState

@@ -3,8 +3,8 @@ class Api::ReviewsController < ApplicationController
     
     def create
         @review = Review.new(review_params)
-        # @review.user_id = current_user.id
-        # @review.listing_id = params[:listing_id]
+        @review.user_id = current_user.id
+        @review.listing_id = params[:listing_id]
         if @review && @review.save
             render :show
         else
@@ -21,9 +21,11 @@ class Api::ReviewsController < ApplicationController
 
 
     def update
+      
         @review = Review.find_by(id: params[:id])
-        if @review.update(review_params)
-            render :index #not sure
+        if @review.update!(review_params)
+            render :show #not sure
+              
         else
             render json: @review.errors.full_messages, status: 422
         end

@@ -6,11 +6,11 @@ import { fetchReview, getReview, updateReview } from '../../store/reviews'
 import { useState } from 'react'
 import './ReviewForm.css'
 
-function ReviewFormEdit() {
+function ReviewFormEdit({review}) {
     const dispatch = useDispatch()
     const { reviewId } = useParams()
     const { listingId } = useParams()
-    const review = useSelector(getReview(reviewId))
+    // const review = useSelector(getReview(reviewId))
     const [rating, setRating] = useState('')
     const [textRating, setTextRating] = useState('')
 
@@ -20,7 +20,7 @@ function ReviewFormEdit() {
     const handleSubmit = (e) => { 
         e.preventDefault()
             const payload = { 
-                // id: listingId,
+                id: review.id,
                 rating: rating, 
                 textRating: textRating,
                 user_id: sessionUser.id,
