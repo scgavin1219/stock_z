@@ -40,7 +40,7 @@ const ReviewIndexItem = ({review}) => {
             <button id="rating-button" onClick={() => dispatch(deleteReview(review.id))}>Delete</button>
         </div>
           }
-          {updateForm ? <ReviewFormEdit review={review} /> : "" }
+          {updateForm ? <ReviewFormEdit setUpdateForm={setUpdateForm} review={review} /> : "" }
     </div>
   )
 }

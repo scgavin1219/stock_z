@@ -6,7 +6,7 @@ import { fetchReview, getReview, updateReview } from '../../store/reviews'
 import { useState } from 'react'
 import './ReviewForm.css'
 
-function ReviewFormEdit({review}) {
+function ReviewFormEdit({review}, {setUpdateForm}) {
     const dispatch = useDispatch()
     const { reviewId } = useParams()
     const { listingId } = useParams()
@@ -27,16 +27,17 @@ function ReviewFormEdit({review}) {
                 listing_id: listingId
             }
             dispatch(updateReview(payload))
-            console.log(payload)
-            console.log(review)
-            console.log(reviewId)
+            setRating("")
+            setTextRating("")
+            setUpdateForm(false)
+            
     }
 
     useEffect(() => { 
-        if (reviewId) { 
+        if (review.id) { 
             setRating(review.rating)
             setTextRating(review.textRating)
-            dispatch(fetchReview(reviewId))
+            dispatch(fetchReview(review.id))
         }
     }, [dispatch])
 
