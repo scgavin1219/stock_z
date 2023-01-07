@@ -22,6 +22,33 @@ h1 {
     justify-content: space-between;
 }
 
+.show-favorites { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#favorites { 
+    color: rgb(53, 53, 53);
+    font-family: proxima-nova, sans-serif;
+    font-size: 24px;
+    line-height: 1.5rem;
+}
+
+#favorite-show { 
+    border: none;
+    background-color: transparent;
+    width: 50px;
+    height: 35px;
+    transition: all ease-in 500ms;
+    font-size: 24px;
+}
+
+#favorite-show:hover { 
+    font-size: 28px;
+}
+
 .show-pic { 
     display: flex;
     flex-direction: column;

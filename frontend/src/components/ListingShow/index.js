@@ -23,10 +23,6 @@ function ListingShow() {
     }
 
     const url = listing.photoUrls[0]
-    // const url1 = listing.photoUrls[1]
-    // const priceChange = Math.abs(listing.price - listing.oldPrice)
-    // const pricePercent = (priceChange / listing.oldPrice) * 100 
-    // const priceLi = <li>{priceChange}({pricePercent})</li>
 
   return (
     <>
@@ -39,7 +35,10 @@ function ListingShow() {
                     <img src={url} alt="" id="show-img" />
                     {/* <img src={url1} alt="" id="show-img" /> */}
                     <br/>
-                    <h4 id="show-li">Add to Favorites <GrFavorite/></h4>
+                    <div className='show-favorites'>
+                        <h4 id="favorites">Add to Favorites</h4>
+                        <button id="favorite-show"><GrFavorite /></button>
+                    </div>
                 </div>
                 <div className='show-information'>
                     <ul>
