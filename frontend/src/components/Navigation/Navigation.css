@@ -165,7 +165,12 @@ button:hover {
 }
 
 #stockx-logo { 
-    padding-right: 30px;
+    margin-right: 50px;
+    margin-left: 30px;
+}
+
+#logo {
+    height: 40px
 }
 
 #profile-button, #shopping-button { 

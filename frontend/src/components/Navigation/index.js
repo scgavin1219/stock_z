@@ -31,7 +31,7 @@ function Navigation() {
     <nav>
       <div className='navbar'>
         <div className='nav-left'>
-          <NavLink id="stockx-logo" exact to="/"><img src={stockx}alt="stockx logo"/></NavLink>
+          <NavLink id="stockx-logo" exact to="/"><img id="logo" src={stockx}alt="stockx logo"/></NavLink>
           <div id='search-box'>
             < GoSearch id='search-icon' />
             <input type="text" placeholder='Search for Brand, Color, etc.' id="search-bar"/>
