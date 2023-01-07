@@ -27,8 +27,6 @@ const ReviewsIndex = () => {
         })
         if (reviews.length) { 
             return (sum/reviews.length).toFixed(2)
-        } else { 
-            return "No Reviews"
         }
     }
 
@@ -47,8 +45,12 @@ const ReviewsIndex = () => {
         <div className='review-container'>
             <div className='review-head'>
                 <h1>Reviews</h1>
-                <h4><AiOutlineStar/>{avgRating()}</h4>
-                <button onClick={()=>formSwitch()}>Leave a Review</button>
+                <div className='star-rating'>
+                    <h4 id="star-icon"><AiOutlineStar/></h4>
+                    <h4> {avgRating()}</h4>
+                    <h4 id="reviews-length">({reviews.length} Reviews)</h4>
+                </div>
+                <button id="create-review" onClick={()=>formSwitch()}>Leave a Review</button>
             </div>
                 <>
                     {reviewForm ? <ReviewForm setReviewForm={setReviewForm} /> : "" }

@@ -50,7 +50,6 @@ function ReviewForm({setReviewForm}) {
                 <label>
                     <input type="text" value={rating} placeholder="Enter a Rating from 1 to 5" onChange={e => setRating(e.target.value)} />
                 </label>
-                    {/* <input type="text" value={textRating} onChange={e => setTextRating(e.target.value)} /> */}
                     <textarea id="textarea" placeholder="Leave a Review" value={textRating} onChange={e => setTextRating(e.target.value)}></textarea>
                 
                 <button id="review-button">{edit ? "Update Review" : "Create Review"}</button>
