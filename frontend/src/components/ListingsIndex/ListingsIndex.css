@@ -95,3 +95,15 @@ h6 {
 #down { 
     color: rgb(204, 21, 21)
 }
+
+#favorite { 
+    border: none;
+    background-color: transparent;
+    width: 40px;
+    height: 25px;
+    transition: all ease-in 500ms;
+}
+
+#favorite:hover { 
+    font-size: 20px;
+}
