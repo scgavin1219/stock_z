@@ -106,3 +106,8 @@
 #reviews-length { 
     font-size: 18px;
 }
+
+#time-ago { 
+    margin-top: 1px;
+    font-size: 12px;
+}

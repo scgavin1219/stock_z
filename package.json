@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/scgavin1219/stock_z/issues"
   },
-  "homepage": "https://github.com/scgavin1219/stock_z#readme"
+  "homepage": "https://github.com/scgavin1219/stock_z#readme",
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
 }
