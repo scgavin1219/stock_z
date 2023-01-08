@@ -49,7 +49,7 @@ export const createReview = (review) => async dispatch => {
         body: JSON.stringify(review),
         headers: {
             "Content-Type": "application/json",
-            "Aceept": "application/json"
+            "Accept": "application/json"
         }
     })
     if (res.ok) { 
@@ -68,7 +68,7 @@ export const updateReview =(review) => async dispatch => {
         }
     })
     const updatedReview = await res.json();
-    debugger
+    // debugger
     dispatch(receiveReview(updatedReview))
 }
 

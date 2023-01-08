@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import { HiTrendingUp } from 'react-icons/hi'
 import { HiTrendingDown } from 'react-icons/hi'
 import { GrFavorite } from 'react-icons/gr'
+import { addItem } from '../../store/cart'
 import './ListingShow.css'
 
 function ListingShow() {
@@ -12,7 +13,10 @@ function ListingShow() {
     const {listingId} = useParams();
     const listing = useSelector(getListing(listingId))
     
-    
+    const handleAdd = (e) => { 
+        e.preventDefaut();
+        dispatch(addItem(listing.id))
+    }
 
     useEffect(() => { 
         dispatch(fetchListing(listingId))
@@ -58,7 +62,7 @@ function ListingShow() {
                         <br/>
                     </ul>
                     <div id="purchase-container">
-                        <button id="show-button">Add to Cart</button>
+                        <button id="show-button" onClick={handleAdd}>Add to Cart</button>
                         <br/>
                         <button id="show-button">Purchase Now</button>
                     </div>
