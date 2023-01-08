@@ -5,7 +5,7 @@ class Api::CartsController < ApplicationController
     end
 
     def show
-
+       
     end
 
     def destroy 
