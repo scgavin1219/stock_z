@@ -3,19 +3,21 @@ export const ADD_ITEM = "cart/ADD_ITEM"
 export const REMOVE_ITEM = "cart/REMOVE_ITEM"
 export const REMOVE_ITEMS = "cart/REMOVE_ITEMS"
 
-const addItem = itemId => ({ 
+export const addItem = itemId => ({ 
     type: ADD_ITEM,
     itemId 
 })
 
-const removeItem = itemId => ({
+export const removeItem = itemId => ({
     type: REMOVE_ITEM,
     itemId
 })
 
-const removeItems = () => ({
+export const removeItems = () => ({
     type: REMOVE_ITEMS
 })
+
+
 
 
 
