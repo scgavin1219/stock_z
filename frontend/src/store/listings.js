@@ -52,7 +52,6 @@ export const deleteListing = (listingId) => async dispatch => {
 }
 
 const listingReducer = (state= {}, action) =>  { 
-    // debugger
     const newState = {...state}
     switch (action.type) { 
         case RECEIVE_LISTING: 

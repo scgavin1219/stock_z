@@ -10,6 +10,7 @@ class User < ApplicationRecord
     before_validation :ensure_session_token
 
     has_many :reviews
+    has_many :carts
 
     def self.find_by_credentials(credential, password)
         if URI::MailTo::EMAIL_REGEXP.match(credential)
