@@ -14,8 +14,8 @@ function ListingShow() {
     const listing = useSelector(getListing(listingId))
     
     const handleAdd = (e) => { 
-        e.preventDefaut();
-        dispatch(addItem(listing.id))
+        e.preventDefault();
+        dispatch(addItem(listingId))
     }
 
     useEffect(() => { 

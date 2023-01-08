@@ -11,10 +11,10 @@ function CartItem({item}) {
         dispatch(removeItem(item.id))
     }
 
-    const handleAdd = (e) => { 
-        e.preventDefaut();
-        dispatch(addItem(item.id))
-    }
+    // const handleAdd = (e) => { 
+    //     e.preventDefaut();
+    //     dispatch(addItem(item.id))
+    // }
 
     useEffect(()=> { 
 
@@ -25,8 +25,7 @@ function CartItem({item}) {
       <div className="cart-item-header">{item.name}</div>
       <div className="cart-item-menu">
         <p>1</p>
-        <button className="cart-item-button" onClick={handleClick} >
-          Remove</button>
+        <button className="cart-item-button" onClick={handleDelete}>Remove</button>
       </div>
     </li>
   )

@@ -3,14 +3,14 @@ export const ADD_ITEM = "cart/ADD_ITEM"
 export const REMOVE_ITEM = "cart/REMOVE_ITEM"
 export const REMOVE_ITEMS = "cart/REMOVE_ITEMS"
 
-export const addItem = itemId => ({ 
+export const addItem = listingId => ({ 
     type: ADD_ITEM,
-    itemId 
+    listingId 
 })
 
-export const removeItem = itemId => ({
+export const removeItem = listingId => ({
     type: REMOVE_ITEM,
-    itemId
+    listingId
 })
 
 export const removeItems = () => ({
@@ -21,13 +21,14 @@ export const removeItems = () => ({
 
 
 
+
 const cartReducer = (state = {}, action) => { 
     const newState = {...state}
     switch (action.type) { 
         case ADD_ITEM: 
-            return newState[action.itemId] = {id: action.produceId, count: 1 } 
+            return {...newState, [action.listingId]: action.listingId} 
         case REMOVE_ITEM:
-            delete newState[action.itemId]
+            delete newState[action.listingId]
             return newState
         case REMOVE_ITEMS: 
             return {}
