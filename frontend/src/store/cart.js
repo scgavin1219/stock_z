@@ -3,9 +3,9 @@ export const ADD_ITEM = "cart/ADD_ITEM"
 export const REMOVE_ITEM = "cart/REMOVE_ITEM"
 export const REMOVE_ITEMS = "cart/REMOVE_ITEMS"
 
-const addItem = item => ({ 
+const addItem = itemId => ({ 
     type: ADD_ITEM,
-    item 
+    itemId 
 })
 
 const removeItem = itemId => ({
@@ -23,7 +23,7 @@ const cartReducer = (state = {}, action) => {
     const newState = {...state}
     switch (action.type) { 
         case ADD_ITEM: 
-            return 
+            return newState[action.itemId] = {id: action.produceId, count: 1 } 
         case REMOVE_ITEM:
             delete newState[action.itemId]
             return newState
@@ -33,5 +33,6 @@ const cartReducer = (state = {}, action) => {
             return state
     }
 }
+
 
 export default cartReducer
