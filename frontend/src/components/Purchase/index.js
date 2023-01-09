@@ -4,21 +4,63 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { icons } from "react-icons/lib";
 import { useState } from "react";
+import { fetchItems, removeItems } from '../../store/cart';
 
 function Purchase() {
     const cart = useSelector(state => state.cart)
-    const listings = useSelector(state => state.listings)
+    // const listings = useSelector(state => state.listings)
     const dispatch = useDispatch()
 
+    useEffect(() => { 
+      dispatch(fetchItems())
+    }, [dispatch])
+
+    const handlePurchase = (e) => { 
+      e.preventDefault()
+      dispatch(removeItems())
+    }
+
+    const totalCost = () => { 
+      let cost = 0
+      Object.values(cart).map(item => { 
+        cost += item.price
+      })
+      return cost.toFixed(2)
+    }
+
+    const taxesShipping = () => { 
+      return (totalCost() * 0.12).toFixed(2)
+    }
+
+    const total = () => { 
+      let totcost = parseInt(taxesShipping())
+      let totship = parseInt(totalCost())
+      const grandTotal = (totcost + totship)
+      return grandTotal.toFixed(2)
+    }
+
   return (
-    <div className="purchase">
+    // <div className="purchase">
       <div className="purchase-container">
+        <h1>Purchase Order</h1>
             <ul className="purchase-item-container">
               {Object.values(cart).map((item, idx) => <PurchaseItem key={idx} item={item}/>)}
             </ul>
-            <button id="checkout-button" type="submit">Purchase</button>
+            <div className='total-cost'>
+              <h4>Cost: </h4>
+              <h4>${totalCost()}</h4>
+            </div>
+            <div className='shipping-taxes'>
+              <h4>Shipping/Taxes: </h4>
+              <h4>${taxesShipping()}</h4>
+            </div>
+            <div className='total'>
+              <h4>Total: </h4>
+              <h4>${total()}</h4>
+            </div>
+            <button id="checkout-button" type="submit" onClick={handlePurchase}>Purchase</button>
       </div>
-    </div>
+   
   )
 }
 

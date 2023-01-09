@@ -3,43 +3,32 @@ import './Cart.css'
 import { AiOutlineShoppingCart} from 'react-icons/ai'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { icons } from "react-icons/lib";
+// import { icons } from "react-icons/lib";
 import { useState } from "react";
 import { fetchItems } from "../../store/cart";
+import { useHistory } from "react-router-dom";
 
 function Cart() {
     const [showCart, setShowCart] = useState(false)
     const cart = useSelector(state => state.cart)
-    const listings = useSelector(state => state.listings)
     const dispatch = useDispatch()
-
-    const openCart = () => { 
-      if (showCart) return;
-      setShowCart(true)
-    }
-
-    //useEffect that fetches all items
-    //in logout clear all cart items
-    //purchase page that just clears cart
+    const history = useHistory()
 
     useEffect(()=> { 
       dispatch(fetchItems())
     }, [dispatch])
+
+    const handlePurchase = (e) => { 
+        e.preventDefault();
+        setShowCart(false)
+        history.push("/checkout")
+    }
 
   
    
   const toggleCart = () => { 
     showCart ? setShowCart(false) : setShowCart(true)
   }
-
-    // const cartItems = Object.values(cart).map(item => { 
-    //     return { 
-    //         ...parseInt(item), ...listings[parseInt(item).id] 
-    //     }
-    // })
-    
-    // console.log(cart)
-    // console.log(Object.values(cart))
 
  
   return (
@@ -53,7 +42,7 @@ function Cart() {
             <ul className="cartitem-container">
               {Object.values(cart).map((item, idx) => <CartItem key={idx} item={item}/>)}
             </ul>
-            <button id="purchase-button" type="submit">Purchase</button>
+            <button id="purchase-button" type="submit" onClick={handlePurchase}>Purchase</button>
         </>
         )}
       </div>
@@ -62,6 +51,8 @@ function Cart() {
 }
 
 export default Cart
+
+  // const listings = useSelector(state => state.listings)
 
   // useEffect(() => { 
     //   if (!showCart) return;
@@ -93,3 +84,12 @@ export default Cart
     //    "Purchased the following:\n" +
     //   `${cartItems.map(item => `${item.count} of ${item.name}`).join('\n')}`
     // }
+
+       // const cartItems = Object.values(cart).map(item => { 
+    //     return { 
+    //         ...parseInt(item), ...listings[parseInt(item).id] 
+    //     }
+    // })
+    
+    // console.log(cart)
+    // console.log(Object.values(cart))

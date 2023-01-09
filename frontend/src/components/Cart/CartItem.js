@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { deleteCartItem, removeItem } from '../../store/cart'
+import { deleteCartItem } from '../../store/cart'
 import { TbTrash } from 'react-icons/tb'
 import './Cart.css'
 import jordan1 from './jordan1-1.png'
@@ -8,10 +8,9 @@ import jordan1 from './jordan1-1.png'
 
 function CartItem({item}) {
     const dispatch = useDispatch()
-    const cartItem = useSelector(state => state.listings[item])
-    console.log(item)
+    // const cartItem = useSelector(state => state.listings[item])
+    // console.log(item)
 
-    // console.log(cartItem)
     const handleDelete = (e) => { 
         e.preventDefault();
         dispatch(deleteCartItem(item.id))
