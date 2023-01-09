@@ -1,6 +1,5 @@
-import CartItem from "./CartItem";
-import './Cart.css'
-import { AiOutlineShoppingCart} from 'react-icons/ai'
+import PurchaseItem from './PurchaseItem';
+import './Purchase.css'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { icons } from "react-icons/lib";
@@ -15,7 +14,7 @@ function Purchase() {
     <div className="purchase">
       <div className="purchase-container">
             <ul className="purchase-item-container">
-              {Object.values(cart).map((item, idx) => <CartItem key={idx} item={item}/>)}
+              {Object.values(cart).map((item, idx) => <PurchaseItem key={idx} item={item}/>)}
             </ul>
             <button id="checkout-button" type="submit">Purchase</button>
       </div>

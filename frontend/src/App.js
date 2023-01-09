@@ -12,6 +12,7 @@ import ListingsIndex from './components/ListingsIndex';
 import ListingShow from './components/ListingShow';
 import ReviewForm from './components/ReviewsIndex/ReviewForm';
 import ReviewsIndex from './components/ReviewsIndex';
+import Purchase from './components/Purchase';
 
 
 
@@ -30,6 +31,10 @@ function App() {
           <Route path="/listings" exact>
             <Navigation />
             <ListingsIndex />
+          </Route>
+          <Route path="/checkout" exact>
+            <Navigation />
+            <Purchase />
           </Route>
           <Route path="/review/:listingId" exact>
             <Navigation />
