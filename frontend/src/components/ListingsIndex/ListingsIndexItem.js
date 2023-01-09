@@ -5,6 +5,7 @@ import './ListingsIndex.css'
 import { GrFavorite } from 'react-icons/gr'
 import { HiTrendingUp } from 'react-icons/hi'
 import { HiTrendingDown } from 'react-icons/hi'
+import  jordan1 from './jordan1-1.png'
 
 
 const ListingsIndexItem= ({listing}) => {
@@ -12,13 +13,14 @@ const ListingsIndexItem= ({listing}) => {
 
     // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
     // console.log(listing.photoUrls[0])
-    const url = listing.photoUrls[0]
+
+    // const url = listing.photoUrls[0]
 
   return (
     <>
         <div className='product-container'>
             <div className='listing-pic'>
-                <Link id="index-img" to={`listings/${listing.id}`}><img src={url} alt="" id="test-img" /></Link>
+                <Link id="index-img" to={`listings/${listing.id}`}><img src={jordan1} alt="" id="test-img" /></Link>
             </div>
             <div id='listing-title'>
                 <div id="bottombox">

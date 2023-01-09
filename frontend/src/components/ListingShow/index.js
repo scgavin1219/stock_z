@@ -7,6 +7,7 @@ import { HiTrendingDown } from 'react-icons/hi'
 import { GrFavorite } from 'react-icons/gr'
 import { addItem } from '../../store/cart'
 import { Link } from 'react-router-dom'
+import jordan1 from './jordan1-1.png'
 import './ListingShow.css'
 
 function ListingShow() {
@@ -32,7 +33,7 @@ function ListingShow() {
         return null
     }
 
-    const url = listing.photoUrls[0]
+    // const url = listing.photoUrls[0]
 
   return (
     <>
@@ -42,7 +43,7 @@ function ListingShow() {
             </div>
             <div className='show-bottom'>
                 <div className='show-pic'>
-                    <img src={url} alt="" id="show-img" />
+                    <img src={jordan1} alt="" id="show-img" />
                     {/* <img src={url1} alt="" id="show-img" /> */}
                     <br/>
                     <div className='show-favorites'>

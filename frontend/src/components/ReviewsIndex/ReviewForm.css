@@ -6,6 +6,27 @@
        
 }
 
+#star-icons { 
+    display: flex;
+    flex-direction: row;
+}
+
+input[type="radio"] { 
+    display: none
+}
+
+.star { 
+    cursor: pointer;
+    transition: color 200ms;
+    font-size: 28px;
+}
+
+#star-rater { 
+    width: 30px;
+    
+    
+}
+
 #review-title { 
     font-size: 20px;
     padding: 5px

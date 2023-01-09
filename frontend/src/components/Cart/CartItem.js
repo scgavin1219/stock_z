@@ -3,12 +3,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addItem, removeItem } from '../../store/cart'
 import { TbTrash } from 'react-icons/tb'
 import './Cart.css'
+import jordan1 from './jordan1-1.png'
 
 
 function CartItem({item}) {
     const dispatch = useDispatch()
     const cartItem = useSelector(state => state.listings[item])
-    const url = cartItem.photoUrls[0]
+    // const url = cartItem.photoUrls[0]
 
     console.log(cartItem)
     const handleDelete = (e) => { 
@@ -28,7 +29,7 @@ function CartItem({item}) {
   return (
     <li className="cart-item">
       <div className='cart-info'>
-        <div className='cart-item-image'><img src={url} alt="" id="cart-img" /></div>
+        <div className='cart-item-image'><img src={jordan1} alt="" id="cart-img" /></div>
         <div className="cart-item-header">{cartItem.name}</div>
         <div className='cart-item-price'>${cartItem.price}</div>
          <button id="cart-item-button" onClick={handleDelete}><TbTrash/></button>
