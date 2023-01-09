@@ -47,9 +47,10 @@ function Navigation() {
         <div className='nav-right'>
           <NavLink id="browse-link" to="/listings">Browse</NavLink>
           <NavLink id="about-link" to="/">About</NavLink>
-          <button id='shopping-button' onClick={toggleCart}><AiOutlineShoppingCart /></button>
+          {/* <button id='shopping-button' onClick={toggleCart}><AiOutlineShoppingCart /></button> */}
+          <Cart id="profile-button"/>
           {sessionLinks}
-          { showCart ? <Cart /> : ""}
+          {/* { showCart ? <Cart /> : ""} */}
         </div>
       </div>
     </nav>

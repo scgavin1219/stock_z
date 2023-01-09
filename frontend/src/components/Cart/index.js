@@ -1,32 +1,56 @@
 import CartItem from "./CartItem";
 import './Cart.css'
-
-import React from 'react'
-import { useSelector } from "react-redux";
+import { AiOutlineShoppingCart} from 'react-icons/ai'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from "react-redux";
+import { icons } from "react-icons/lib";
+import { useState } from "react";
 
 function Cart() {
-
+    const [showCart, setShowCart] = useState(false)
     const cart = useSelector(state => state.cart)
     const listings = useSelector(state => state.listings)
-    console.log(cart)
-    console.log(listings)
+    const dispatch = useDispatch()
+
+    const openCart = () => { 
+      if (showCart) return;
+      setShowCart(true)
+    }
+
+    useEffect(() => { 
+      if (!showCart) return;
+
+      const closeCart = () => { 
+        setShowCart(false)
+      }
+      document.addEventListener('click', closeCart);
+      return () => document.removeEventListener("click", closeCart)
+    }, [showCart])
+   
+  // const toggleCart = () => { 
+  //   showCart ? setShowCart(false) : setShowCart(true)
+  // }
 
     const cartItems = Object.values(cart).map(item => { 
-
         return { 
             ...parseInt(item), ...listings[parseInt(item).id] 
-          
         }
-       
     })
 
-    // console.log(cartItems)
-
     // if (!cartItems || !cartItems.length) return ( 
-    //     <div className="cart">
+    //     <div className="cart-info">
     //         No items in the cart. Start selecting items to purchase.
     //     </div>
     // )
+
+    // const totalCost = () => { 
+    //   let sum = 0 
+    //   Object.values(cart).map(item =>{ 
+    //     let cartItem = useSelector(state => state.listings[item])
+    //     sum += cartItem.price
+    //   })
+    //   return sum
+    // }
 
     // const onSubmit = (e) => { 
     //     e.preventDefault();
@@ -36,13 +60,19 @@ function Cart() {
 
   return (
     <div className="cart">
-      <ul>
-        {Object.values(cart).map((item, idx) => <CartItem key={idx} item={item}/>)}
-      </ul>
-      <hr />
-      <form >
-        <button type="submit">Purchase</button>
-      </form>
+      <button id='shopping-button' onClick={openCart}>
+        <AiOutlineShoppingCart />
+      </button>
+      <div classname="cart-container">
+        {showCart && (
+          <>
+            <ul className="cartitem-container">
+              {Object.values(cart).map((item, idx) => <CartItem key={idx} item={item}/>)}
+            </ul>
+            <button id="purchase-button" type="submit">Purchase</button>
+        </>
+        )}
+      </div>
     </div>
   )
 }
