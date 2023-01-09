@@ -7,11 +7,18 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import stockx from './StockX_logo.png'
+import Cart from '../Cart';
 import './Navigation.css';
+import { useState } from 'react';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
+  const [showCart, setShowCart] = useState(false)
   // let location = useLocation();
+
+  const toggleCart = () => { 
+    showCart ? setShowCart(false) : setShowCart(true)
+  }
 
   let sessionLinks;
   if (sessionUser) {
@@ -40,8 +47,9 @@ function Navigation() {
         <div className='nav-right'>
           <NavLink id="browse-link" to="/listings">Browse</NavLink>
           <NavLink id="about-link" to="/">About</NavLink>
-          <button id='shopping-button'><AiOutlineShoppingCart /></button>
+          <button id='shopping-button' onClick={toggleCart}><AiOutlineShoppingCart /></button>
           {sessionLinks}
+          { showCart ? <Cart /> : ""}
         </div>
       </div>
     </nav>

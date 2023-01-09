@@ -7,34 +7,40 @@ import { useSelector } from "react-redux";
 function Cart() {
 
     const cart = useSelector(state => state.cart)
-    const listing = useSelector(state => state.listing)
+    const listings = useSelector(state => state.listings)
+    console.log(cart)
+    console.log(listings)
 
     const cartItems = Object.values(cart).map(item => { 
+
         return { 
-            ...item, 
-            ...listing[item.id]
+            ...parseInt(item), ...listings[parseInt(item).id] 
+          
         }
+       
     })
 
-    if (!cartItems || !cartItems.length) return ( 
-        <div className="cart">
-            No items in the cart. Start selecting items to purchase.
-        </div>
-    )
+    // console.log(cartItems)
 
-    const onSubmit = (e) => { 
-        e.preventDefault();
-       "Purchased the following:\n" +
-      `${cartItems.map(item => `${item.count} of ${item.name}`).join('\n')}`
-    }
+    // if (!cartItems || !cartItems.length) return ( 
+    //     <div className="cart">
+    //         No items in the cart. Start selecting items to purchase.
+    //     </div>
+    // )
+
+    // const onSubmit = (e) => { 
+    //     e.preventDefault();
+    //    "Purchased the following:\n" +
+    //   `${cartItems.map(item => `${item.count} of ${item.name}`).join('\n')}`
+    // }
 
   return (
     <div className="cart">
       <ul>
-        {cartItems.map(item => <CartItem key={item.id} item={item}/>)}
+        {Object.values(cart).map((item, idx) => <CartItem key={idx} item={item}/>)}
       </ul>
       <hr />
-      <form onSubmit={onSubmit}>
+      <form >
         <button type="submit">Purchase</button>
       </form>
     </div>
