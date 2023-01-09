@@ -1,18 +1,29 @@
 .cart-container {
+    position: absolute;
+    top: 100%;
+    width: 500px;
+    background-color: white;
+        padding: 0.75rem;
+        border-radius: 3px;
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+        font-size: 18px;
+}
+
+.cart { 
     position: relative;
 }
 
-.cartitem-container { 
-    position: absolute;
+/* .cartitem-container { 
+    position: absolute; 
     background-color: white;
     padding: 0.75rem;
     border-radius: 3px;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
     font-size: 18px;
     right: 0;
-    /* top: 200px; */
-    width: 500px;
-}
+    top: 200px;
+ width: 500px;
+} */
 
 
 .cart-info { 

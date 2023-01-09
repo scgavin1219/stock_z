@@ -8,6 +8,7 @@ import { GrFavorite } from 'react-icons/gr'
 import { createCartItem } from '../../store/cart'
 import { Link } from 'react-router-dom'
 import jordan1 from './jordan1-1.png'
+import { useHistory } from 'react-router-dom'
 import './ListingShow.css'
 
 function ListingShow() {
@@ -15,6 +16,7 @@ function ListingShow() {
     const {listingId} = useParams();
     const listing = useSelector(getListing(listingId))
     const sessionUser = useSelector(state => state.session.user);
+    const history = useHistory()
     
     const handleAdd = (e) => { 
         e.preventDefault();
@@ -26,10 +28,14 @@ function ListingShow() {
         dispatch(createCartItem(payload))
     }
 
-    // const handlePurchase = (e) => { 
-    //     e.preventDefault();
-    //     dispatch(addItem(listingId))
-    // }
+
+    const handlePurchase = (e) => { 
+        e.preventDefault();
+        handleAdd(e)
+        history.push("/checkout")
+        
+
+    }
 
     useEffect(() => { 
         dispatch(fetchListing(listingId))
@@ -77,7 +83,7 @@ function ListingShow() {
                     <div id="purchase-container">
                         <button id="show-button" onClick={handleAdd}>Add to Cart</button>
                         <br/>
-                        <Link to="/checkout"><button id="show-button">Purchase Now</button></Link>
+                        <button id="show-button"onClick={handlePurchase}>Purchase Now</button>
                     </div>
                 </div>
             </div>

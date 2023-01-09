@@ -5,6 +5,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { icons } from "react-icons/lib";
 import { useState } from "react";
+import { fetchItems } from "../../store/cart";
 
 function Cart() {
     const [showCart, setShowCart] = useState(false)
@@ -17,15 +18,15 @@ function Cart() {
       setShowCart(true)
     }
 
-    // useEffect(() => { 
-    //   if (!showCart) return;
+    //useEffect that fetches all items
+    //in logout clear all cart items
+    //purchase page that just clears cart
 
-    //   const closeCart = () => { 
-    //     setShowCart(false)
-    //   }
-    //   document.addEventListener('click', closeCart);
-    //   return () => document.removeEventListener("click", closeCart)
-    // }, [showCart])
+    useEffect(()=> { 
+      dispatch(fetchItems())
+    }, [dispatch])
+
+  
    
   const toggleCart = () => { 
     showCart ? setShowCart(false) : setShowCart(true)
@@ -37,27 +38,7 @@ function Cart() {
         }
     })
 
-    // if (!cartItems || !cartItems.length) return ( 
-    //     <div className="cart-info">
-    //         No items in the cart. Start selecting items to purchase.
-    //     </div>
-    // )
-
-    // const totalCost = () => { 
-    //   let sum = 0 
-    //   Object.values(cart).map(item =>{ 
-    //     let cartItem = useSelector(state => state.listings[item])
-    //     sum += cartItem.price
-    //   })
-    //   return sum
-    // }
-
-    // const onSubmit = (e) => { 
-    //     e.preventDefault();
-    //    "Purchased the following:\n" +
-    //   `${cartItems.map(item => `${item.count} of ${item.name}`).join('\n')}`
-    // }
-
+ 
   return (
     <div className="cart">
       <button id='shopping-button' onClick={toggleCart}>
@@ -78,3 +59,34 @@ function Cart() {
 }
 
 export default Cart
+
+  // useEffect(() => { 
+    //   if (!showCart) return;
+
+    //   const closeCart = () => { 
+    //     setShowCart(false)
+    //   }
+    //   document.addEventListener('click', closeCart);
+    //   return () => document.removeEventListener("click", closeCart)
+    // }, [showCart])
+
+       // if (!cartItems || !cartItems.length) return ( 
+    //     <div className="cart-info">
+    //         No items in the cart. Start selecting items to purchase.
+    //     </div>
+    // )
+
+    // const totalCost = () => { 
+    //   let sum = 0 
+    //   Object.values(cart).map(item =>{ 
+    //     let cartItem = useSelector(state => state.listings[item])
+    //     sum += cartItem.price
+    //   })
+    //   return sum
+    // }
+
+    // const onSubmit = (e) => { 
+    //     e.preventDefault();
+    //    "Purchased the following:\n" +
+    //   `${cartItems.map(item => `${item.count} of ${item.name}`).join('\n')}`
+    // }
