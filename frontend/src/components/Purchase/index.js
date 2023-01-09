@@ -2,9 +2,7 @@ import PurchaseItem from './PurchaseItem';
 import './Purchase.css'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { icons } from "react-icons/lib";
-import { useState } from "react";
-import { fetchItems, removeItems } from '../../store/cart';
+import { deleteCartItem, fetchItems, removeItems } from '../../store/cart';
 
 function Purchase() {
     const cart = useSelector(state => state.cart)
@@ -17,7 +15,11 @@ function Purchase() {
 
     const handlePurchase = (e) => { 
       e.preventDefault()
+      Object.values(cart).map(item => { 
+        dispatch(deleteCartItem(item.id))
+      })
       dispatch(removeItems())
+      
     }
 
     const totalCost = () => { 
