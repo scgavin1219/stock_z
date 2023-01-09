@@ -5,6 +5,7 @@
     min-width: 900px;
     width: 60vw;
     border: 2px solid lightgray;
+    box-shadow: 0 10px 20px #cfcfcf;
     border-radius: 8px;
     padding: 20px;
     background-color: white;

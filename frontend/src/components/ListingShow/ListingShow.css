@@ -8,6 +8,7 @@
     width: 60vw;
     min-width: 900px;
     border: 2px solid lightgray;
+    box-shadow: 0 10px 20px #cfcfcf;
     border-radius: 8px;
     padding: 20px;
 }
