@@ -34,15 +34,6 @@ function ReviewForm({setReviewForm}) {
         }
     
 
-    // useEffect(() => { 
-    //     if (reviewId) { 
-    //         setEdit(true)
-    //         setRating(review.rating)
-    //         setTextRating(review.textRating)
-    //         dispatch(fetchReview(reviewId))
-    //     }
-    // }, [reviewId, dispatch])
-
   return (
     <div className='review-form'>
         <div className='review-create'>

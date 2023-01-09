@@ -15,9 +15,6 @@ const ReviewIndexItem = ({review}) => {
   const dispatch = useDispatch()
   const [updateForm, setUpdateForm] = useState(false)
 
-  // const formSwitch =() => { 
-  //       edit ? setEdit(false) : setEdit(true)
-  //   }
 
     const editSwitch = () => { 
         updateForm ? setUpdateForm(false) : setUpdateForm(true)
