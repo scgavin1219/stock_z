@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 import { HiTrendingUp } from 'react-icons/hi'
 import { HiTrendingDown } from 'react-icons/hi'
 import { GrFavorite } from 'react-icons/gr'
-import { addItem } from '../../store/cart'
+import { createCartItem } from '../../store/cart'
 import { Link } from 'react-router-dom'
 import jordan1 from './jordan1-1.png'
 import './ListingShow.css'
@@ -14,16 +14,22 @@ function ListingShow() {
     const dispatch = useDispatch()
     const {listingId} = useParams();
     const listing = useSelector(getListing(listingId))
+    const sessionUser = useSelector(state => state.session.user);
     
     const handleAdd = (e) => { 
         e.preventDefault();
-        dispatch(addItem(listingId))
+        const payload = {
+            user_id: sessionUser.id,
+            listing_id: listingId
+        }
+
+        dispatch(createCartItem(payload))
     }
 
-    const handlePurchase = (e) => { 
-        e.preventDefault();
-        dispatch(addItem(listingId))
-    }
+    // const handlePurchase = (e) => { 
+    //     e.preventDefault();
+    //     dispatch(addItem(listingId))
+    // }
 
     useEffect(() => { 
         dispatch(fetchListing(listingId))
@@ -71,7 +77,7 @@ function ListingShow() {
                     <div id="purchase-container">
                         <button id="show-button" onClick={handleAdd}>Add to Cart</button>
                         <br/>
-                        <Link to="/checkout"><button id="show-button" onClick={handlePurchase}>Purchase Now</button></Link>
+                        <Link to="/checkout"><button id="show-button">Purchase Now</button></Link>
                     </div>
                 </div>
             </div>

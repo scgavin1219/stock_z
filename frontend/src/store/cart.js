@@ -6,9 +6,9 @@ export const REMOVE_ITEM = "cart/REMOVE_ITEM"
 export const REMOVE_ITEMS = "cart/REMOVE_ITEMS"
 export const ADD_ITEMS = "cart/ADD_ITEMS"
 
-export const addItem = listingId => ({ 
+export const addItem = itemId => ({ 
     type: ADD_ITEM,
-    listingId 
+    itemId 
 })
 
 export const addItems = items => ({
@@ -16,9 +16,9 @@ export const addItems = items => ({
     items
 })
 
-export const removeItem = listingId => ({
+export const removeItem = itemId => ({
     type: REMOVE_ITEM,
-    listingId
+    itemId
 })
 
 export const removeItems = () => ({
@@ -50,7 +50,7 @@ export const fetchItem = (itemId) => async dispatch => {
 }
 
 export const createCartItem = (cartItem) => async dispatch => { 
-    const res = await csrfFetch(`api/cart`, { 
+    const res = await csrfFetch(`/api/carts`, { 
         method: "POST",
         body: JSON.stringify(cartItem),
         headers: { 
@@ -74,21 +74,15 @@ export const deleteCartItem = (itemId) => async dispatch => {
 
 
 
-
-
-
-
-
-
-
-
 const cartReducer = (state = {}, action) => { 
     const newState = {...state}
     switch (action.type) { 
         case ADD_ITEM: 
-            return {...newState, [action.listingId]: action.listingId} 
+            return {...newState, [action.itemId]: action.itemId}
+        case ADD_ITEMS: 
+            return {...action.items} 
         case REMOVE_ITEM:
-            delete newState[action.listingId]
+            delete newState[action.itemId]
             return newState
         case REMOVE_ITEMS: 
             return {}
