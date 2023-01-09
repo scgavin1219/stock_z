@@ -6,6 +6,7 @@ import { HiTrendingUp } from 'react-icons/hi'
 import { HiTrendingDown } from 'react-icons/hi'
 import { GrFavorite } from 'react-icons/gr'
 import { addItem } from '../../store/cart'
+import { Link } from 'react-router-dom'
 import './ListingShow.css'
 
 function ListingShow() {
@@ -14,6 +15,11 @@ function ListingShow() {
     const listing = useSelector(getListing(listingId))
     
     const handleAdd = (e) => { 
+        e.preventDefault();
+        dispatch(addItem(listingId))
+    }
+
+    const handlePurchase = (e) => { 
         e.preventDefault();
         dispatch(addItem(listingId))
     }
@@ -64,7 +70,7 @@ function ListingShow() {
                     <div id="purchase-container">
                         <button id="show-button" onClick={handleAdd}>Add to Cart</button>
                         <br/>
-                        <button id="show-button">Purchase Now</button>
+                        <Link to="/checkout"><button id="show-button" onClick={handlePurchase}>Purchase Now</button></Link>
                     </div>
                 </div>
             </div>

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :listings, only: [:show, :index] do 
       resources :reviews, only: [:index]
     end
+    resources :carts, only: [:create, :index, :destroy, :show]
     resources :reviews, only: [:create, :update, :destroy]
     resource :session, only: [:show, :create, :destroy]
   end

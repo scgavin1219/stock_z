@@ -40,10 +40,6 @@ function App() {
             <Navigation />
             <ReviewForm />
           </Route>
-          {/* <Route path="/tradingcards" exact>
-            <Navigation />
-            <CardIndex /> */}
-          {/* </Route> */}
           <Route path="/listings/:listingId" exact>
             <Navigation />
             <ListingShow />
