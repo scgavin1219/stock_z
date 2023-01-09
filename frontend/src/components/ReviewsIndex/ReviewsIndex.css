@@ -16,6 +16,7 @@
 .rating-container { 
    margin: 20px;
    border: 1px solid rgb(134, 133, 133);
+   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
    background-color: white;
    border-radius: 5px;
    padding: 10px;

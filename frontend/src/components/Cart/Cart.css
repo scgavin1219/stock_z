@@ -3,7 +3,7 @@
     top: 100%;
     width: 500px;
     background-color: white;
-    padding: 0.75rem;
+    /* padding: 0.75rem; */
     border-radius: 3px;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
     font-size: 18px;
@@ -75,5 +75,10 @@
     height: 100px;
     width: auto;
     margin-bottom: 5px;
+}
+
+#purchase-button { 
+    margin: 10px;
+    width:475px;
 }
 

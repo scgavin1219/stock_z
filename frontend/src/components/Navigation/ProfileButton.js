@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { CgProfile } from "react-icons/cg"
 import './Navigation.css'
+import { removeItems } from "../../store/cart";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -27,6 +28,7 @@ function ProfileButton({ user }) {
 
   const logout = (e) => {
     e.preventDefault();
+    dispatch(removeItems())
     dispatch(sessionActions.logout());
   };
 
