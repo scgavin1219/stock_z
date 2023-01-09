@@ -6,6 +6,7 @@ import { deleteReview } from '../../store/reviews.js';
 import './ReviewIndexItem.js'
 import ReviewFormEdit from './ReviewFormEdit'
 import moment from 'moment'
+import { FaStar } from 'react-icons/fa'
 
 
 const ReviewIndexItem = ({review}) => {
@@ -27,7 +28,17 @@ const ReviewIndexItem = ({review}) => {
     <div className='rating-container'>
         <div className='user-rating'>
             <h4><span id="bold">username:</span> {review.username}</h4>
-            <h4>{review.rating} STARS</h4>
+            {/* <h4>{review.rating} STARS</h4> */}
+             <div className='star-icons' id='star-icons'>
+                 {[...Array(5)].map((star, idx) => { 
+                    const ratingValue = idx + 1
+                    return (
+                            <>
+                                <FaStar className='star' color={ratingValue <= review.rating ? "#ffc107" : "#e4e5e9" } />
+                              </>
+                    )
+                 })}
+                 </div>
         </div>
         <div className='star-rating'>
             {/* <h6>{review.createdAt}</h6> */}
