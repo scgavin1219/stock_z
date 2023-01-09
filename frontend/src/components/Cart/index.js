@@ -32,11 +32,14 @@ function Cart() {
     showCart ? setShowCart(false) : setShowCart(true)
   }
 
-    const cartItems = Object.values(cart).map(item => { 
-        return { 
-            ...parseInt(item), ...listings[parseInt(item).id] 
-        }
-    })
+    // const cartItems = Object.values(cart).map(item => { 
+    //     return { 
+    //         ...parseInt(item), ...listings[parseInt(item).id] 
+    //     }
+    // })
+    
+    // console.log(cart)
+    // console.log(Object.values(cart))
 
  
   return (

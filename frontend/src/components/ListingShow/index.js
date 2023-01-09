@@ -24,17 +24,14 @@ function ListingShow() {
             user_id: sessionUser.id,
             listing_id: listingId
         }
-
         dispatch(createCartItem(payload))
     }
-
 
     const handlePurchase = (e) => { 
         e.preventDefault();
         handleAdd(e)
         history.push("/checkout")
         
-
     }
 
     useEffect(() => { 
