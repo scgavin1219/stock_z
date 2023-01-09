@@ -17,19 +17,19 @@ function Cart() {
       setShowCart(true)
     }
 
-    useEffect(() => { 
-      if (!showCart) return;
+    // useEffect(() => { 
+    //   if (!showCart) return;
 
-      const closeCart = () => { 
-        setShowCart(false)
-      }
-      document.addEventListener('click', closeCart);
-      return () => document.removeEventListener("click", closeCart)
-    }, [showCart])
+    //   const closeCart = () => { 
+    //     setShowCart(false)
+    //   }
+    //   document.addEventListener('click', closeCart);
+    //   return () => document.removeEventListener("click", closeCart)
+    // }, [showCart])
    
-  // const toggleCart = () => { 
-  //   showCart ? setShowCart(false) : setShowCart(true)
-  // }
+  const toggleCart = () => { 
+    showCart ? setShowCart(false) : setShowCart(true)
+  }
 
     const cartItems = Object.values(cart).map(item => { 
         return { 
@@ -60,10 +60,10 @@ function Cart() {
 
   return (
     <div className="cart">
-      <button id='shopping-button' onClick={openCart}>
+      <button id='shopping-button' onClick={toggleCart}>
         <AiOutlineShoppingCart />
       </button>
-      <div classname="cart-container">
+      <div className="cart-container">
         {showCart && (
           <>
             <ul className="cartitem-container">
