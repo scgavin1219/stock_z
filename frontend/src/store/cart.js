@@ -58,8 +58,12 @@ export const createCartItem = (cartItem) => async dispatch => {
             "Accept": "application/json"
         }
     })
+    //debugger
+    console.log(cartItem)
+    console.log(res)
     if (res.ok) { 
         const newCartItem = await res.json();
+        console.log(newCartItem)
         dispatch(addItem(newCartItem))
     }
 }

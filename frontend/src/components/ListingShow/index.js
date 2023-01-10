@@ -16,13 +16,15 @@ function ListingShow() {
     const listing = useSelector(getListing(listingId))
     const sessionUser = useSelector(state => state.session.user);
     const history = useHistory()
+    // const url = listing.photoUrls[0]
     
     const handleAdd = (e) => { 
         e.preventDefault();
         const payload = {
             user_id: sessionUser.id,
-            listing_id: listingId
+            listing_id: parseInt(listingId)
         }
+
         dispatch(createCartItem(payload))
     }
 
@@ -40,8 +42,6 @@ function ListingShow() {
     if (!listing) { 
         return null
     }
-
-    // const url = listing.photoUrls[0]
 
   return (
     <>
