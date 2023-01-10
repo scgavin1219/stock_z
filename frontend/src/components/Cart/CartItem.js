@@ -1,13 +1,18 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { deleteCartItem } from '../../store/cart'
+import { deleteCartItem, updateCartItem } from '../../store/cart'
 import { TbTrash } from 'react-icons/tb'
 import './Cart.css'
 import jordan1 from './jordan1-1.png'
+import { CiCirclePlus} from 'react-icons/ci'
+import { CiCircleMinus } from 'react-icons/ci'
+import { useState } from 'react'
+
 
 
 function CartItem({item}) {
     const dispatch = useDispatch()
+    const [amount, setAmount] = useState(item.quantity)
 
     const handleDelete = (e) => { 
         e.preventDefault();
@@ -17,13 +22,43 @@ function CartItem({item}) {
     useEffect(()=> { 
       
     }, [dispatch])
+
+    const handleAdd =(e) => { 
+      e.preventDefault()
+      setAmount(amount + 1)
+      console.log(amount)
+      const payload = {
+        id: item.id,
+        user_id: item.userId,
+        listing_id: item.listingId,
+        quantity: amount + 1
+      }
+      dispatch(updateCartItem(payload))
+    }
+
+    const handleMinus = (e) => { 
+      e.preventDefault()
+      amount > 1 ? setAmount(amount - 1) : dispatch(deleteCartItem(item.id))
+      const payload = { 
+        id: item.id,
+        user_id: item.userId,
+        listing_id: item.listingId,
+        quantity: amount - 1
+      }
+      dispatch(updateCartItem(payload))
+    }
   
   return (
     <li className="cart-item">
       <div className='cart-info'>
         <div className='cart-item-image'><img src={jordan1} alt="" id="cart-img" /></div>
         <div className="cart-item-header">{item.name}</div>
-        <div className='cart-item-price'>${item.price.toFixed(2)}</div>
+        <div className='cart-item-quantity'>
+          <button onClick={handleMinus}><CiCircleMinus/></button>
+          {amount}
+          <button onClick={handleAdd}><CiCirclePlus /></button>
+        </div>
+        <div className='cart-item-price'>${(item.price * amount).toFixed(2)}</div>
          <button id="cart-item-button" onClick={handleDelete}><TbTrash/></button>
       {/* <div className="cart-item-menu">
       </div> */}

@@ -58,14 +58,23 @@ export const createCartItem = (cart) => async dispatch => {
             "Accept": "application/json"
         }
     })
-    //debugger
-    console.log(cart)
-    console.log(res)
     if (res.ok) { 
         const newCartItem = await res.json();
-        console.log(newCartItem)
         dispatch(addItem(newCartItem))
     }
+}
+
+export const updateCartItem = (cart) => async dispatch => { 
+    const res = await csrfFetch(`/api/carts/${cart.id}`, { 
+        method: "PUT",
+        body: JSON.stringify({cart}),
+        headers: { 
+            "Content-Type": "application/json",
+            "Accept": "appliation/json"
+        }
+    })
+    const updatedCart = await res.json();
+    dispatch(addItem(updatedCart))
 }
 
 export const deleteCartItem = (itemId) => async dispatch => { 
