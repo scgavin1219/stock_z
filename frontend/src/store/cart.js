@@ -49,17 +49,17 @@ export const fetchItem = (itemId) => async dispatch => {
     }
 }
 
-export const createCartItem = (cartItem) => async dispatch => { 
+export const createCartItem = (cart) => async dispatch => { 
     const res = await csrfFetch(`/api/carts`, { 
         method: "POST",
-        body: JSON.stringify(cartItem),
+        body: JSON.stringify({cart}),
         headers: { 
             "Content-Type": "application/json",
             "Accept": "application/json"
         }
     })
     //debugger
-    console.log(cartItem)
+    console.log(cart)
     console.log(res)
     if (res.ok) { 
         const newCartItem = await res.json();
