@@ -3,7 +3,6 @@ import './Cart.css'
 import { AiOutlineShoppingCart} from 'react-icons/ai'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-// import { icons } from "react-icons/lib";
 import { useState } from "react";
 import { fetchItems } from "../../store/cart";
 import { useHistory } from "react-router-dom";

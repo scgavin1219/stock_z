@@ -10,7 +10,7 @@ import { FaStar } from 'react-icons/fa'
 
 
 const ReviewIndexItem = ({review}) => {
-  // const [edit, setEdit] = useState(false)
+ 
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch()
   const [updateForm, setUpdateForm] = useState(false)
@@ -25,20 +25,18 @@ const ReviewIndexItem = ({review}) => {
     <div className='rating-container'>
         <div className='user-rating'>
             <h4><span id="bold">username:</span> {review.username}</h4>
-            {/* <h4>{review.rating} STARS</h4> */}
              <div className='star-icons' id='star-icons'>
                  {[...Array(5)].map((star, idx) => { 
                     const ratingValue = idx + 1
                     return (
-                            <>
-                                <FaStar className='star' color={ratingValue <= review.rating ? "#ffc107" : "#e4e5e9" } />
-                              </>
+                        <>
+                          <FaStar className='star' color={ratingValue <= review.rating ? "#ffc107" : "#e4e5e9" } />
+                        </>
                     )
                  })}
                  </div>
         </div>
         <div className='star-rating'>
-            {/* <h6>{review.createdAt}</h6> */}
             <h6 id="time-ago"><time title={new Date(review.createdAt).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) }>{moment(review.createdAt).fromNow()}</time></h6>
         </div>
         <div className='text-rating'>
@@ -56,3 +54,6 @@ const ReviewIndexItem = ({review}) => {
 }
 
 export default ReviewIndexItem
+
+
+ // const [edit, setEdit] = useState(false)
