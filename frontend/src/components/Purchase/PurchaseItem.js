@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addItem, deleteCartItem, removeItem } from '../../store/cart'
+import { deleteCartItem } from '../../store/cart'
 import { TbTrash } from 'react-icons/tb'
 import './Purchase.css'
 import jordan1 from './jordan1-1.png'

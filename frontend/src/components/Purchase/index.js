@@ -38,9 +38,11 @@ function Purchase() {
     }
 
     const total = () => { 
-      let totcost = parseInt(taxesShipping())
-      let totship = parseInt(totalCost())
-      const grandTotal = (totcost + totship)
+      let totcost = parseFloat(taxesShipping())
+      let totship = parseFloat(totalCost())
+      let grandTotal = (totcost + totship)
+      // Math.round((totcost + totship) * 100) / 100
+      // let grandTotal = (totcost + totship)
       return grandTotal.toFixed(2)
     }
 
