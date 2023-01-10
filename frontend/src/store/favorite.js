@@ -66,12 +66,19 @@ export const deleteFavorite = (favoriteId) => async dispatch => {
 }
 
 
-const favoritesReducer = (state ={}, action ) => { 
+const favoritesReducer = (state = {}, action ) => { 
     const newState = {...state}
     switch (action.type) { 
-        
+        case RECEIVE_FAVORITE: 
+            return {...newState, [action.favorite.id]: action.favorite }
+        case RECEIVE_FAVORITES: 
+            return {...action.favorites}
+        case RECEIVE_FAVORITE:
+            delete newState[action.favoriteId]
+            return newState
+        default: 
+            return state
     }
-
 }
 
 export default favoritesReducer
