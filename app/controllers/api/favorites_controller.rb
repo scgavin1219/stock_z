@@ -19,6 +19,7 @@ class Api::FavoritesController < ApplicationController
     end
 
     def destroy
+        debugger
         @favorite = Favorite.find_by(id: params[:id])
         if @favorite.destroy!
         else

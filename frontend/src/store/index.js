@@ -4,13 +4,14 @@ import session from './session';
 import listingReducer from './listings'; 
 import reviewsReducer from './reviews';
 import cartReducer from './cart';
-
+import favoritesReducer from './favorite';
 
 const rootReducer = combineReducers ({
     session,
     listings: listingReducer,
     reviews: reviewsReducer,
-    cart: cartReducer
+    cart: cartReducer,
+    favorites: favoritesReducer
 });
 
 let enhancer;

@@ -1,4 +1,4 @@
-* , *::before, *::after { 
+/* * , *::before, *::after { 
     box-sizing: border-box;
 }
 
@@ -47,4 +47,4 @@
 
 .carousel-button.next { 
     right: 1rem
-}
+} */
