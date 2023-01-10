@@ -3,6 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './ListingsIndex.css'
 import { GrFavorite } from 'react-icons/gr'
+import { MdFavorite } from 'react-icons/md'
 import { HiTrendingUp } from 'react-icons/hi'
 import { HiTrendingDown } from 'react-icons/hi'
 import  jordan1 from './jordan1-1.png'
@@ -49,7 +50,6 @@ const ListingsIndexItem= ({listing}) => {
     }
 
     // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
-
     // const url = listing.photoUrls[0]
 
   return (
@@ -62,7 +62,8 @@ const ListingsIndexItem= ({listing}) => {
                 <div id="bottombox">
                     <div id="bottombox-left">
                         <Link to={`listings/${listing.id}`} id="index-title"><span id="bold">{listing.name}</span></Link>
-                        <button id="favorite" onClick={handleFavorite}><GrFavorite /></button>
+                        {favorite ? <button id="non-fav" onClick={handleFavorite}><MdFavorite /></button> : <button id="favorite" onClick={handleFavorite}><GrFavorite /></button>}
+                        {/* <button id="favorite" onClick={handleFavorite}><GrFavorite /></button> */}
                     </div>
                     <div id="bottombox-right">
                         <h6 id="listing-price">${listing.price.toFixed(2)}</h6>

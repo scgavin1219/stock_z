@@ -104,6 +104,15 @@ h6 {
     transition: all ease-in 500ms;
 }
 
-#favorite:hover { 
+#non-fav { 
+    border: none;
+    background-color: transparent;
+    width: 40px;
+    height: 25px;
+    transition: all ease-in 500ms;
+    color: rgb(204, 21, 21)
+}
+
+#favorite:hover, #non-fav:hover { 
     font-size: 20px;
 }
