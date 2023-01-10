@@ -13,6 +13,7 @@ import ListingShow from './components/ListingShow';
 import ReviewForm from './components/ReviewsIndex/ReviewForm';
 import ReviewsIndex from './components/ReviewsIndex';
 import Purchase from './components/Purchase';
+import Checkout from './components/Checkout';
 
 
 
@@ -44,6 +45,10 @@ function App() {
             <Navigation />
             <ListingShow />
             <ReviewsIndex />
+          </Route>
+          <Route path="/thanks" exact>
+            <Navigation />
+            <Checkout />
           </Route>
           <Route path="/error" exact>
             <LoginNavigation />

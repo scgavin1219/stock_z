@@ -1,0 +1,42 @@
+.checkout { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(192, 192, 192);
+    box-shadow: 0 10px 20px #cfcfcf;
+    border-radius: 5px;
+    background-color: white;
+    width: 60vw;
+    min-width: 600px;
+    margin: 150px;
+    font-family: proxima-nova, sans-serif;
+}
+
+.thankyou { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:20px
+
+}
+
+#github-thanks, 
+#linkedin-thanks { 
+    height: 100px;
+    width: auto;
+}
+
+#continue { 
+    padding: 20px;
+}
+
+#stockx-thanks { 
+    height: 40px;
+    margin-left: 10px;
+}
+
+#thankslink { 
+    text-decoration: none;
+    color: inherit;
+}

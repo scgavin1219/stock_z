@@ -3,11 +3,13 @@ import './Purchase.css'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { deleteCartItem, fetchItems, removeItems } from '../../store/cart';
+import { useHistory } from 'react-router-dom';
 
 function Purchase() {
     const cart = useSelector(state => state.cart)
     // const listings = useSelector(state => state.listings)
     const dispatch = useDispatch()
+    const history = useHistory()
 
     useEffect(() => { 
       dispatch(fetchItems())
@@ -19,6 +21,7 @@ function Purchase() {
         dispatch(deleteCartItem(item.id))
       })
       dispatch(removeItems())
+      history.push("/thanks")
       
     }
 
