@@ -22,7 +22,7 @@ function ListingShow() {
         e.preventDefault();
         const payload = {
             user_id: sessionUser.id,
-            listing_id: parseInt(listingId)
+            listing_id: parseInt(listingId),
         }
 
         dispatch(createCartItem(payload))

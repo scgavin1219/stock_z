@@ -12,7 +12,6 @@ function PurchaseItem({item}) {
     // const cartItem = useSelector(state => state.listings[item])
     // const url = cartItem.photoUrls[0]
 
-    // console.log(cartItem)
     const handleDelete = (e) => { 
         e.preventDefault();
         dispatch(removeItem(item.id))
