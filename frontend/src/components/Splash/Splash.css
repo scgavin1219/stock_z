@@ -41,9 +41,10 @@
 .jordan { 
     display: flex;
     justify-content: center;
-    
 }
 
+
 .jordan img { 
+    margin-top: 30px;
     width: 90%;
 }

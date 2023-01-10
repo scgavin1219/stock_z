@@ -3,9 +3,13 @@ import './Splash.css'
 import { Link } from 'react-router-dom'
 // import jordan from './AJ1.png'
 import dunk from './dunk.png'
+import babe from './bape.png'
+import trends from './trends.png'
+import jshoes from './js.png'
+import Carousel from './Carousel'
 
 function Splash() {
-
+  const slides = [dunk, babe, trends, jshoes] 
 
   return (
     <div className='splash-container'>
@@ -18,7 +22,11 @@ function Splash() {
           <Link to="/accessories" id="splash-links">Accessories</Link> 
         </div>
         <div className='jordan'> 
-             <img src={dunk} alt="Air Jordan 1"/>
+            
+            <img src={dunk} alt="Air Jordan 1"/>
+        </div>
+        <div className='jordan-two'>
+          {/* <Carousel /> */}
         </div>
     </div>
   )
