@@ -27,7 +27,7 @@ function PurchaseItem({item}) {
       <div className='purchase-info'>
         <div className='purchase-item-image'><img src={jordan1} alt="" id="purchase-img" /></div>
         <div className="purchase-item-header">{item.name}</div>
-        <div className='purchase-item-price'>${item.price}</div>
+        <div className='purchase-item-price'>${item.price.toFixed(2)}</div>
          <button id="purchase-item-button" onClick={handleDelete}><TbTrash id="trash" /></button>
       </div>
     </li>

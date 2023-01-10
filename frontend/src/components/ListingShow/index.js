@@ -67,7 +67,7 @@ function ListingShow() {
                         <br/>
                         <li id="show-li"><span id="bold">COLORWAY:</span> {listing.colorway}</li>
                         <br/>
-                        <li id="show-li"><span id="bold">PRICE:</span> ${listing.price}</li>
+                        <li id="show-li"><span id="bold">PRICE:</span> ${listing.price.toFixed(2)}</li>
                         <br/>
                         {listing.price > listing.oldPrice ? 
                 

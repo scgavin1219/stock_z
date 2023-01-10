@@ -23,7 +23,7 @@ function CartItem({item}) {
       <div className='cart-info'>
         <div className='cart-item-image'><img src={jordan1} alt="" id="cart-img" /></div>
         <div className="cart-item-header">{item.name}</div>
-        <div className='cart-item-price'>${item.price}</div>
+        <div className='cart-item-price'>${item.price.toFixed(2)}</div>
          <button id="cart-item-button" onClick={handleDelete}><TbTrash/></button>
       {/* <div className="cart-item-menu">
       </div> */}

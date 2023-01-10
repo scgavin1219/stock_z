@@ -23,6 +23,8 @@ function Cart() {
         history.push("/checkout")
     }
 
+    console.log(Object.values(cart).length)
+
   
    
   const toggleCart = () => { 
