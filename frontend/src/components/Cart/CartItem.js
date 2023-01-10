@@ -54,12 +54,12 @@ function CartItem({item}) {
         <div className='cart-item-image'><img src={jordan1} alt="" id="cart-img" /></div>
         <div className="cart-item-header">{item.name}</div>
         <div className='cart-item-quantity'>
-          <button onClick={handleMinus}><CiCircleMinus/></button>
+          <button onClick={handleMinus} id="update-cart"><CiCircleMinus id="circle"/></button>
           {amount}
-          <button onClick={handleAdd}><CiCirclePlus /></button>
+          <button onClick={handleAdd} id="update-cart"><CiCirclePlus id="circle" /></button>
         </div>
         <div className='cart-item-price'>${(item.price * amount).toFixed(2)}</div>
-         <button id="cart-item-button" onClick={handleDelete}><TbTrash/></button>
+         <button id="cart-item-button" onClick={handleDelete}><TbTrash id="trash"/></button>
       {/* <div className="cart-item-menu">
       </div> */}
       </div>
