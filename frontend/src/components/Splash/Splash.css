@@ -43,6 +43,15 @@
     justify-content: center;
 }
 
+.splash-img { 
+    display: flex;
+    justify-content: center;
+}
+
+#splash-img { 
+    width: 90vw;
+}
+
 
 .jordan img { 
     margin-top: 30px;
