@@ -23,10 +23,7 @@ function Cart() {
         history.push("/checkout")
     }
 
-    console.log(Object.values(cart).length)
-
   
-   
   const toggleCart = () => { 
     showCart ? setShowCart(false) : setShowCart(true)
   }
@@ -43,7 +40,14 @@ function Cart() {
             <ul className="cartitem-container">
               {Object.values(cart).map((item, idx) => <CartItem key={idx} item={item}/>)}
             </ul>
+            {Object.values(cart).length ? 
             <button id="purchase-button" type="submit" onClick={handlePurchase}>Purchase</button>
+            :
+            <div className="empty-cart">
+              <h3>Your Cart is Empty</h3>
+              <button onClick={toggleCart}>Back to Shopping</button>
+            </div>
+            }
         </>
         )}
       </div>
