@@ -98,6 +98,14 @@ h1 {
 #show-img { 
     height: 400px;
     width: auto;
+    transition: all ease-in 500ms;
+}
+
+#show-img:hover { 
+    height:401px;
+    width: auto;
+    box-shadow: 0 10px 20px #cfcfcf;
+
 }
 
 #show-button { 
