@@ -2,11 +2,12 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    width: 100%
 }
 
 .purchase-item-image,
 .purchase-item-header {
-    width: 200px;
+    width: 150px;
     padding: 10px;
 }
 
@@ -38,7 +39,7 @@
     border-radius: 5px;
     background-color: white;
     width: 60vw;
-    min-width: 620px;
+    min-width: 700px;
     margin: 150px 200px 200px;
     font-family: proxima-nova, sans-serif;
 
@@ -60,6 +61,18 @@
     font-size: 24px;
     font-family: proxima-nova, sans-serif;
     padding: 5px;
+}
+
+#purchase-amount { 
+    background-color: transparent;
+    border: none;
+    width: 100px;
+}
+
+#amount { 
+    font-family: proxima-nova, sans-serif;
+    font-size: 24px;
+    margin: -20px;
 }
 
 
@@ -86,4 +99,5 @@
 
 .purchase-item-price { 
     font-size: 24px;
+    margin-left: 20px
 }
