@@ -11,6 +11,7 @@ class Api::ListingsController < ApplicationController
     end
 
     def search
+        # debugger
         query = params[:query]
         @listings = Listing.where('name ILIKE ? OR description ILIKE ? OR category ILIKE ?', "%#{query}%", "%#{query}%", "%#{query}%")
         if @listings.length > 0

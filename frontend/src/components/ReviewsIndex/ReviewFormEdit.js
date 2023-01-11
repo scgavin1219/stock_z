@@ -35,13 +35,13 @@ function ReviewFormEdit({review, setUpdateForm}) {
             
     }
 
-    useEffect(() => { 
-        if (review.id) { 
-            setRating(review.rating)
-            setTextRating(review.textRating)
-            dispatch(fetchReview(review.id))
-        }
-    }, [dispatch])
+    // useEffect(() => { 
+    //     if (review.id) { 
+    //         setRating(review.rating)
+    //         setTextRating(review.textRating)
+    //         dispatch(fetchReview(review.id))
+    //     }
+    // }, [dispatch])
 
   return (
     <div className='review-form'>
@@ -54,11 +54,11 @@ function ReviewFormEdit({review, setUpdateForm}) {
                     const ratingValue = idx + 1
                     return (
                             <label>
-                                <input id="star-rater" type="radio" value={ratingValue} 
+                                <input id="star-rater" type="radio" value={review.rating} 
                                 onClick={() => setRating(ratingValue)}
                                  />
 
-                                <FaStar className='star' color={ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9" }
+                                <FaStar className='star' color={review.rating <= (hover || review.rating) ? "#ffc107" : "#e4e5e9" }
                                 onMouseEnter={()=>setHover(ratingValue)}
                                 onMouseLeave={() => setHover(null)} />
                             </label>
@@ -68,7 +68,7 @@ function ReviewFormEdit({review, setUpdateForm}) {
                 {/* <label>
                     <input type="text" value={rating} placeholder="Enter a Rating from 1 to 5" onChange={e => setRating(e.target.value)} />
                 </label> */}
-                    <textarea id="textarea" placeholder="Leave a Review" value={textRating} onChange={e => setTextRating(e.target.value)}></textarea>
+                    <textarea id="textarea" placeholder="Leave a Review" value={review.textRating} onChange={e => setTextRating(e.target.value)}></textarea>
                 
                 <button id="review-button">Update Review</button>
             </form>

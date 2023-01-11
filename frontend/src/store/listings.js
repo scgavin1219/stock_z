@@ -22,9 +22,9 @@ export const getListings = store => {
     return (store.listings) ? Object.values(store.listings) : []
 }
 
-export const getSearchListings = query => dispatch => { 
-    return fetchSearchListings(query).then(result => dispatch(receiveListings(result)))
-}
+// export const getSearchListings = query => dispatch => { 
+//     return fetchSearchListings(query).then(result => dispatch(receiveListings(result)))
+// }
 
 export const getListing = listingId => store => {
     return (store.listings && store.listings[listingId]) ? store.listings[listingId] : null
@@ -42,7 +42,7 @@ export const fetchSearchListings = (query) => async dispatch => {
     const res = await fetch(`/api/listings/search/${query}`)
     if (res.ok) { 
         const search = await res.json();
-        dispatch(receiveListing(search))
+        dispatch(receiveListings(search))
     }
 }
 
@@ -69,7 +69,7 @@ const listingReducer = (state= {}, action) =>  {
         case RECEIVE_LISTING: 
             return {...newState, [action.listing.id]: action.listing}
         case RECEIVE_LISTINGS: 
-            return {...newState, ...action.listings}
+            return { ...action.listings}
         case REMOVE_LISTING: 
             delete newState[action.listingId]
             return newState
