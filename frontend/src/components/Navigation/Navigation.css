@@ -168,10 +168,18 @@ button:hover {
 #stockx-logo { 
     margin-right: 50px;
     margin-left: 30px;
+    width:200px;
+    transition: all ease-in 500ms;
+}
+
+#logo:hover { 
+    height: 42px;
+    width: auto;
 }
 
 #logo {
-    height: 40px
+    height: 40px;
+    transition: all ease-in 500ms;
 }
 
 #profile-button, #shopping-button { 

@@ -1,6 +1,6 @@
 import React from 'react';
-import { AiOutlineShoppingCart } from "react-icons/ai"
-import { GoSearch } from 'react-icons/go'
+// import { AiOutlineShoppingCart } from "react-icons/ai"
+// import { GoSearch } from 'react-icons/go'
 // import { useLocation } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -15,7 +15,6 @@ import SearchBar from './SearchBar';
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
   const [showCart, setShowCart] = useState(false)
-  // let location = useLocation();
 
   const toggleCart = () => { 
     showCart ? setShowCart(false) : setShowCart(true)
@@ -41,7 +40,6 @@ function Navigation() {
         <div className='nav-left'>
           <NavLink id="stockx-logo" exact to="/"><img id="logo" src={stockx}alt="stockx logo"/></NavLink>
           <div id='search-box'>
-            
             {/* <input type="text" placeholder='Search for Brand, Color, etc.' id="search-bar"/> */}
             < SearchBar />
           </div>
