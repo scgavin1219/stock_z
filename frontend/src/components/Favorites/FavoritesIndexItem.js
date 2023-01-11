@@ -25,7 +25,7 @@ function FavoriteIndexItem({favorite}) {
 
   const handleDeleteFavorite = (e) => { 
         e.preventDefault()
-        dispatch(deleteFavorite(favorite.listingId))
+        dispatch(deleteFavorite(favorite.id))
         //not rerendering page on deletes
     }
 
