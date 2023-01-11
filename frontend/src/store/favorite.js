@@ -78,7 +78,7 @@ const favoritesReducer = (state = {}, action ) => {
             return {...newState, [action.favorite.id]: action.favorite }
         case RECEIVE_FAVORITES: 
             return { ...action.favorites}
-        case RECEIVE_FAVORITE:
+        case REMOVE_FAVORITE:
             delete newState[action.favoriteId]
             return newState
         case REMOVE_FAVORITES:

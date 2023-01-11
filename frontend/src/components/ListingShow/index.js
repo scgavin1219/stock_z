@@ -22,13 +22,12 @@ function ListingShow() {
     const listing = useSelector(getListing(listingId))
     const sessionUser = useSelector(state => state.session.user);
     const history = useHistory()
-    const [favorite, setFavorite] = useState(false)
+    const [favorite, setFavorite] = useState(listing.liked)
     const [currentIdx, setCurrentIdx] = useState(0)
         const favorited = useSelector(state => state.favorites)
     // const url = listing.photoUrls[0]
 
     const slide = [jordan1, jordan2, jordan3, jordan4]
-    
     
     const handleAdd = (e) => { 
         e.preventDefault();
@@ -39,20 +38,9 @@ function ListingShow() {
         dispatch(createCartItem(payload))
     }
 
-    useEffect(() => {
-        // dispatch(fetchFavorites())
-    }, [dispatch])
-
-    useEffect(()=> { 
-    const showInterval = setInterval(()=> { 
-      if (currentIdx < slide.length - 1) { 
-        setCurrentIdx(currentIdx + 1)
-      } else { 
-        setCurrentIdx(0)
-      }
-    }, 4000) 
-    return () => clearInterval(showInterval)
-  }, [currentIdx])
+    // useEffect(() => {
+    //     // dispatch(fetchFavorites())
+    // }, [dispatch])
 
     const favoriteId = () => { 
         let favId = null
@@ -105,7 +93,7 @@ function ListingShow() {
                     <br/>
                     <div className='show-favorites'>
                         <h4 id="favorites">Add to Favorites</h4>
-                        {listing.liked || favorite ? <button id="favorite-show" onClick={handleDeleteFavorite}><MdFavorite /></button> : <button id="favorite-non-show" onClick={handleAddFavorite}><GrFavorite /></button>}
+                        { favorite ? <button id="favorite-show" onClick={handleDeleteFavorite}><MdFavorite /></button> : <button id="favorite-non-show" onClick={handleAddFavorite}><GrFavorite /></button>}
                     </div>
                 </div>
                 <div className='show-information'>

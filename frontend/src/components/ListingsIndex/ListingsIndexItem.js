@@ -15,15 +15,11 @@ import { useState, useEffect } from 'react'
 
 const ListingsIndexItem= ({listing}) => {
     const dispatch = useDispatch()
-    const [favorite, setFavorite] = useState(false)
+    const [favorite, setFavorite] = useState(listing.liked)
     const sessionUser = useSelector(state => state.session.user);
     const favorited = useSelector(state => state.favorites)
     const [currentIdx, setCurrentIdx] = useState(0)
     const slide = [jordan1, jordan2]
-
-    useEffect(() => {
-        if (listing.liked) setFavorite(true)
-    }, [ listing.liked])
 
     const favoriteId = () => { 
         let favId = null
@@ -31,22 +27,6 @@ const ListingsIndexItem= ({listing}) => {
             if (favorite.listingId === listing.id)  favId = favorite.id;
         })
         return favId
-    }
-
-    const handleFavorite = (e) => {
-        e.preventDefault() 
-        if (listing.liked) { 
-            dispatch(deleteFavorite(favoriteId()))
-            setFavorite(false)
-    
-        } else { 
-            const payload = { 
-                user_id: sessionUser.id,
-                listing_id: listing.id
-            }
-            dispatch(createFavorite(payload))
-            setFavorite(true)
-        }
     }
 
      const handleDeleteFavorite = (e) => { 
@@ -79,11 +59,11 @@ const ListingsIndexItem= ({listing}) => {
                 <div id="bottombox">
                     <div id="bottombox-left">
                         <Link to={`listings/${listing.id}`} id="index-title"><span id="bold">{listing.name}</span></Link>
-                         {listing.liked ? <button id="non-fav" onClick={handleDeleteFavorite}><MdFavorite /></button> : <button id="favorite" onClick={handleAddFavorite}><GrFavorite /></button>}
+                         { favorite ? <button id="non-fav" onClick={handleDeleteFavorite}><MdFavorite /></button> : <button id="favorite" onClick={handleAddFavorite}><GrFavorite /></button>}
                     </div>
                     <div id="bottombox-right">
                         <h6 id="listing-price">${listing.price.toFixed(2)}</h6>
-                        {listing.price > listing.oldPrice ? <span id="up"><HiTrendingUp /></span> : <span id="down"><HiTrendingDown /></span>}
+                        {listing.price  > listing.oldPrice ? <span id="up"><HiTrendingUp /></span> : <span id="down"><HiTrendingDown /></span>}
                     </div>
                 </div>
             </div>
