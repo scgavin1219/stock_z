@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { deleteCartItem, updateCartItem } from '../../store/cart'
 import { TbTrash } from 'react-icons/tb'
 import './Cart.css'
-import jordan1 from './jordan1-1.png'
+import jordan from '../../assets/jordan1-1.png'
 import { CiCirclePlus} from 'react-icons/ci'
 import { CiCircleMinus } from 'react-icons/ci'
 import { useState } from 'react'
@@ -51,7 +51,7 @@ function CartItem({item}) {
   return (
     <li className="cart-item">
       <div className='cart-info'>
-        <div className='cart-item-image'><img src={jordan1} alt="" id="cart-img" /></div>
+        <div className='cart-item-image'><img src={jordan} alt="" id="cart-img" /></div>
         <div className="cart-item-header">{item.name}</div>
         <div className='cart-item-quantity'>
           <button onClick={handleMinus} id="update-cart"><CiCircleMinus id="circle"/></button>

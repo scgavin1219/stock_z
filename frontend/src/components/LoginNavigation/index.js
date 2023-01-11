@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import stockX from "./StockX_logo2.png"
+import stockX from "../../assets/StockX_logo2.png"
 import './LoginNavigation.css'
 
 function LoginNavigation() { 

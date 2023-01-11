@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
-import stockx from './StockX_logo.png'
+import stockx from '../../assets/StockX_logo.png'
 import Cart from '../Cart';
 import './Navigation.css';
 import { useState } from 'react';

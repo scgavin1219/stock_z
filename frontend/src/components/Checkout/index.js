@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import linkedIn from './linkedin.png'
-import github from './github.png'
-import stockx from './StockX_logo.png'
+
+import linkedIn from '../../assets/linkedin.png'
+import github from '../../assets/github.png'
+import stockx from '../../assets/StockX_logo.png'
 import './Checkout.css'
 
 function Checkout() {

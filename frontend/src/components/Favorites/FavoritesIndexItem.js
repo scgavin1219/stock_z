@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import './Favorites.css'
-import jordan1 from './jordan1-1.png'
+import jordan1 from '../../assets/jordan1-1.png'
 import { MdFavorite } from 'react-icons/md'
 import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import { createCartItem } from '../../store/cart'
