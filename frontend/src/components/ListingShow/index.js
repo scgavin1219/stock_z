@@ -7,6 +7,9 @@ import { HiTrendingDown } from 'react-icons/hi'
 import { GrFavorite } from 'react-icons/gr'
 import { createCartItem } from '../../store/cart'
 import jordan1 from './jordan1-1.png'
+import jordan2 from './jordan1-3.png'
+import jordan3 from './jordan1-2.png'
+import jordan4 from './jordan1-4.png'
 import { useHistory } from 'react-router-dom'
 import { useState } from 'react'
 import { MdFavorite } from 'react-icons/md'
@@ -20,7 +23,11 @@ function ListingShow() {
     const sessionUser = useSelector(state => state.session.user);
     const history = useHistory()
     const [favorite, setFavorite] = useState(false)
+    const [currentIdx, setCurrentIdx] = useState(0)
     // const url = listing.photoUrls[0]
+
+    const slide = [jordan1, jordan2, jordan3, jordan4]
+    
     
     const handleAdd = (e) => { 
         e.preventDefault();
@@ -34,6 +41,17 @@ function ListingShow() {
     useEffect(() => {
         // dispatch(fetchFavorites())
     }, [dispatch])
+
+    useEffect(()=> { 
+    const showInterval = setInterval(()=> { 
+      if (currentIdx < slide.length - 1) { 
+        setCurrentIdx(currentIdx + 1)
+      } else { 
+        setCurrentIdx(0)
+      }
+    }, 4000) 
+    return () => clearInterval(showInterval)
+  }, [currentIdx])
 
     const handleDeleteFavorite = (e) => { 
         e.preventDefault()
@@ -73,7 +91,7 @@ function ListingShow() {
             </div>
             <div className='show-bottom'>
                 <div className='show-pic'>
-                    <img src={jordan1} alt="" id="show-img" />
+                    <img src={slide[currentIdx]} alt="" id="show-img" />
                     {/* <img src={url1} alt="" id="show-img" /> */}
                     <br/>
                     <div className='show-favorites'>
