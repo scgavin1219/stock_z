@@ -3,6 +3,7 @@
     flex-direction: column;
     margin: 150px 200px;
     width: 60vw;
+    min-width: 650px;
     border: 2px solid lightgrey;
     background-color: rgb(253, 251, 251);
     box-shadow: 0 10px 20px #cfcfcf;
@@ -26,6 +27,24 @@
 
 #favorite-favorite { 
     font-size: 24px;
-    color: rgb(204, 21, 21)
+    color: rgb(204, 21, 21);
+    transition: all ease-in 500ms;
+}
+
+#purchase-cart { 
+    border:none;
+    background-color: transparent;
+    font-size: 24px;
+    transition: all ease-in 500ms;
+}
+
+#purchase-cart:hover, 
+#favorite-favorite:hover { 
+    font-size: 28px;
+
+}
+
+#purchase-page-price { 
+    font-size: 20px;
 }
 

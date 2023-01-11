@@ -14,10 +14,6 @@ const  FavoritesIndex =() => {
       dispatch(fetchFavorites())
     }, [dispatch])
 
-    // if (!listings) { 
-    //     return null
-    // }
-
   return (
     <div className='favorites-container'>
       <div className='favorites-header'>
