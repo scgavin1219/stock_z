@@ -22,6 +22,10 @@ export const getListings = store => {
     return (store.listings) ? Object.values(store.listings) : []
 }
 
+export const getSearchListings = query => dispatch => { 
+    return fetchSearchListings(query).then(result => dispatch(receiveListings(result)))
+}
+
 export const getListing = listingId => store => {
     return (store.listings && store.listings[listingId]) ? store.listings[listingId] : null
 }
@@ -31,6 +35,14 @@ export const fetchListings = () => async dispatch => {
     if (res.ok) { 
         const listings = await res.json();
         dispatch(receiveListings(listings))
+    }
+}
+
+export const fetchSearchListings = (query) => async dispatch => { 
+    const res = await fetch(`/api/listings/search/${query}`)
+    if (res.ok) { 
+        const search = await res.json();
+        dispatch(receiveListing(search))
     }
 }
 

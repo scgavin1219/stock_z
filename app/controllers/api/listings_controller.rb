@@ -10,5 +10,16 @@ class Api::ListingsController < ApplicationController
         render :show
     end
 
+    def search
+        query = params[:query]
+        @listings = Listing.where('name ILIKE ? OR description ILIKE ? OR category ILIKE ?', "%#{query}%", "%#{query}%", "%#{query}%")
+        if @listings.length > 0
+            render :index
+        else
+            render json: ["Sorry, we did not find any results for #{query}, try another search"], status: 404
+        end
+        
+    end
+
 
 end

@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resources :listings, only: [:show, :index] do 
       resources :reviews, only: [:index]
+      collection do 
+        get "/search/:query", to: "listings#search", :as => "search"
+      end
     end
     resources :carts, only: [:create, :index, :destroy, :show, :update]
     resources :favorites, only: [:create, :index, :destroy, :show]
