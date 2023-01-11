@@ -7,7 +7,6 @@ import { useHistory } from 'react-router-dom';
 
 function Purchase() {
     const cart = useSelector(state => state.cart)
-    // const listings = useSelector(state => state.listings)
     const dispatch = useDispatch()
     const history = useHistory()
 
@@ -28,7 +27,7 @@ function Purchase() {
     const totalCost = () => { 
       let cost = 0
       Object.values(cart).map(item => { 
-        cost += item.price
+        cost += (item.price * item.quantity)
       })
       return cost.toFixed(2)
     }
@@ -41,8 +40,6 @@ function Purchase() {
       let totcost = parseFloat(taxesShipping())
       let totship = parseFloat(totalCost())
       let grandTotal = (totcost + totship)
-      // Math.round((totcost + totship) * 100) / 100
-      // let grandTotal = (totcost + totship)
       return grandTotal.toFixed(2)
     }
 

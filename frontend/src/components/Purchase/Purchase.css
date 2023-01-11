@@ -85,16 +85,30 @@
 
 #purchase-item-button { 
     border: none;
-    background-color: transparent
+    background-color: transparent;
 }
 
 #checkout-button { 
-    width: 600px;
-    margin: 10px
+    width: 95%;
+    margin: 10px;
+    background-color: rgb(50, 49, 49);
+    color: white;
+    transition: all ease-in 500ms;
+}
+
+#checkout-button:hover {
+    background-color: rgb(1 99 62);
+    color: whitesmoke;
 }
 
 #trash { 
     font-size: 28px;
+    transition: all ease-in 300ms;
+}
+
+#trash:hover { 
+    color: rgb(1 99 62);
+    font-size: 30px
 }
 
 .purchase-item-price { 
