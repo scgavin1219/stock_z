@@ -32,7 +32,7 @@ function Splash() {
           <Link to="/electronics" id="splash-links">Electronics</Link>
           <Link to="/tradingcards" id="splash-links">Trading Cards</Link>
           <Link to="/tradingcards" id="splash-links">Collectibles</Link>
-          <Link to="/watches" id="splash-links">Accessories</Link> 
+          {/* <Link to="/watches" id="splash-links">Accessories</Link>  */}
         </div>
         <div className='jordan'> 
             
