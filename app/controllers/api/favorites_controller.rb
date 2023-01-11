@@ -19,9 +19,9 @@ class Api::FavoritesController < ApplicationController
     end
 
     def destroy
-        # debugger
-        @favorite = Favorite.find_by(id: params[:id])
+        @favorite = Favorite.find_by(user_id: current_user.id, listing_id: params[:id])
         if @favorite.destroy!
+            render :show
         else
             render json: @favorite.errors.full_messages, status: 422
         end

@@ -8,6 +8,9 @@ import { GrFavorite } from 'react-icons/gr'
 import { createCartItem } from '../../store/cart'
 import jordan1 from './jordan1-1.png'
 import { useHistory } from 'react-router-dom'
+import { useState } from 'react'
+import { MdFavorite } from 'react-icons/md'
+import { deleteFavorite, createFavorite } from '../../store/favorite'
 import './ListingShow.css'
 
 function ListingShow() {
@@ -16,6 +19,7 @@ function ListingShow() {
     const listing = useSelector(getListing(listingId))
     const sessionUser = useSelector(state => state.session.user);
     const history = useHistory()
+    const [favorite, setFavorite] = useState(false)
     // const url = listing.photoUrls[0]
     
     const handleAdd = (e) => { 
@@ -24,8 +28,27 @@ function ListingShow() {
             user_id: sessionUser.id,
             listing_id: parseInt(listingId),
         }
-
         dispatch(createCartItem(payload))
+    }
+
+    useEffect(() => {
+        // dispatch(fetchFavorites())
+    }, [dispatch])
+
+    const handleFavorite = (e) => {
+        e.preventDefault() 
+        if (listing.liked) { 
+            dispatch(deleteFavorite(listing.id))
+            setFavorite(false)
+    
+        } else { 
+            const payload = { 
+                user_id: sessionUser.id,
+                listing_id: listing.id
+            }
+            dispatch(createFavorite(payload))
+            setFavorite(true)
+        }
     }
 
     const handlePurchase = (e) => { 
@@ -56,7 +79,7 @@ function ListingShow() {
                     <br/>
                     <div className='show-favorites'>
                         <h4 id="favorites">Add to Favorites</h4>
-                        <button id="favorite-show"><GrFavorite /></button>
+                        {listing.liked || favorite ? <button id="favorite-show" onClick={handleFavorite}><MdFavorite /></button> : <button id="favorite-non-show" onClick={handleFavorite}><GrFavorite /></button>}
                     </div>
                 </div>
                 <div className='show-information'>

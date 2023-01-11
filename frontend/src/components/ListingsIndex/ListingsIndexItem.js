@@ -9,7 +9,7 @@ import { HiTrendingDown } from 'react-icons/hi'
 import  jordan1 from './jordan1-1.png'
 import { createFavorite, deleteFavorite, fetchFavorites, getFavorites } from '../../store/favorite'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+// import { useParams } from 'react-router-dom'
 import { useState } from 'react'
 import { useEffect } from 'react'
 
@@ -17,25 +17,16 @@ import { useEffect } from 'react'
 const ListingsIndexItem= ({listing}) => {
     const dispatch = useDispatch()
     const [favorite, setFavorite] = useState(false)
-    // const favorites = useSelector(state => state.favorites)
     const sessionUser = useSelector(state => state.session.user);
-    // const { listingId } = useParams()
-    const favorites = useSelector(getFavorites)
+    // const favorites = useSelector(getFavorites)
 
     useEffect(() => {
-        dispatch(fetchFavorites())
+        // dispatch(fetchFavorites())
     }, [dispatch])
-
-    // const favoriteCheck = () => { 
-    //     Object.values(favorites).map(favorite => { 
-    //         if (favorite.listingId === listing.id) setFavorite(true)
-    //         return favorite.id
-    //     })
-    // }
 
     const handleFavorite = (e) => {
         e.preventDefault() 
-        if (favorite) { 
+        if (listing.liked) { 
             dispatch(deleteFavorite(listing.id))
             setFavorite(false)
     
@@ -62,8 +53,7 @@ const ListingsIndexItem= ({listing}) => {
                 <div id="bottombox">
                     <div id="bottombox-left">
                         <Link to={`listings/${listing.id}`} id="index-title"><span id="bold">{listing.name}</span></Link>
-                        {favorite ? <button id="non-fav" onClick={handleFavorite}><MdFavorite /></button> : <button id="favorite" onClick={handleFavorite}><GrFavorite /></button>}
-                        {/* <button id="favorite" onClick={handleFavorite}><GrFavorite /></button> */}
+                        {listing.liked || favorite ? <button id="non-fav" onClick={handleFavorite}><MdFavorite /></button> : <button id="favorite" onClick={handleFavorite}><GrFavorite /></button>}
                     </div>
                     <div id="bottombox-right">
                         <h6 id="listing-price">${listing.price.toFixed(2)}</h6>

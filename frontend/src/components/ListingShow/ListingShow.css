@@ -37,7 +37,21 @@ h1 {
     line-height: 1.5rem;
 }
 
-#favorite-show { 
+/* #favorite-show { 
+    border: none;
+    background-color: transparent;
+    width: 50px;
+    height: 35px;
+    transition: all ease-in 500ms;
+    
+} */
+
+#favorite-show:hover,
+#favorite-non-show:hover { 
+    font-size: 28px;
+}
+
+#favorite-non-show {
     border: none;
     background-color: transparent;
     width: 50px;
@@ -46,8 +60,14 @@ h1 {
     font-size: 24px;
 }
 
-#favorite-show:hover { 
-    font-size: 28px;
+#favorite-show {
+    border: none;
+    background-color: transparent;
+    width: 50px;
+    height: 35px;
+    transition: all ease-in 500ms;
+    color: rgb(204, 21, 21);
+    font-size: 24px;
 }
 
 .show-pic { 
