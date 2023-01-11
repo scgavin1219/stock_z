@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { GoSearch } from 'react-icons/go'
+import './Navigation.css'
 
 
 function SearchBar() {

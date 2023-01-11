@@ -105,14 +105,14 @@ button:hover {
     width: 410px;
     flex: 1;
     height: 45px;
-    background-color: #f8f6f6;
-    border: solid 1px black;
+    /* background-color: #f8f6f6; */
+    /* border: solid 1px black; */
     border-radius: 3px;
 
 }
 
 #search-bar { 
-    font-size: 14px;
+    font-size: 18px;
     border: none;
     outline: none;
     width: 305px;
@@ -230,5 +230,16 @@ button:hover {
     border: none;
     background-color: whitesmoke;
     width: 50px;
+    font-size: 20px;
     padding-right: -10px
+}
+
+.search-field { 
+    font-size: 16px;
+}
+
+.search-form { 
+    border: 1px solid black;
+    background-color: whitesmoke;
+    
 }
