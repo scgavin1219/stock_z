@@ -6,7 +6,7 @@ import CategoryIndexItem from './CategoryIndexItem'
 import { fetchFavorites } from '../../store/favorite'
 
 
-const  WatchesIndex =() => {
+const  ElectronicsIndex =() => {
     const dispatch = useDispatch();
     const listings = useSelector(getListings)
 
@@ -25,7 +25,7 @@ const  WatchesIndex =() => {
     const watches = () => { 
         let watch = []
         listings.map(listing => { 
-            if (listing.category === "Watches") { 
+            if (listing.category === "Electronics") { 
                 watch.push(listing)
             }
         })
@@ -40,4 +40,4 @@ const  WatchesIndex =() => {
   )
 }
 
-export default WatchesIndex
+export default ElectronicsIndex

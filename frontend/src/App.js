@@ -17,6 +17,9 @@ import Checkout from './components/Checkout';
 import FavoritesIndex from './components/Favorites/FavoriteIndex';
 import SearchIndex from './components/SearchIndex/SearchIndex';
 import WatchesIndex from './components/Categories/WatchesIndex';
+import ShoesIndex from './components/Categories/ShoesIndex';
+import ElectronicsIndex from './components/Categories/ElectronicsIndex';
+import CardsIndex from './components/Categories/TradingCardsIndex';
 
 
 
@@ -57,9 +60,21 @@ function App() {
             <Navigation />
             <FavoritesIndex />
           </Route>
-          <Route path="/watches">
+          <Route path="/watches" exact>
             <Navigation/>
             <WatchesIndex />
+          </Route>
+          <Route path="/sneakers" exact>
+            <Navigation />
+            <ShoesIndex />
+          </Route>
+          <Route path="/electronics" exact>
+            <Navigation />
+            <ElectronicsIndex />
+          </Route>
+          <Route path="/tradingcards" exact>
+            <Navigation />
+            <CardsIndex />
           </Route>
           <Route path="/search/:query" exact>
             <Navigation/>
