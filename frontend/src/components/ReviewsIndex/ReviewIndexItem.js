@@ -19,6 +19,8 @@ const ReviewIndexItem = ({review}) => {
 
   return (
     <div className='rating-container'>
+      {updateForm ? <ReviewFormEdit setUpdateForm={setUpdateForm} review={review} /> :  
+        <>
         <div className='user-rating'>
             <h4><span id="bold">username:</span> {review.username}</h4>
              <div className='star-icons' id='star-icons'>
@@ -38,13 +40,15 @@ const ReviewIndexItem = ({review}) => {
         <div className='text-rating'>
             <p>{review.textRating}</p>
         </div>
+        </>
+      }
         {sessionUser?.id === review.userId &&
         <div className='edit-rating'>
             <button id="rating-button" onClick={()=> editSwitch()}>Edit</button> 
             <button id="rating-button" onClick={() => dispatch(deleteReview(review.id))}>Delete</button>
         </div>
           }
-          {updateForm ? <ReviewFormEdit setUpdateForm={setUpdateForm} review={review} /> : "" }
+          {/* {updateForm ? <ReviewFormEdit setUpdateForm={setUpdateForm} review={review} /> : "" } */}
     </div>
   )
 }
