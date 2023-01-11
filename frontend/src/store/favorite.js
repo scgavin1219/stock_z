@@ -15,7 +15,7 @@ export const receiveFavorites = favorites => ({
     favorites
 })
 
-export const removeFavorite = favoriteId => ({
+export const removeFavorite = (favoriteId) => ({
     type: REMOVE_FAVORITE, 
     favoriteId
 })
