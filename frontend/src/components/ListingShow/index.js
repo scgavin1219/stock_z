@@ -24,6 +24,7 @@ function ListingShow() {
     const history = useHistory()
     const [favorite, setFavorite] = useState(false)
     const [currentIdx, setCurrentIdx] = useState(0)
+        const favorited = useSelector(state => state.favorites)
     // const url = listing.photoUrls[0]
 
     const slide = [jordan1, jordan2, jordan3, jordan4]
@@ -53,9 +54,17 @@ function ListingShow() {
     return () => clearInterval(showInterval)
   }, [currentIdx])
 
+    const favoriteId = () => { 
+        let favId = null
+        Object.values(favorited).map(favorite => { 
+            if (favorite.listingId === listing.id)  favId = favorite.id;
+        })
+        return favId
+    }
+
     const handleDeleteFavorite = (e) => { 
         e.preventDefault()
-        dispatch(deleteFavorite(listing.id))
+        dispatch(deleteFavorite(favoriteId()))
         setFavorite(false)
     }
 

@@ -7,10 +7,10 @@ import { HiTrendingUp } from 'react-icons/hi'
 import { HiTrendingDown } from 'react-icons/hi'
 import  jordan1 from './jordan1-1.png'
 import jordan2 from './jordan1-3.png'
-import { createFavorite, deleteFavorite, fetchFavorites, getFavorites } from '../../store/favorite'
+import { createFavorite, deleteFavorite  } from '../../store/favorite'
 import { useDispatch, useSelector } from 'react-redux'
-import { useState } from 'react'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
+
 
 
 const ListingsIndexItem= ({listing}) => {
@@ -19,11 +19,11 @@ const ListingsIndexItem= ({listing}) => {
     const sessionUser = useSelector(state => state.session.user);
     const favorited = useSelector(state => state.favorites)
     const [currentIdx, setCurrentIdx] = useState(0)
-    const slide = [jordan1]
+    const slide = [jordan1, jordan2]
 
     useEffect(() => {
         if (listing.liked) setFavorite(true)
-    }, [currentIdx, listing.liked])
+    }, [ listing.liked])
 
     const favoriteId = () => { 
         let favId = null
@@ -31,18 +31,6 @@ const ListingsIndexItem= ({listing}) => {
             if (favorite.listingId === listing.id)  favId = favorite.id;
         })
         return favId
-    }
-
- 
-   const hoverEffect = () => {
-    const splashInterval = setInterval(()=> { 
-      if (currentIdx < slide.length - 1) { 
-        setCurrentIdx(currentIdx + 1)
-      } else { 
-        setCurrentIdx(0)
-      }
-    }, 4000) 
-    return () => clearInterval(splashInterval)
     }
 
     const handleFavorite = (e) => {
@@ -61,20 +49,37 @@ const ListingsIndexItem= ({listing}) => {
         }
     }
 
+     const handleDeleteFavorite = (e) => { 
+        e.preventDefault()
+        dispatch(deleteFavorite(favoriteId()))
+        setFavorite(false)
+    }
+
+    const handleAddFavorite = (e) => {
+        e.preventDefault() 
+            const payload = { 
+                user_id: sessionUser.id,
+                listing_id: listing.id
+            }
+            dispatch(createFavorite(payload))
+            setFavorite(true)
+    }
+
     // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
     // const url = listing.photoUrls[0]
 
   return (
     <>
         <div className='product-container'>
-            <div onMouseEnter={()=>hoverEffect()} className='listing-pic'>
+            <div className='listing-pic'>
+                
                 <Link id="index-img" to={`listings/${listing.id}`}><img src={slide[currentIdx]} alt="" id="test-img" /></Link>
             </div>
             <div id='listing-title'>
                 <div id="bottombox">
                     <div id="bottombox-left">
                         <Link to={`listings/${listing.id}`} id="index-title"><span id="bold">{listing.name}</span></Link>
-                        {listing.liked || favorite ? <button id="non-fav" onClick={handleFavorite}><MdFavorite /></button> : <button id="favorite" onClick={handleFavorite}><GrFavorite /></button>}
+                         {listing.liked ? <button id="non-fav" onClick={handleDeleteFavorite}><MdFavorite /></button> : <button id="favorite" onClick={handleAddFavorite}><GrFavorite /></button>}
                     </div>
                     <div id="bottombox-right">
                         <h6 id="listing-price">${listing.price.toFixed(2)}</h6>
