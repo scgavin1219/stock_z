@@ -50,9 +50,10 @@ function ProfileButton({ user }) {
           <ul className="profile-dropdown">
             <li><span id="bold">USERNAME:</span> {user.username}</li>
             <li><span id="bold">EMAIL: </span>{user.email}</li>
-            <li><Link to="/favorites"><span id="bold">FAVORITES: </span>{Object.values(favorites).length}</Link></li>
+            <li><span id="bold">FAVORITES: </span>{Object.values(favorites).length}</li>
+            <li><Link to="/favorites" id="favorites-link">Take me There!</Link></li>
             <li>
-              <button onClick={logout}>Log Out</button>
+              <button id="logout" onClick={logout}>Log Out</button>
             </li>
           </ul>
         )}

@@ -192,3 +192,32 @@ button:hover {
     margin-top: 5px;
     margin-left: 5px;
 }
+
+#logout { 
+    width: 95%;
+    background-color: rgb(50, 49, 49);
+    color: white;
+    transition: all ease-in 500ms;
+}
+
+#logout:hover {
+    background-color: rgb(1 99 62);
+    color: whitesmoke;
+}
+
+#favorites-link:visited, 
+#favorites-link:link { 
+    text-decoration: none;
+    color: inherit
+}
+
+#favorites-link { 
+    transition: all ease-in 500ms;
+}
+
+#favorites-link:hover { 
+    transform: translateX(-1px);
+    transform: translateY(-1px);
+    color: rgb(1 99 62);
+    font-size: 20px;
+}
