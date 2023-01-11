@@ -1,0 +1,15 @@
+.favorites-container { 
+    display: flex;
+    flex-direction: column;
+    margin: 200px;
+    width: 60vw;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.favorites-header { 
+    display: flex;
+    justify-content: center;
+    margin: 20px
+}
+

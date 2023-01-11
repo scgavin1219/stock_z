@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getListings, fetchListings } from '../../store/listings'
 import ListingsIndexItem from './ListingsIndexItem'
 import './ListingsIndex.css'
+import { fetchFavorites } from '../../store/favorite'
 
 
 const  ListingsIndex =() => {
@@ -11,6 +12,10 @@ const  ListingsIndex =() => {
 
     useEffect(() => {
         dispatch(fetchListings())
+    }, [dispatch])
+
+    useEffect(() => { 
+      dispatch(fetchFavorites())
     }, [dispatch])
 
     if (!listings) { 
