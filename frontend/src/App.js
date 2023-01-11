@@ -16,6 +16,7 @@ import Purchase from './components/Purchase';
 import Checkout from './components/Checkout';
 import FavoritesIndex from './components/Favorites/FavoriteIndex';
 import SearchIndex from './components/SearchIndex/SearchIndex';
+import WatchesIndex from './components/Categories/WatchesIndex';
 
 
 
@@ -55,6 +56,10 @@ function App() {
           <Route path ="/favorites" exact>
             <Navigation />
             <FavoritesIndex />
+          </Route>
+          <Route path="/watches">
+            <Navigation/>
+            <WatchesIndex />
           </Route>
           <Route path="/search/:query" exact>
             <Navigation/>

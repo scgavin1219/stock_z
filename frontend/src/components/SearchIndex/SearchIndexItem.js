@@ -50,7 +50,7 @@ const SearchIndexItem= ({listing}) => {
                 <div id="bottombox">
                     <div id="bottombox-left">
                         <Link to={`listings/${listing.id}`} id="index-title"><span id="bold">{listing.name}</span></Link>
-                        {listing.liked || favorite ? <button id="non-fav" onClick={handleFavorite}><MdFavorite /></button> : <button id="favorite" onClick={handleFavorite}><GrFavorite /></button>}
+                        { favorite ? <button id="non-fav" onClick={handleFavorite}><MdFavorite /></button> : <button id="favorite" onClick={handleFavorite}><GrFavorite /></button>}
                     </div>
                     <div id="bottombox-right">
                         <h6 id="listing-price">${listing.price.toFixed(2)}</h6>
