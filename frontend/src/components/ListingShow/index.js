@@ -38,6 +38,17 @@ function ListingShow() {
         dispatch(createCartItem(payload))
     }
 
+    useEffect(()=> { 
+    const splashInterval = setInterval(()=> { 
+      if (currentIdx < slide.length - 1) { 
+        setCurrentIdx(currentIdx + 1)
+      } else { 
+        setCurrentIdx(0)
+      }
+    }, 4000) 
+    return () => clearInterval(splashInterval)
+  }, [currentIdx])
+
     // useEffect(() => {
     //     // dispatch(fetchFavorites())
     // }, [dispatch])
