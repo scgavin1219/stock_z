@@ -1,9 +1,11 @@
 .favorites-container { 
     display: flex;
     flex-direction: column;
-    margin: 200px;
+    margin: 150px 200px;
     width: 60vw;
-    border: 2px solid black;
+    border: 2px solid lightgrey;
+    background-color: rgb(253, 251, 251);
+    box-shadow: 0 10px 20px #cfcfcf;
     border-radius: 5px;
 }
 
@@ -11,5 +13,19 @@
     display: flex;
     justify-content: center;
     margin: 20px
+}
+
+#favorite-item { 
+    list-style: none;
+    
+}
+
+.purchase-info { 
+    border: 1 px solid black
+}
+
+#favorite-favorite { 
+    font-size: 24px;
+    color: rgb(204, 21, 21)
 }
 

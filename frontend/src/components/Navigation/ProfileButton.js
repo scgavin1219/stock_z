@@ -6,11 +6,13 @@ import './Navigation.css'
 import { removeItems } from "../../store/cart";
 import { Link } from 'react-router-dom';
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const favorites = useSelector(state => state.favorites);
   const [showMenu, setShowMenu] = useState(false);
+  const history = useHistory()
   
   const openMenu = () => {
     if (showMenu) return;
@@ -28,10 +30,12 @@ function ProfileButton({ user }) {
   
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
-  console.log(Object.values(favorites).length)
+
+
   const logout = (e) => {
     e.preventDefault();
     dispatch(removeItems())
+    history.push("/")
     dispatch(sessionActions.logout());
   };
 
