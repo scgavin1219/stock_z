@@ -116,6 +116,12 @@
 
 #circle, #trash { 
     font-size: 35px;
+    transition: all ease-in 300ms;
+}
+
+#circle:hover { 
+    color: rgb(1 99 62);
+    font-size: 37px;
 }
 
 .cart-item-quantity { 

@@ -1,7 +1,6 @@
 .show-container { 
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     background-color: white;
     margin: 150px 200px;
@@ -37,14 +36,6 @@ h1 {
     line-height: 1.5rem;
 }
 
-/* #favorite-show { 
-    border: none;
-    background-color: transparent;
-    width: 50px;
-    height: 35px;
-    transition: all ease-in 500ms;
-    
-} */
 
 #favorite-show:hover,
 #favorite-non-show:hover { 
@@ -114,8 +105,6 @@ h1 {
     color: white;
     transition: all ease-in 500ms;
 }
-
-
 
 #show-button:hover {
     background-color: rgb(1 99 62);
