@@ -35,27 +35,26 @@ function ListingShow() {
         // dispatch(fetchFavorites())
     }, [dispatch])
 
-    const handleFavorite = (e) => {
+    const handleDeleteFavorite = (e) => { 
+        e.preventDefault()
+        dispatch(deleteFavorite(listing.id))
+        setFavorite(false)
+    }
+
+    const handleAddFavorite = (e) => {
         e.preventDefault() 
-        if (listing.liked) { 
-            dispatch(deleteFavorite(listing.id))
-            setFavorite(false)
-    
-        } else { 
             const payload = { 
                 user_id: sessionUser.id,
                 listing_id: listing.id
             }
             dispatch(createFavorite(payload))
             setFavorite(true)
-        }
     }
 
     const handlePurchase = (e) => { 
         e.preventDefault();
         handleAdd(e)
         history.push("/checkout")
-        
     }
 
     useEffect(() => { 
@@ -79,7 +78,7 @@ function ListingShow() {
                     <br/>
                     <div className='show-favorites'>
                         <h4 id="favorites">Add to Favorites</h4>
-                        {listing.liked || favorite ? <button id="favorite-show" onClick={handleFavorite}><MdFavorite /></button> : <button id="favorite-non-show" onClick={handleFavorite}><GrFavorite /></button>}
+                        {listing.liked || favorite ? <button id="favorite-show" onClick={handleDeleteFavorite}><MdFavorite /></button> : <button id="favorite-non-show" onClick={handleAddFavorite}><GrFavorite /></button>}
                     </div>
                 </div>
                 <div className='show-information'>

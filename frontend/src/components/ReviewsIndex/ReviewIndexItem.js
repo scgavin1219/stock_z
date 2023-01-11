@@ -2,12 +2,10 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { deleteReview } from '../../store/reviews.js';
-// import ReviewForm from './ReviewForm.js';
 import './ReviewIndexItem.js'
 import ReviewFormEdit from './ReviewFormEdit'
 import moment from 'moment'
 import { FaStar } from 'react-icons/fa'
-
 
 const ReviewIndexItem = ({review}) => {
  
@@ -15,11 +13,9 @@ const ReviewIndexItem = ({review}) => {
   const dispatch = useDispatch()
   const [updateForm, setUpdateForm] = useState(false)
 
-
     const editSwitch = () => { 
         updateForm ? setUpdateForm(false) : setUpdateForm(true)
     }
-
 
   return (
     <div className='rating-container'>
@@ -55,5 +51,3 @@ const ReviewIndexItem = ({review}) => {
 
 export default ReviewIndexItem
 
-
- // const [edit, setEdit] = useState(false)
