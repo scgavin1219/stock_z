@@ -37,7 +37,6 @@ const LoginFormPage = () => {
 
   const demoLogin = e => { 
     e.preventDefault()
-
     return dispatch(sessionActions.login({credential:'demo@user.io', password:'password'}))
     .then(()=> history.pushState('/'))
   }
@@ -69,3 +68,5 @@ const LoginFormPage = () => {
 }
 
 export default LoginFormPage
+
+//

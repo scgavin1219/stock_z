@@ -39,10 +39,9 @@ const SignupFormPage = () => {
     return setErrors(['Confirm Password field must be the same as the Password field']);
   };
 
-    const demoLogin = e => { 
+  const demoLogin = e => { 
     e.preventDefault()
-
-    return dispatch(sessionActions.login({credential:'demo@user.io', password:'password'}))
+    dispatch(sessionActions.login({credential:'demo@user.io', password:'password'}))
     .then(()=> history.pushState('/'))
   }
 
@@ -86,3 +85,6 @@ const SignupFormPage = () => {
 }
 
 export default SignupFormPage;
+
+
+//demologin

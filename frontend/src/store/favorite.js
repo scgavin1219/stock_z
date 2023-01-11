@@ -3,6 +3,7 @@ import csrfFetch from "./csrf";
 export const RECEIVE_FAVORITE = 'favorites/RECEIVE_FAVORITE'
 export const RECEIVE_FAVORITES = 'favorites/RECEIVE_FAVORITES'
 export const REMOVE_FAVORITE = 'favorites/REMOVE_FAVORITE'
+export const REMOVE_FAVORITES = 'favorites/REMOVE_FAVORITES'
 
 export const receiveFavorite = favorite => ({
     type: RECEIVE_FAVORITE,
@@ -17,6 +18,10 @@ export const receiveFavorites = favorites => ({
 export const removeFavorite = favoriteId => ({
     type: REMOVE_FAVORITE, 
     favoriteId
+})
+
+export const removeFavorites = () => ({
+    type: REMOVE_FAVORITES
 })
 
 export const getFavorites = store => { 
@@ -76,6 +81,8 @@ const favoritesReducer = (state = {}, action ) => {
         case RECEIVE_FAVORITE:
             delete newState[action.favoriteId]
             return newState
+        case REMOVE_FAVORITES:
+            return {}
         default: 
             return state
     }

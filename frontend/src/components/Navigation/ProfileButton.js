@@ -7,6 +7,7 @@ import { removeItems } from "../../store/cart";
 import { Link } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { removeFavorites } from "../../store/favorite";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -35,6 +36,7 @@ function ProfileButton({ user }) {
   const logout = (e) => {
     e.preventDefault();
     dispatch(removeItems())
+    dispatch(removeFavorites())
     history.push("/")
     dispatch(sessionActions.logout());
   };
