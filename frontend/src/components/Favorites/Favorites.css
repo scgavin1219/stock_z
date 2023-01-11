@@ -22,7 +22,11 @@
 }
 
 .purchase-info { 
-    border: 1 px solid black
+    transition: all ease-in 500ms;
+}
+
+.purchase-info:hover { 
+    box-shadow: 0 10px 20px #cfcfcf;
 }
 
 #favorite-favorite { 
