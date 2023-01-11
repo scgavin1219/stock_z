@@ -55,6 +55,9 @@ function App() {
             <Navigation />
             <FavoritesIndex />
           </Route>
+          <Route path="/search/:query">
+            <Navigation/>
+          </Route>
           <Route path="/error" exact>
             <LoginNavigation />
             <PageNotFound />

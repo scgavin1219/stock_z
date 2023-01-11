@@ -10,6 +10,7 @@ import stockx from './StockX_logo.png'
 import Cart from '../Cart';
 import './Navigation.css';
 import { useState } from 'react';
+import SearchBar from './SearchBar';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
@@ -40,17 +41,16 @@ function Navigation() {
         <div className='nav-left'>
           <NavLink id="stockx-logo" exact to="/"><img id="logo" src={stockx}alt="stockx logo"/></NavLink>
           <div id='search-box'>
-            < GoSearch id='search-icon' />
-            <input type="text" placeholder='Search for Brand, Color, etc.' id="search-bar"/>
+            
+            {/* <input type="text" placeholder='Search for Brand, Color, etc.' id="search-bar"/> */}
+            < SearchBar />
           </div>
         </div>
         <div className='nav-right'>
           <NavLink id="browse-link" to="/listings">Browse</NavLink>
           <NavLink id="about-link" to="/">About</NavLink>
-          {/* <button id='shopping-button' onClick={toggleCart}><AiOutlineShoppingCart /></button> */}
           <Cart />
           {sessionLinks}
-          {/* { showCart ? <Cart /> : ""} */}
         </div>
       </div>
     </nav>
@@ -58,3 +58,5 @@ function Navigation() {
 }
 
 export default Navigation;
+
+//  <button id='shopping-button' onClick={toggleCart}><AiOutlineShoppingCart /></button> 

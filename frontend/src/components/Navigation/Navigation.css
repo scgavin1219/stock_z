@@ -102,9 +102,9 @@ button:hover {
 }
 
 #search-box { 
-    width: 350px;
+    width: 410px;
     flex: 1;
-    height: 37px;
+    height: 45px;
     background-color: #f8f6f6;
     border: solid 1px black;
     border-radius: 3px;
@@ -220,4 +220,15 @@ button:hover {
     transform: translateY(-1px);
     color: rgb(1 99 62);
     font-size: 20px;
+}
+
+.search-search { 
+    display: flex
+}
+
+#search-button { 
+    border: none;
+    background-color: whitesmoke;
+    width: 50px;
+    padding-right: -10px
 }

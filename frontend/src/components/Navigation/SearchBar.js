@@ -1,6 +1,9 @@
 import React from 'react'
 import { fetchSearchListings } from '../../store/listings'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
+import { GoSearch } from 'react-icons/go'
 
 
 function SearchBar() {
@@ -15,20 +18,20 @@ function SearchBar() {
 
     const handleSubmit = (e) => { 
         e.preventDefault()
-        fetchSearchListings(search)
+        dispatch(fetchSearchListings(search))
         history.push(`/search/${search}`)
         //get or fetch search products
     }
 
   return (
-    <div className="search-bar-container">
+    <>
         <form onSubmit={handleSubmit} className="search-form">
-          <input className="search-field" type="search" placeholder="Search" onChange={handleChange} />
-          <button className="search-button">
-            
-          </button>
+          <div className='search-search'>
+          <input className="search-field" placeholder='Search for Brand, Color, etc.' id="search-bar" type="search" onChange={handleChange} />
+          <button id="search-button">< GoSearch id='search-icon' /></button>
+          </div>
         </form>
-      </div>
+      </>
   )
 }
 
