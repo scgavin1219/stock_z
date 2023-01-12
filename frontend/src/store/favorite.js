@@ -1,4 +1,5 @@
 import csrfFetch from "./csrf";
+import { fetchListing } from "./listings";
 
 export const RECEIVE_FAVORITE = 'favorites/RECEIVE_FAVORITE'
 export const RECEIVE_FAVORITES = 'favorites/RECEIVE_FAVORITES'
@@ -60,6 +61,7 @@ export const createFavorite = (favorite) => async dispatch => {
     if (res.ok) { 
         const newFavorite = await res.json();
         dispatch(receiveFavorite(newFavorite))
+        dispatch(fetchListing(newFavorite.listingId))
     }
 }
 

@@ -3,20 +3,23 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getListings, fetchListings } from '../../store/listings'
 import ListingsIndexItem from './ListingsIndexItem'
 import './ListingsIndex.css'
-import { fetchFavorites } from '../../store/favorite'
+import { fetchFavorites, removeFavorites, getFavorites } from '../../store/favorite'
 
 
 const  ListingsIndex =() => {
     const dispatch = useDispatch();
     const listings = useSelector(getListings)
+    const favorites = useSelector(getFavorites)
+    const sessionUser = useSelector(state => state.session.user);
 
     useEffect(() => {
         dispatch(fetchListings())
-    }, [dispatch])
+        if (sessionUser) dispatch(fetchFavorites())
+    }, [])
 
-    useEffect(() => { 
-      dispatch(fetchFavorites())
-    }, [dispatch])
+    // useEffect(() => { 
+    //   dispatch(fetchFavorites())
+    // }, [dispatch])
 
     if (!listings) { 
         return null
@@ -24,7 +27,7 @@ const  ListingsIndex =() => {
 
   return (
     <div className='listings-container'>
-        {listings.map((listing) => <ListingsIndexItem listing={listing} key={listing.id} />)}
+        {listings.map((listing) => <ListingsIndexItem listing={listing} key={listing.id} favorites={favorites} />)}
     </div>
   )
 }

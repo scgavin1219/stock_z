@@ -23,6 +23,8 @@ const ListingsIndexItem= ({listing}) => {
     const url2 = listing.photoUrls[1]
     const slide = [url1, url2]
 
+    
+
     const favoriteId = () => { 
         let favId = null
         Object.values(favorited).map(favorite => { 

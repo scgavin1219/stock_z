@@ -16,30 +16,37 @@ const SearchIndexItem= ({listing}) => {
     const dispatch = useDispatch()
     const [favorite, setFavorite] = useState(false)
     const sessionUser = useSelector(state => state.session.user);
-
-    // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
+    const favorited = useSelector(state => state.favorites)
     const url1 = listing.photoUrls[0]
     const url2 = listing.photoUrls[1]
     const slide = [url1, url2]
 
-    useEffect(() => {
-        // dispatch(fetchFavorites())
-    }, [dispatch])
+    // useEffect(() => {
+    //     // dispatch(fetchFavorites())
+    // }, [dispatch])
 
-    const handleFavorite = (e) => {
+     const favoriteId = () => { 
+        let favId = null
+        Object.values(favorited).map(favorite => { 
+            if (favorite.listingId === listing.id)  favId = favorite.id;
+        })
+        return favId
+    }
+
+     const handleDeleteFavorite = (e) => { 
+        e.preventDefault()
+        dispatch(deleteFavorite(favoriteId()))
+        setFavorite(false)
+    }
+
+    const handleAddFavorite = (e) => {
         e.preventDefault() 
-        if (listing.liked) { 
-            dispatch(deleteFavorite(listing.id))
-            setFavorite(false)
-    
-        } else { 
             const payload = { 
                 user_id: sessionUser.id,
                 listing_id: listing.id
             }
             dispatch(createFavorite(payload))
             setFavorite(true)
-        }
     }
 
     // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
@@ -55,7 +62,7 @@ const SearchIndexItem= ({listing}) => {
                 <div id="bottombox">
                     <div id="bottombox-left">
                         <Link to={`listings/${listing.id}`} id="index-title"><span id="bold">{listing.name}</span></Link>
-                        { favorite ? <button id="non-fav" onClick={handleFavorite}><MdFavorite /></button> : <button id="favorite" onClick={handleFavorite}><GrFavorite /></button>}
+                        { favorite ? <button id="non-fav" onClick={handleDeleteFavorite}><MdFavorite /></button> : <button id="favorite" onClick={handleAddFavorite}><GrFavorite /></button>}
                     </div>
                     <div id="bottombox-right">
                         <h6 id="listing-price">${listing.price.toFixed(2)}</h6>
