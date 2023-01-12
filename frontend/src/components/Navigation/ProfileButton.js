@@ -51,10 +51,10 @@ function ProfileButton({ user }) {
       <div className="dropdown-menu">
         {showMenu && (
           <ul className="profile-dropdown">
-            <li><span id="bold">USERNAME:</span> {user.username}</li>
-            <li><span id="bold">EMAIL: </span>{user.email}</li>
-            <li><span id="bold">FAVORITES: </span>{Object.values(favorites).length}</li>
-            <li><Link to="/favorites" id="favorites-link"><button id="logout">Take me There!</button></Link></li>
+            <li id="profileinfo"><span id="bold">USERNAME:</span> {user.username}</li>
+            <li id="profileinfo"><span id="bold">EMAIL: </span>{user.email}</li>
+            <li id="profileinfo"><span id="bold">FAVORITES: </span>{Object.values(favorites).length}</li>
+            <li id="profileinfo"><Link to="/favorites" id="favorites-link"><button id="logout">Take me There!</button></Link></li>
             <li>
               <button id="logout" onClick={logout}>Log Out</button>
             </li>
