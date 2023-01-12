@@ -22,10 +22,16 @@ function ListingShow() {
     const listing = useSelector(getListing(listingId))
     const sessionUser = useSelector(state => state.session.user);
     const history = useHistory()
-    const [favorite, setFavorite] = useState(listing.liked)
+    const [favorite, setFavorite] = useState("")
     const [currentIdx, setCurrentIdx] = useState(0)
         const favorited = useSelector(state => state.favorites)
     // const url = listing.photoUrls[0]
+
+    useEffect(()=> { 
+        if (listing) { 
+            setFavorite(listing.liked)
+        }
+    }, [listing])
 
     const slide = [jordan1, jordan2, jordan3, jordan4]
     
@@ -49,9 +55,6 @@ function ListingShow() {
     return () => clearInterval(splashInterval)
   }, [currentIdx])
 
-    // useEffect(() => {
-    //     // dispatch(fetchFavorites())
-    // }, [dispatch])
 
     const favoriteId = () => { 
         let favId = null

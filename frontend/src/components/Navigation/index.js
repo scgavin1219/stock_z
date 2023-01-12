@@ -46,7 +46,7 @@ function Navigation() {
         </div>
         <div className='nav-right'>
           <NavLink id="browse-link" to="/listings">Browse</NavLink>
-          <NavLink id="about-link" to="/">About</NavLink>
+          <NavLink id="about-link" to="/about">About</NavLink>
           <Cart />
           {sessionLinks}
         </div>

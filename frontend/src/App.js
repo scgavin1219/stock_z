@@ -20,6 +20,7 @@ import WatchesIndex from './components/Categories/WatchesIndex';
 import ShoesIndex from './components/Categories/ShoesIndex';
 import ElectronicsIndex from './components/Categories/ElectronicsIndex';
 import CardsIndex from './components/Categories/TradingCardsIndex';
+import About from './components/About';
 
 
 
@@ -79,6 +80,10 @@ function App() {
           <Route path="/search/:query" exact>
             <Navigation/>
             <SearchIndex />
+          </Route>
+          <Route path="/about" exact>
+            <Navigation />
+            <About />
           </Route>
           <Route path="/error" exact>
             <LoginNavigation />
