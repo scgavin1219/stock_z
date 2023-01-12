@@ -72,6 +72,7 @@ label {
 
 #demo-user:hover, #signup-user:hover { 
     background-color: #2a4e49;
+    box-shadow: 0 10px 20px #838282;
 }
 
 #signup-login { 
