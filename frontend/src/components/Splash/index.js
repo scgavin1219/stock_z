@@ -6,7 +6,6 @@ import dunk from '../../assets/dunk.png'
 import babe from '../../assets/bape.png'
 import trends from '../../assets/trends.png'
 import jshoes from '../../assets/js.png'
-// import Carousel from '../../assets/Carousel'
 import { useState } from 'react'
 
 function Splash() {

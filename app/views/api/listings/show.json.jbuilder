@@ -1,7 +1,7 @@
 # json.set! @listing.id do
     json.extract! @listing, :id, :name, :brand, :style, :colorway, :description, :old_price, :price, :category
     # json.likes @listing.favorites
-    if @listing.favoriters.include?(current_user)
+    if current_user && @listing.favoriters.include?(current_user)
         json.liked true
     else
         json.liked false
