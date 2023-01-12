@@ -65,7 +65,7 @@ const ListingsIndexItem= ({listing}) => {
                 <div id="bottombox">
                     <div id="bottombox-left">
                         <Link to={`listings/${listing.id}`} id="index-title"><span id="bold">{listing.name}</span></Link>
-                         { favorite ? <button id="non-fav" onClick={handleDeleteFavorite}><MdFavorite /></button> : <button id="favorite" onClick={handleAddFavorite}><GrFavorite /></button>}
+                         { sessionUser && favorite ? <button id="non-fav" onClick={handleDeleteFavorite}><MdFavorite /></button> : <button id="favorite" onClick={handleAddFavorite}><GrFavorite /></button>}
                     </div>
                     <div id="bottombox-right">
                         <h6 id="listing-price">${listing.price.toFixed(2)}</h6>
