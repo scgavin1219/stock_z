@@ -23,8 +23,6 @@ input[type="radio"] {
 
 #star-rater { 
     width: 30px;
-    
-    
 }
 
 #review-title { 
@@ -43,9 +41,21 @@ input[type="radio"] {
     border-radius: 3px;
 }
 
+.review-create { 
+    box-shadow: 0 10px 20px #cfcfcf;
+}
+
 #review-button { 
     width: 320px;
     margin: 10px;
     background-color: rgb(50, 49, 49);
     color: white;
+}
+
+#review-button { 
+    transition: all ease-in 300ms;
+}
+
+#review-button:hover { 
+    box-shadow: 0 10px 20px #cfcfcf;
 }

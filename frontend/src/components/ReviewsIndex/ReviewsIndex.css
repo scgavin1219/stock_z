@@ -113,3 +113,13 @@
     margin-top: 1px;
     font-size: 12px;
 }
+
+ #create-review, #rating-button {
+    transition: all ease-in 300ms;
+}
+
+#create-review:hover,
+#rating-button:hover {
+    box-shadow: 0 10px 20px #cfcfcf;
+
+}

@@ -20,7 +20,6 @@ function ListingShow() {
     const dispatch = useDispatch()
     const {listingId} = useParams();
     const listing = useSelector(getListing(listingId))
-    // console.log(listing)
     const sessionUser = useSelector(state => state.session.user);
     const history = useHistory()
     const [favorite, setFavorite] = useState("")
