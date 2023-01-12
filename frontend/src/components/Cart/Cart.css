@@ -56,6 +56,11 @@
     margin: 10px
 }
 
+.cart-info:hover {
+    transition: all ease-in 200ms;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
 .cart-item-image, 
 .cart-item-header,
 .cart-item-price {  
@@ -102,6 +107,12 @@
     width: auto;
     margin-bottom: 5px;
 }
+
+/* #cart-img:hover { 
+    height: 102px;
+    width: auto;
+
+} */
 
 #purchase-button { 
     margin: 10px;

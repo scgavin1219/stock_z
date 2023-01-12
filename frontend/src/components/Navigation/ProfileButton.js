@@ -37,8 +37,9 @@ function ProfileButton({ user }) {
     e.preventDefault();
     dispatch(removeItems())
     dispatch(removeFavorites())
-    history.push("/")
+    
     dispatch(sessionActions.logout());
+    history.push("/login")
   };
 
   return (

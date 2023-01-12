@@ -7,6 +7,7 @@ import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import { createCartItem } from '../../store/cart'
 import { deleteFavorite, fetchFavorites } from '../../store/favorite'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom';
 
 
 
@@ -34,7 +35,7 @@ function FavoriteIndexItem({favorite}) {
     }, [dispatch])
 
   return (
-    <li id="favorite-item" className="cart-item">
+    <Link id="favorite-link" to={`listings/${favorite.listingId}`}><li id="favorite-item" className="cart-item">
       <div className='purchase-info'>
         <div className='cart-item-image'><img src={jordan1} alt="" id="purchase-img" /></div>
         <div className="cart-item-header">{favorite.name}</div>
@@ -43,6 +44,7 @@ function FavoriteIndexItem({favorite}) {
          <button id="purchase-cart" onClick={handleAdd}><MdOutlineAddShoppingCart/></button>
       </div>
     </li>
+    </Link>
   )
 }
 

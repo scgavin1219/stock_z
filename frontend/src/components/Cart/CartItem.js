@@ -7,6 +7,7 @@ import jordan from '../../assets/jordan1-1.png'
 import { CiCirclePlus} from 'react-icons/ci'
 import { CiCircleMinus } from 'react-icons/ci'
 import { useState } from 'react'
+import { Link }  from 'react-router-dom'
 
 
 
@@ -51,7 +52,7 @@ function CartItem({item}) {
   return (
     <li className="cart-item">
       <div className='cart-info'>
-        <div className='cart-item-image'><img src={jordan} alt="" id="cart-img" /></div>
+        <Link id="favorite-link" to={`listings/${item.listingId}`}><div className='cart-item-image'><img src={jordan} alt="" id="cart-img" /></div></Link>
         <div className="cart-item-header">{item.name}</div>
         <div className='cart-item-quantity'>
           <button onClick={handleMinus} id="update-cart"><CiCircleMinus id="circle"/></button>

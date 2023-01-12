@@ -52,3 +52,11 @@
     font-size: 20px;
 }
 
+#favorite-link:visited { 
+    color: inherit
+}
+
+#favorite-link { 
+    text-decoration: none;
+}
+
