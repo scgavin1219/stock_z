@@ -44,7 +44,7 @@ const SearchIndexItem= ({listing}) => {
     <>
         <div className='product-container'>
             <div className='listing-pic'>
-                <Link id="index-img" to={`listings/${listing.id}`}><img src={jordan1} alt="" id="test-img" /></Link>
+                <Link id="index-img" to={`/listings/${listing.id}`}><img src={jordan1} alt="" id="test-img" /></Link>
             </div>
             <div id='listing-title'>
                 <div id="bottombox">
