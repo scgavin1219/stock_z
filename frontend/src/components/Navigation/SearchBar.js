@@ -21,8 +21,6 @@ function SearchBar() {
         e.preventDefault()
         dispatch(fetchSearchListings(search))
         .then(()=>history.push(`/search/${search}`))
-        
-        //get or fetch search products
     }
 
   return (

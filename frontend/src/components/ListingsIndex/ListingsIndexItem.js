@@ -7,7 +7,7 @@ import { HiTrendingUp } from 'react-icons/hi'
 import { HiTrendingDown } from 'react-icons/hi'
 import  jordan1 from '../../assets/jordan1-1.png'
 import jordan2 from '../../assets/jordan1-3.png'
-import { createFavorite, deleteFavorite  } from '../../store/favorite'
+import { createFavorite, deleteFavorite, fetchFavorites, removeFavorites  } from '../../store/favorite'
 import { useDispatch, useSelector } from 'react-redux'
 import { useState, useEffect } from 'react'
 
@@ -46,9 +46,10 @@ const ListingsIndexItem= ({listing}) => {
             dispatch(createFavorite(payload))
             setFavorite(true)
     }
-        useEffect(()=> {
-            if (!sessionUser) setFavorite(false)
-        }, [])
+        // useEffect(()=> {
+        //     sessionUser ? dispatch(fetchFavorites()) :
+        //     dispatch(removeFavorites)
+        // }, [dispatch, sessionUser])
     
 
   return (

@@ -12,6 +12,7 @@ import { removeFavorites } from "../../store/favorite";
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const favorites = useSelector(state => state.favorites);
+  const sessionUser = useSelector(state => state.session.user)
   const [showMenu, setShowMenu] = useState(false);
   const history = useHistory()
   
@@ -22,7 +23,6 @@ function ProfileButton({ user }) {
   
   useEffect(() => {
     if (!showMenu) return;
-
     const closeMenu = () => {
       setShowMenu(false);
     };

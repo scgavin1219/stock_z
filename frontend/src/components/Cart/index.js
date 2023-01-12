@@ -4,18 +4,21 @@ import { AiOutlineShoppingCart} from 'react-icons/ai'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { fetchItems } from "../../store/cart";
+import { fetchItems, removeItems } from "../../store/cart";
 import { useHistory } from "react-router-dom";
 
 function Cart() {
     const [showCart, setShowCart] = useState(false)
     const cart = useSelector(state => state.cart)
+    const sessionUser = useSelector(state => state.session.user)
     const dispatch = useDispatch()
     const history = useHistory()
 
     useEffect(()=> { 
-      dispatch(fetchItems())
-    }, [dispatch])
+      sessionUser ? 
+      dispatch(fetchItems()) : 
+      dispatch(removeItems())
+    }, [dispatch, sessionUser])
 
     const handlePurchase = (e) => { 
         e.preventDefault();
@@ -27,7 +30,6 @@ function Cart() {
   const toggleCart = () => { 
     showCart ? setShowCart(false) : setShowCart(true)
   }
-
  
   return (
     <div className="cart">
