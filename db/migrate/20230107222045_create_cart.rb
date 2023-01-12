@@ -5,6 +5,5 @@ class CreateCart < ActiveRecord::Migration[7.0]
       t.references :listing, foreign_key: true, null: false
       t.timestamps
     end
-    add_index :favorites, [:user_id, :listing_id], unique: true
   end
 end
