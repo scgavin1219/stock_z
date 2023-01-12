@@ -54,7 +54,7 @@ function ProfileButton({ user }) {
             <li><span id="bold">USERNAME:</span> {user.username}</li>
             <li><span id="bold">EMAIL: </span>{user.email}</li>
             <li><span id="bold">FAVORITES: </span>{Object.values(favorites).length}</li>
-            <li><Link to="/favorites" id="favorites-link">Take me There!</Link></li>
+            <li><Link to="/favorites" id="favorites-link"><button id="logout">Take me There!</button></Link></li>
             <li>
               <button id="logout" onClick={logout}>Log Out</button>
             </li>

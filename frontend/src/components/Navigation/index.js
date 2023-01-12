@@ -16,10 +16,6 @@ function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
   const [showCart, setShowCart] = useState(false)
 
-  // const toggleCart = () => { 
-  //   showCart ? setShowCart(false) : setShowCart(true)
-  // }
-
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
@@ -40,7 +36,6 @@ function Navigation() {
         <div className='nav-left'>
           <NavLink id="stockx-logo" exact to="/"><img id="logo" src={stockx}alt="stockx logo"/></NavLink>
           <div id='search-box'>
-            {/* <input type="text" placeholder='Search for Brand, Color, etc.' id="search-bar"/> */}
             < SearchBar />
           </div>
         </div>
