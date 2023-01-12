@@ -1,0 +1,41 @@
+
+.about-container {
+    display: flex;
+    /* align-items: center; */
+    background-color: white;
+    margin: 150px 200px;
+    width: 60vw;
+    min-width: 900px;
+    border: 2px solid lightgray;
+    box-shadow: 0 10px 20px #cfcfcf;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+#spiderman { 
+    width: 600px;
+    width: 500px;
+    margin: 20px;
+
+}
+
+.about-title { 
+    display: flex;
+    justify-content: center;
+}
+
+.about-picture { 
+    display: flex;
+    align-items: center;
+}
+
+.about-bio { 
+    padding: 20px;
+}
+
+.about-bio > p { 
+    line-height: 2rem;
+    margin: 20px;
+    font-size: 24px;
+    font-family: proxima-nova, sans-serif;
+}
