@@ -11,7 +11,10 @@ class Api::FavoritesController < ApplicationController
 
     def index
         @favorites = Favorite.where(user_id: current_user.id)
+        # if @favorites
         render :index
+        # else
+        #     render json: @favorites.errors.full_messages, status: 422
     end
 
     def show
