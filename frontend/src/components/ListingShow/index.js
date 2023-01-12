@@ -27,11 +27,6 @@ function ListingShow() {
     const [currentIdx, setCurrentIdx] = useState(0)
     const favorited = useSelector(state => state.favorites)
 
-    // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
-    
-    //const slide = [jordan1, jordan2, jordan3, jordan4]
-   
-
     useEffect(()=> { 
         if (listing) { 
             setFavorite(listing.liked)
@@ -101,6 +96,10 @@ function ListingShow() {
     const url2 = listing.photoUrls[1]
     const slide = [url1, url2]
 
+    const toSignup = () => { 
+        history.push("/login")
+    }
+
   return (
     <>
         <div id="show" className='show-container'>
@@ -135,9 +134,11 @@ function ListingShow() {
                         <br/>
                     </ul>
                     <div id="purchase-container">
-                        <button id="show-button" onClick={handleAdd}>Add to Cart</button>
+                        { sessionUser ? <button id="show-button" onClick={handleAdd}>Add to Cart</button> :
+                         <button id="show-button" onClick={()=>toSignup()}>Add to Cart</button>}
                         <br/>
-                        <button id="show-button"onClick={handlePurchase}>Purchase Now</button>
+                        { sessionUser ? <button id="show-button"onClick={handlePurchase}>Purchase Now</button> : 
+                        <button id="show-button" onClick={()=>toSignup()}>Purchase Now</button> }
                     </div>
                 </div>
             </div>
