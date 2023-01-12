@@ -16,9 +16,9 @@ function FavoriteIndexItem({favorite}) {
     const sessionUser = useSelector(state => state.session.user);
 
     // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
-    // const url1 = listing.photoUrls[0]
-    // const url2 = listing.photoUrls[1]
-    // const slide = [url1, url2]
+    const url1 = favorite.photoUrls[0]
+    const url2 = favorite.photoUrls[1]
+    const slide = [url1, url2]
   
   const handleAdd = (e) => { 
         e.preventDefault();
@@ -42,7 +42,7 @@ function FavoriteIndexItem({favorite}) {
   return (
     <Link id="favorite-link" to={`listings/${favorite.listingId}`}><li id="favorite-item" className="cart-item">
       <div className='purchase-info'>
-        <div className='cart-item-image'><img src={jordan1} alt="" id="purchase-img" /></div>
+        <div className='cart-item-image'><img src={url1} alt="" id="purchase-img" /></div>
         <div className="cart-item-header">{favorite.name}</div>
         <div className='cart-item-price' id="purchase-page-price">${(favorite.price).toFixed(2)}</div>
          <button id="cart-item-button" onClick={handleDeleteFavorite} >< MdFavorite  id="favorite-favorite" /></button>

@@ -21,10 +21,10 @@ const CategoryIndexItem= ({listing}) => {
     const [currentIdx, setCurrentIdx] = useState(0)
 
     // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
-    // const url1 = listing.photoUrls[0]
-    // const url2 = listing.photoUrls[1]
-    // const slide = [url1, url2]
-    const slide = [jordan1, jordan2]
+    const url1 = listing.photoUrls[0]
+    const url2 = listing.photoUrls[1]
+    const slide = [url1, url2]
+    // const slide = [jordan1, jordan2]
 
     const favoriteId = () => { 
         let favId = null
@@ -58,7 +58,7 @@ const CategoryIndexItem= ({listing}) => {
         <div className='product-container'>
             <div className='listing-pic'>
                 
-                <Link id="index-img" to={`listings/${listing.id}`}><img src={slide[currentIdx]} alt="" id="test-img" /></Link>
+                <Link id="index-img" to={`listings/${listing.id}`}><img src={url1} alt="" id="test-img" /></Link>
             </div>
             <div id='listing-title'>
                 <div id="bottombox">

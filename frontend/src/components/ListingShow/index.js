@@ -27,10 +27,8 @@ function ListingShow() {
     const favorited = useSelector(state => state.favorites)
 
     // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
-    // const url1 = listing.photoUrls[0]
-    // const url2 = listing.photoUrls[1]
-    // const slide = [url1, url2]
-    const slide = [jordan1, jordan2, jordan3, jordan4]
+    
+    //const slide = [jordan1, jordan2, jordan3, jordan4]
    
 
     useEffect(()=> { 
@@ -97,6 +95,10 @@ function ListingShow() {
     if (!listing) { 
         return null
     }
+
+    const url1 = listing.photoUrls[0]
+    const url2 = listing.photoUrls[1]
+    const slide = [url1, url2]
 
   return (
     <>

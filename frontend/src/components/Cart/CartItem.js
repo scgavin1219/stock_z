@@ -15,7 +15,7 @@ function CartItem({item}) {
     const [amount, setAmount] = useState(item.quantity)
 
     // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
-    // const url1 = listing.photoUrls[0]
+    const url1 = item.photoUrls[0]
     // const url2 = listing.photoUrls[1]
     // const slide = [url1, url2]
 
@@ -56,7 +56,7 @@ function CartItem({item}) {
   return (
     <li className="cart-item">
       <div className='cart-info'>
-        <Link id="favorite-link" to={`listings/${item.listingId}`}><div className='cart-item-image'><img src={jordan} alt="" id="cart-img" /></div></Link>
+        <Link id="favorite-link" to={`listings/${item.listingId}`}><div className='cart-item-image'><img src={url1} alt="" id="cart-img" /></div></Link>
         <div className="cart-item-header">{item.name}</div>
         <div className='cart-item-quantity'>
           <button onClick={handleMinus} id="update-cart"><CiCircleMinus id="circle"/></button>

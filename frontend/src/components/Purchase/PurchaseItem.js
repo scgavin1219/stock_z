@@ -17,9 +17,9 @@ function PurchaseItem({item}) {
     // const cartItem = useSelector(state => state.listings[item])
 
     // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
-    // const url1 = listing.photoUrls[0]
-    // const url2 = listing.photoUrls[1]
-    // const slide = [url1, url2]
+    const url1 = item.photoUrls[0]
+    const url2 = item.photoUrls[1]
+    const slide = [url1, url2]
 
     const handleDelete = (e) => { 
         e.preventDefault();
@@ -58,7 +58,7 @@ function PurchaseItem({item}) {
   return (
     <li className="purchase-item">
       <div className='purchase-info'>
-        <div className='purchase-item-image'><img src={jordan1} alt="" id="purchase-img" /></div>
+        <div className='purchase-item-image'><img src={url1} alt="" id="purchase-img" /></div>
         <div className="purchase-item-header">{item.name}</div>
         <div className='cart-item-quantity'>
           <button onClick={handleMinus} id="purchase-amount"><CiCircleMinus id="circle"/></button>

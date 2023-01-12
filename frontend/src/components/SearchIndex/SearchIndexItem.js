@@ -18,9 +18,9 @@ const SearchIndexItem= ({listing}) => {
     const sessionUser = useSelector(state => state.session.user);
 
     // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
-    // const url1 = listing.photoUrls[0]
-    // const url2 = listing.photoUrls[1]
-    // const slide = [url1, url2]
+    const url1 = listing.photoUrls[0]
+    const url2 = listing.photoUrls[1]
+    const slide = [url1, url2]
 
     useEffect(() => {
         // dispatch(fetchFavorites())
@@ -49,7 +49,7 @@ const SearchIndexItem= ({listing}) => {
     <>
         <div className='product-container'>
             <div className='listing-pic'>
-                <Link id="index-img" to={`/listings/${listing.id}`}><img src={jordan1} alt="" id="test-img" /></Link>
+                <Link id="index-img" to={`/listings/${listing.id}`}><img src={url1} alt="" id="test-img" /></Link>
             </div>
             <div id='listing-title'>
                 <div id="bottombox">

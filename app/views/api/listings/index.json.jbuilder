@@ -8,6 +8,6 @@
             json.liked false
     end
         # json.liked listing.user_id == current_user.id
-        # json.photoUrls listing.photos.map { |photo| photo.url }
+        json.photoUrls listing.photos.map { |photo| photo.url }
     end
 end
