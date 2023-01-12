@@ -19,13 +19,9 @@ const ListingsIndexItem= ({listing}) => {
     const sessionUser = useSelector(state => state.session.user);
     const favorited = useSelector(state => state.favorites)
     const [currentIdx, setCurrentIdx] = useState(0)
-    
-    // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
     const url1 = listing.photoUrls[0]
     const url2 = listing.photoUrls[1]
     const slide = [url1, url2]
-    // const slide = [jordan1, jordan2]
-
 
     const favoriteId = () => { 
         let favId = null
@@ -51,7 +47,6 @@ const ListingsIndexItem= ({listing}) => {
             setFavorite(true)
     }
 
-
   return (
     <>
         <div className='product-container'>
@@ -67,7 +62,7 @@ const ListingsIndexItem= ({listing}) => {
                     </div>
                     <div id="bottombox-right">
                         <h6 id="listing-price">${listing.price.toFixed(2)}</h6>
-                        {listing.price  > listing.oldPrice ? <span id="up"><HiTrendingUp /></span> : <span id="down"><HiTrendingDown /></span>}
+                        {listing.price  > listing.oldPrice ? <span id="up"><HiTrendingUp id="up"/></span> : <span id="down"><HiTrendingDown id="down" /></span>}
                     </div>
                 </div>
             </div>
