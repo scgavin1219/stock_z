@@ -16,9 +16,9 @@ function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
   const [showCart, setShowCart] = useState(false)
 
-  const toggleCart = () => { 
-    showCart ? setShowCart(false) : setShowCart(true)
-  }
+  // const toggleCart = () => { 
+  //   showCart ? setShowCart(false) : setShowCart(true)
+  // }
 
   let sessionLinks;
   if (sessionUser) {

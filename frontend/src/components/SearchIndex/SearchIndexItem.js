@@ -17,6 +17,11 @@ const SearchIndexItem= ({listing}) => {
     const [favorite, setFavorite] = useState(false)
     const sessionUser = useSelector(state => state.session.user);
 
+    // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
+    // const url1 = listing.photoUrls[0]
+    // const url2 = listing.photoUrls[1]
+    // const slide = [url1, url2]
+
     useEffect(() => {
         // dispatch(fetchFavorites())
     }, [dispatch])

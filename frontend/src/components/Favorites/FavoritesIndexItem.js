@@ -14,6 +14,11 @@ import { Link } from 'react-router-dom';
 function FavoriteIndexItem({favorite}) {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user);
+
+    // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
+    // const url1 = listing.photoUrls[0]
+    // const url2 = listing.photoUrls[1]
+    // const slide = [url1, url2]
   
   const handleAdd = (e) => { 
         e.preventDefault();

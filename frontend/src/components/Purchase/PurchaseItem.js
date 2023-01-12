@@ -15,7 +15,11 @@ function PurchaseItem({item}) {
     const dispatch = useDispatch()
     const [amount, setAmount] = useState(item.quantity)
     // const cartItem = useSelector(state => state.listings[item])
-    // const url = cartItem.photoUrls[0]
+
+    // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
+    // const url1 = listing.photoUrls[0]
+    // const url2 = listing.photoUrls[1]
+    // const slide = [url1, url2]
 
     const handleDelete = (e) => { 
         e.preventDefault();

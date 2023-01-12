@@ -10,10 +10,14 @@ import { useState } from 'react'
 import { Link }  from 'react-router-dom'
 
 
-
 function CartItem({item}) {
     const dispatch = useDispatch()
     const [amount, setAmount] = useState(item.quantity)
+
+    // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
+    // const url1 = listing.photoUrls[0]
+    // const url2 = listing.photoUrls[1]
+    // const slide = [url1, url2]
 
     const handleDelete = (e) => { 
         e.preventDefault();

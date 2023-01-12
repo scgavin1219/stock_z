@@ -19,6 +19,11 @@ const CategoryIndexItem= ({listing}) => {
     const sessionUser = useSelector(state => state.session.user);
     const favorited = useSelector(state => state.favorites)
     const [currentIdx, setCurrentIdx] = useState(0)
+
+    // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
+    // const url1 = listing.photoUrls[0]
+    // const url2 = listing.photoUrls[1]
+    // const slide = [url1, url2]
     const slide = [jordan1, jordan2]
 
     const favoriteId = () => { 

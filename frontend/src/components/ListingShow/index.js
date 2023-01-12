@@ -24,8 +24,14 @@ function ListingShow() {
     const history = useHistory()
     const [favorite, setFavorite] = useState("")
     const [currentIdx, setCurrentIdx] = useState(0)
-        const favorited = useSelector(state => state.favorites)
-    // const url = listing.photoUrls[0]
+    const favorited = useSelector(state => state.favorites)
+
+    // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
+    // const url1 = listing.photoUrls[0]
+    // const url2 = listing.photoUrls[1]
+    // const slide = [url1, url2]
+    const slide = [jordan1, jordan2, jordan3, jordan4]
+   
 
     useEffect(()=> { 
         if (listing) { 
@@ -33,8 +39,6 @@ function ListingShow() {
         }
     }, [listing])
 
-    const slide = [jordan1, jordan2, jordan3, jordan4]
-    
     const handleAdd = (e) => { 
         e.preventDefault();
         const payload = {
