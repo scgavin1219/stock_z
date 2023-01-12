@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import { getReviews, fetchReviews} from '../../store/reviews'
 import { AiOutlineStar } from 'react-icons/ai'
 import ReviewForm from './ReviewForm'
@@ -14,8 +14,9 @@ const ReviewsIndex = () => {
     const reviews = useSelector(getReviews)
     const {listingId} = useParams()
     const [reviewForm, setReviewForm] = useState(false)
+    const sessionUser = useSelector(state => state.session.user);
+    const history = useHistory()
     
-
     useEffect(() => { 
         dispatch(fetchReviews(listingId))
     }, [listingId, dispatch])
@@ -38,6 +39,10 @@ const ReviewsIndex = () => {
         reviewForm ? setReviewForm(false) : setReviewForm(true)
     }
 
+    const toSignup = () => { 
+        history.push("/signup")
+    }
+
    
 
   return (
@@ -50,7 +55,8 @@ const ReviewsIndex = () => {
                     <h4> {avgRating()}</h4>
                     <h4 id="reviews-length">({reviews.length} Reviews)</h4>
                 </div>
-                <button id="create-review" onClick={()=>formSwitch()}>Leave a Review</button>
+                { sessionUser ? <button id="create-review" onClick={()=>formSwitch()}>Leave a Review</button> : 
+                                <button id="create-review" onClick={()=>toSignup()}>Sign in to Leave Review</button>}
             </div>
                 <>
                     {reviewForm ? <ReviewForm setReviewForm={setReviewForm} /> : "" }

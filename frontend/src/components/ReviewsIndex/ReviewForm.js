@@ -15,8 +15,6 @@ function ReviewForm({setReviewForm}) {
     const [rating, setRating] = useState('')
     const [textRating, setTextRating] = useState('')
     const [hover, setHover] = useState(null)
-    
-
     const sessionUser = useSelector(state => state.session.user);
 
     const handleSubmit = (e) => { 
