@@ -20,7 +20,8 @@ function SearchBar() {
     const handleSubmit = (e) => { 
         e.preventDefault()
         dispatch(fetchSearchListings(search))
-        history.push(`/search/${search}`)
+        .then(()=>history.push(`/search/${search}`))
+        
         //get or fetch search products
     }
 

@@ -1,6 +1,7 @@
 export const RECEIVE_LISTINGS = "listings/RECEIVE_LISTINGS"
 export const RECEIVE_LISTING = "listings/RECEIVE_LISTING"
 export const REMOVE_LISTING = "listings/REMOVE_LISTING"
+export const REMOVE_LISTINGS = "listings/REMOVE_LISTINGS"
 
 const receiveListings = listings => ({ 
     type: RECEIVE_LISTINGS,
@@ -17,6 +18,9 @@ const removeListing = listingId => ({
     listingId
 })
 
+const removeListings = () => ({ 
+    type: REMOVE_LISTINGS
+})
 
 export const getListings = store => { 
     return (store.listings) ? Object.values(store.listings) : []
@@ -43,6 +47,8 @@ export const fetchSearchListings = (query) => async dispatch => {
     if (res.ok) { 
         const search = await res.json();
         dispatch(receiveListings(search))
+    } else { 
+        dispatch(removeListings())
     }
 }
 
@@ -73,6 +79,8 @@ const listingReducer = (state= {}, action) =>  {
         case REMOVE_LISTING: 
             delete newState[action.listingId]
             return newState
+        case REMOVE_LISTINGS: 
+            return {};
         default: 
             return state;
     }

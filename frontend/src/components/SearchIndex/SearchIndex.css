@@ -1,0 +1,20 @@
+.noresults { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#noresults { 
+    margin: 30px;
+    font-size: 40px;
+    font-family: proxima-nova, sans-serif;
+}
+
+#nores { 
+    text-decoration: none;
+}
+
+#nores:visited { 
+    color: inherit;
+}
