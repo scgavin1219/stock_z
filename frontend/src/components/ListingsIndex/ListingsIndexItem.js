@@ -46,6 +46,10 @@ const ListingsIndexItem= ({listing}) => {
             dispatch(createFavorite(payload))
             setFavorite(true)
     }
+        useEffect(()=> {
+            if (!sessionUser) setFavorite(false)
+        }, [])
+    
 
   return (
     <>
