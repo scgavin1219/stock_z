@@ -13,9 +13,10 @@ import { useState, useEffect } from 'react'
 
 
 
-const ListingsIndexItem= ({listing}) => {
+const ListingsIndexItem= ({listing, initialFavorite}) => {
     const dispatch = useDispatch()
     const [favorite, setFavorite] = useState(listing.liked)
+    // console.log(favorite)
     const sessionUser = useSelector(state => state.session.user);
     const favorited = useSelector(state => state.favorites)
     const [currentIdx, setCurrentIdx] = useState(0)
@@ -48,11 +49,7 @@ const ListingsIndexItem= ({listing}) => {
             dispatch(createFavorite(payload))
             setFavorite(true)
     }
-        // useEffect(()=> {
-        //     sessionUser ? dispatch(fetchFavorites()) :
-        //     dispatch(removeFavorites)
-        // }, [dispatch, sessionUser])
-    
+ 
 
   return (
     <>
@@ -65,7 +62,7 @@ const ListingsIndexItem= ({listing}) => {
                 <div id="bottombox">
                     <div id="bottombox-left">
                         <Link to={`listings/${listing.id}`} id="index-title"><span id="bold">{listing.name}</span></Link>
-                         { sessionUser && favorite ? <button id="non-fav" onClick={handleDeleteFavorite}><MdFavorite /></button> : <button id="favorite" onClick={handleAddFavorite}><GrFavorite /></button>}
+                         { favorite && sessionUser ? <button id="non-fav" onClick={handleDeleteFavorite}><MdFavorite /></button> : <button id="favorite" onClick={handleAddFavorite}><GrFavorite /></button>}
                     </div>
                     <div id="bottombox-right">
                         <h6 id="listing-price">${listing.price.toFixed(2)}</h6>

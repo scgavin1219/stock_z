@@ -27,7 +27,7 @@ const  ListingsIndex =() => {
 
   return (
     <div className='listings-container'>
-        {listings.map((listing) => <ListingsIndexItem listing={listing} key={listing.id} favorites={favorites} />)}
+        {listings.map((listing) => <ListingsIndexItem listing={listing} key={listing.id} initialFavorite={listing.liked} />)}
     </div>
   )
 }
