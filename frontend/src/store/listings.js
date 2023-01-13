@@ -1,3 +1,5 @@
+import { REMOVE_FAVORITE } from "./favorite"
+
 export const RECEIVE_LISTINGS = "listings/RECEIVE_LISTINGS"
 export const RECEIVE_LISTING = "listings/RECEIVE_LISTING"
 export const REMOVE_LISTING = "listings/REMOVE_LISTING"
@@ -21,6 +23,7 @@ const removeListing = listingId => ({
 const removeListings = () => ({ 
     type: REMOVE_LISTINGS
 })
+
 
 export const getListings = store => { 
     return (store.listings) ? Object.values(store.listings) : []
@@ -81,6 +84,10 @@ const listingReducer = (state= {}, action) =>  {
             return newState
         case REMOVE_LISTINGS: 
             return {};
+        case REMOVE_FAVORITE:
+            const listing = newState[action.favorite.listingId]
+            listing.liked = false
+            return newState
         default: 
             return state;
     }

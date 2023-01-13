@@ -28,7 +28,7 @@ class Api::FavoritesController < ApplicationController
         @favorite = current_user.favorites.find_by(id: params[:id])
         # debugger
         if @favorite.destroy!
-            # render :index
+            render :show
         else
             render json: @favorite.errors.full_messages, status: 422
         end
