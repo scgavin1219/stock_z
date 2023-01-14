@@ -25,15 +25,15 @@ function Footer() {
             <Link id="footer-link" to="/listings/7">Pokemon Shoes</Link><br/>
             <Link id="footer-link" to="/listings/12">Vans</Link><br/>
             <Link id="footer-link" to="/listings/16">G-Shock</Link><br/>
-            <Link id="footer-link" to="/listings/17">SteamDeck</Link><br/>
+            <Link id="footer-link" to="/listings/18">Nintendo Switch</Link><br/>
         </div>
         <div className='footer-right'>
             <h3>Hot Cards</h3>
-            <Link id="footer-link" to="/listings/21">MTG: Alpha Black Lotus</Link><br/>
-            <Link id="footer-link" to="/listings/22">MTG: Lightning Bolt</Link><br/>
-            <Link id="footer-link" to="/listings/24">PTC: Shining Charizard</Link><br/>
-            <Link id="footer-link" to="/listings/25">PTC: Shining Gyarados</Link><br/>
-            <Link id="footer-link" to="/listings/23">PTC: No: 1 Trainer</Link><br/>
+            <Link id="footer-link" to="/listings/19">MTG: Alpha Black Lotus</Link><br/>
+            <Link id="footer-link" to="/listings/20">MTG: Lightning Bolt</Link><br/>
+            <Link id="footer-link" to="/listings/22">PTC: Shining Charizard</Link><br/>
+            <Link id="footer-link" to="/listings/23">PTC: Shining Gyarados</Link><br/>
+            <Link id="footer-link" to="/listings/21">PTC: No: 1 Trainer</Link><br/>
         </div>
     </div>
   )

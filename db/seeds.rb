@@ -275,33 +275,33 @@ watch_4 = Listing.create!({
 watch_4.photos.attach(io: URI.open("https://stockz-dev.s3.us-west-1.amazonaws.com/gshock2-2.png"), filename: "gshock2-2.png")
 watch_4.photos.attach(io: URI.open("https://stockz-dev.s3.us-west-1.amazonaws.com/gshock2-3.png"), filename: "gshock2-3.png")
 
-electronic_1 = Listing.create!({
-  name: 'Steam Deck 512GB', 
-  brand: 'Valve',
-  style: 'V004287-30', 
-  colorway: 'Black', 
-  description: 'Valve shocked the gaming world when it announced the Valve Steam Deck in mid-July, launching the company into the handheld gaming market. The Valve Steam Deck 512GB will bring a PC gamers Steam library to the handheld console, which Valve says will provide a seamless transition between both platforms. Like the name suggests, the Steam Deck 512GB will include 512GB NVMe SSD internal storage, and will include a carrying case and an exclusive steam community profile bundle.', 
-  old_price: 649, 
-  price: 899, 
-  category: 'Electronics' 
-})
+# electronic_1 = Listing.create!({
+#   name: 'Steam Deck 512GB', 
+#   brand: 'Valve',
+#   style: 'V004287-30', 
+#   colorway: 'Black', 
+#   description: 'Valve shocked the gaming world when it announced the Valve Steam Deck in mid-July, launching the company into the handheld gaming market. The Valve Steam Deck 512GB will bring a PC gamers Steam library to the handheld console, which Valve says will provide a seamless transition between both platforms. Like the name suggests, the Steam Deck 512GB will include 512GB NVMe SSD internal storage, and will include a carrying case and an exclusive steam community profile bundle.', 
+#   old_price: 649, 
+#   price: 899, 
+#   category: 'Electronics' 
+# })
 
-electronic_1.photos.attach(io: URI.open("https://stockz-dev.s3.us-west-1.amazonaws.com/steamdeck1.png"), filename: "steamdeck1.png")
-electronic_1.photos.attach(io: URI.open("https://stockz-dev.s3.us-west-1.amazonaws.com/steamdeck2.png"), filename: "steamdeck2.png")
+# electronic_1.photos.attach(io: URI.open("https://stockz-dev.s3.us-west-1.amazonaws.com/steamdeck1.png"), filename: "steamdeck1.png")
+# electronic_1.photos.attach(io: URI.open("https://stockz-dev.s3.us-west-1.amazonaws.com/steamdeck2.png"), filename: "steamdeck2.png")
 
-electronic_2 = Listing.create!({
-  name: 'PS5', 
-  brand: 'Sony',
-  style: '3005719', 
-  colorway: 'White/Black', 
-  description: 'The PlayStation 5 (US Plug) Digital Edition Console remains one of the most sought-after gaming console releases as millions of people look to upgrade their previous generation console. With a retail price of $400 ($100 less than the Blu-ray Edition), this PlayStation PS5 (US Plug) Digital Edition Console comes without a disc drive and features a sleek white design with a matching DualSense controller. The PlayStation 5 (US Plug) Digital Edition Console was released on November 12, 2020, but sold out quickly at retailers globally. The PlayStation 5 (US Plug) Digital Edition Console is in stock on StockX, even if it might be sold out in stores.', 
-  old_price: 499, 
-  price: 679, 
-  category: 'Electronics' 
-})
+# electronic_2 = Listing.create!({
+#   name: 'PS5', 
+#   brand: 'Sony',
+#   style: '3005719', 
+#   colorway: 'White/Black', 
+#   description: 'The PlayStation 5 (US Plug) Digital Edition Console remains one of the most sought-after gaming console releases as millions of people look to upgrade their previous generation console. With a retail price of $400 ($100 less than the Blu-ray Edition), this PlayStation PS5 (US Plug) Digital Edition Console comes without a disc drive and features a sleek white design with a matching DualSense controller. The PlayStation 5 (US Plug) Digital Edition Console was released on November 12, 2020, but sold out quickly at retailers globally. The PlayStation 5 (US Plug) Digital Edition Console is in stock on StockX, even if it might be sold out in stores.', 
+#   old_price: 499, 
+#   price: 679, 
+#   category: 'Electronics' 
+# })
 
-electronic_2.photos.attach(io: URI.open("https://stockz-dev.s3.us-west-1.amazonaws.com/ps51.png"), filename: "ps51.png")
-electronic_2.photos.attach(io: URI.open("https://stockz-dev.s3.us-west-1.amazonaws.com/ps52.png"), filename: "ps52.png")
+# electronic_2.photos.attach(io: URI.open("https://stockz-dev.s3.us-west-1.amazonaws.com/ps51.png"), filename: "ps51.png")
+# electronic_2.photos.attach(io: URI.open("https://stockz-dev.s3.us-west-1.amazonaws.com/ps52.png"), filename: "ps52.png")
 
 electronic_3 = Listing.create!({
   name: 'Apple Airpods Pro', 
@@ -405,28 +405,28 @@ card_5.photos.attach(io: URI.open("https://stockz-dev.s3.us-west-1.amazonaws.com
 
 review_1 = Review.create!({
   rating: 5, 
-  text_rating: "I love being able to take all of my games on the go!",
+  text_rating: "I love my J's so much",
   user_id: 1,
-  listing_id: 17
+  listing_id: 1
 })
 
 review_2 = Review.create!({
   rating: 4, 
-  text_rating: "Pretty sweet! Wish I could play Halo on it though",
+  text_rating: "These sshoes are so nice I'm afraid to wear them",
   user_id: 2,
-  listing_id: 17
+  listing_id: 1
 })
 
 review_3 = Review.create!({
   rating: 0, 
-  text_rating: "I dropped it and StockZ didn't accept my return",
+  text_rating: "stockZ ripped me off, these were knockoffs",
   user_id: 3,
-  listing_id: 17
+  listing_id: 1
 })
 
 review_4 = Review.create!({
   rating: 5, 
-  text_rating: "The SteamDeck is the quintessential mobile gaming device.",
+  text_rating: "These are my favorite shoes of all time.",
   user_id: 4,
-  listing_id: 17
+  listing_id: 1
 })
