@@ -10,6 +10,10 @@ function Purchase() {
     const dispatch = useDispatch()
     const history = useHistory()
 
+    useEffect(()=>{
+        window.scrollTo(0, 0)
+    },[]) 
+
     useEffect(() => { 
       dispatch(fetchItems())
     }, [dispatch])

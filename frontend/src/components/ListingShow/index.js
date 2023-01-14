@@ -22,6 +22,10 @@ function ListingShow() {
     const [currentIdx, setCurrentIdx] = useState(0)
     const favorited = useSelector(state => state.favorites)
 
+    useEffect(()=>{
+        window.scrollTo(0, 0)
+    },[])   
+
     useEffect(()=> { 
         if (listing) { 
             setFavorite(listing.liked)

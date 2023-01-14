@@ -14,6 +14,10 @@ const  FavoritesIndex =() => {
       dispatch(fetchFavorites())
     }, [dispatch])
 
+    useEffect(()=>{
+        window.scrollTo(0, 0)
+    },[]) 
+
   return (
     <div className='favorites-container' id="favorites-container">
       <div className='favorites-header'>

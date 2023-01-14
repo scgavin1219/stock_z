@@ -12,6 +12,10 @@ const  ListingsIndex =() => {
     const favorites = useSelector(getFavorites)
     const sessionUser = useSelector(state => state.session.user);
 
+    useEffect(()=>{
+        window.scrollTo(0, 0)
+    },[]) 
+
     useEffect(() => {
         dispatch(fetchListings())
         if (sessionUser) dispatch(fetchFavorites())
