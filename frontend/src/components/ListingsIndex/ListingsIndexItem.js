@@ -16,7 +16,6 @@ import { useState, useEffect } from 'react'
 const ListingsIndexItem= ({listing, initialFavorite}) => {
     const dispatch = useDispatch()
     const [favorite, setFavorite] = useState(listing.liked)
-    // console.log(favorite)
     const sessionUser = useSelector(state => state.session.user);
     const favorited = useSelector(state => state.favorites)
     const [currentIdx, setCurrentIdx] = useState(0)

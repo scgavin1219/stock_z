@@ -6,10 +6,6 @@ import { HiTrendingUp } from 'react-icons/hi'
 import { HiTrendingDown } from 'react-icons/hi'
 import { GrFavorite } from 'react-icons/gr'
 import { createCartItem } from '../../store/cart'
-import jordan1 from '../../assets/jordan1-1.png'
-import jordan2 from '../../assets/jordan1-3.png'
-import jordan3 from '../../assets/jordan1-2.png'
-import jordan4 from '../../assets/jordan1-4.png'
 import { useHistory } from 'react-router-dom'
 import { useState } from 'react'
 import { MdFavorite } from 'react-icons/md'
@@ -127,9 +123,9 @@ function ListingShow() {
                         <br/>
                         {listing.price > listing.oldPrice ? 
                 
-                             <li id="show-li"><span id="bold">PRICE INCREASE: </span><span id="up">({(((Math.abs(listing.price - listing.oldPrice))/ listing.oldPrice) * 100 ).toFixed(2)}%)<HiTrendingUp /></span></li>
+                             <li id="show-li"><span id="bold">PRICE INCREASE: </span><span id="showup">({(((Math.abs(listing.price - listing.oldPrice))/ listing.oldPrice) * 100 ).toFixed(2)}%)<HiTrendingUp /></span></li>
                         : 
-                            <li id="show-li"><span id="bold">PRICE DECREASE: </span><span id="down">({(((Math.abs(listing.price - listing.oldPrice))/ listing.oldPrice) * 100 ).toFixed(2)}%)<HiTrendingDown /></span></li> }
+                            <li id="show-li"><span id="bold">PRICE DECREASE: </span><span id="showdown">({(((Math.abs(listing.price - listing.oldPrice))/ listing.oldPrice) * 100 ).toFixed(2)}%)<HiTrendingDown /></span></li> }
                         <br/>
                     </ul>
                     <div id="purchase-container">
