@@ -77,3 +77,29 @@
 #purachase-img { 
     margin: 10px 50px;
 }
+
+.backtofavorites { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#backbutton { 
+    width: 90%;
+    margin-bottom: 10px;
+    transition: all ease-in 200ms;
+    background-color: rgb(50, 49, 49);
+    color: white;
+    
+}
+
+#backbutton:hover { 
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+#backtofavorites { 
+    margin-bottom: 30px;
+    margin-top: 20px;
+    font-size: 30px;
+}

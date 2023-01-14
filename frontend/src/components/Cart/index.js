@@ -46,10 +46,7 @@ function Cart() {
     })
   })
 
-  // const toggleCart = () => { 
-  //   showCart ? setShowCart(false) : setShowCart(true)
-  // }
- 
+
   return (
     <div className="cart">
       <button id='shopping-button' onClick={openCart}>
@@ -78,44 +75,3 @@ function Cart() {
 
 export default Cart
 
-  // const listings = useSelector(state => state.listings)
-
-  // useEffect(() => { 
-    //   if (!showCart) return;
-
-    //   const closeCart = () => { 
-    //     setShowCart(false)
-    //   }
-    //   document.addEventListener('click', closeCart);
-    //   return () => document.removeEventListener("click", closeCart)
-    // }, [showCart])
-
-       // if (!cartItems || !cartItems.length) return ( 
-    //     <div className="cart-info">
-    //         No items in the cart. Start selecting items to purchase.
-    //     </div>
-    // )
-
-    // const totalCost = () => { 
-    //   let sum = 0 
-    //   Object.values(cart).map(item =>{ 
-    //     let cartItem = useSelector(state => state.listings[item])
-    //     sum += cartItem.price
-    //   })
-    //   return sum
-    // }
-
-    // const onSubmit = (e) => { 
-    //     e.preventDefault();
-    //    "Purchased the following:\n" +
-    //   `${cartItems.map(item => `${item.count} of ${item.name}`).join('\n')}`
-    // }
-
-       // const cartItems = Object.values(cart).map(item => { 
-    //     return { 
-    //         ...parseInt(item), ...listings[parseInt(item).id] 
-    //     }
-    // })
-    
-    // console.log(cart)
-    // console.log(Object.values(cart))
