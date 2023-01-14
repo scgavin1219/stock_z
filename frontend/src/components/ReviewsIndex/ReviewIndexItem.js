@@ -6,6 +6,8 @@ import './ReviewIndexItem.js'
 import ReviewFormEdit from './ReviewFormEdit'
 import moment from 'moment'
 import { FaStar } from 'react-icons/fa'
+import { FaEdit } from 'react-icons/fa'
+import { TbTrash } from 'react-icons/tb'
 
 const ReviewIndexItem = ({review}) => {
  
@@ -41,18 +43,20 @@ const ReviewIndexItem = ({review}) => {
         <div className='star-rating'>
             <h6 id="time-ago"><time title={new Date(review.createdAt).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) }>{moment(review.createdAt).fromNow()}</time></h6>
         </div>
-        <div className='text-rating'>
-            <p>{review.textRating}</p>
+        <div className='editing-buttons'>
+          <div className='text-rating'>
+              <p>{review.textRating}</p>
+          </div>
+              {sessionUser?.id === review.userId &&
+          <div className='edit-rating'>
+            <button id="rating-button" onClick={()=> editSwitch()}><FaEdit id='editing-icons' /></button> 
+            <button id="rating-button" onClick={() => dispatch(deleteReview(review.id))}><TbTrash id='editing-icons'/></button>
+          </div>
+          }
         </div>
         </>
       }
-        {sessionUser?.id === review.userId &&
-        <div className='edit-rating'>
-            <button id="rating-button" onClick={()=> editSwitch()}>Edit</button> 
-            <button id="rating-button" onClick={() => dispatch(deleteReview(review.id))}>Delete</button>
-        </div>
-          }
-          {/* {updateForm ? <ReviewFormEdit setUpdateForm={setUpdateForm} review={review} /> : "" } */}
+        
     </div>
   )
 }
