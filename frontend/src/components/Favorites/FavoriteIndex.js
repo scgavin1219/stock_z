@@ -15,13 +15,13 @@ const  FavoritesIndex =() => {
     }, [dispatch])
 
   return (
-    <div className='favorites-container'>
+    <div className='favorites-container' id="favorites-container">
       <div className='favorites-header'>
         <h1>{sessionUser.username}'s Favorites</h1>
       </div>
-      <div className='favorites'>
+      <ul className='purchase-item-container'>
           {favorites.map((favorite) => <FavoriteIndexItem favorite={favorite} key={favorite.id} />)}
-      </div>
+      </ul>
     </div>
   )
 }

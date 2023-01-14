@@ -40,16 +40,16 @@ function FavoriteIndexItem({favorite}) {
     }, [dispatch])
 
   return (
-    <Link id="favorite-link" to={`listings/${favorite.listingId}`}><li id="favorite-item" className="cart-item">
+    <li  className="purchase-item">
       <div className='purchase-info'>
-        <div className='cart-item-image'><img src={url1} alt="" id="purchase-img" /></div>
-        <div className="cart-item-header">{favorite.name}</div>
-        <div className='cart-item-price' id="purchase-page-price">${(favorite.price).toFixed(2)}</div>
-         <button id="cart-item-button" onClick={handleDeleteFavorite} >< MdFavorite  id="favorite-favorite" /></button>
+        <div className='purchase-item-image'><img src={url1} alt="" id="purchase-img" /></div>
+        <div className="purchase-item-header">{favorite.name}</div>
+        <div className='purchase-item-price' id="purchase-page-price">${(favorite.price).toFixed(2)}</div>
+         <button id="purchase-item-button" onClick={handleDeleteFavorite} >< MdFavorite  id="favorite-favorite" /></button>
          <button id="purchase-cart" onClick={handleAdd}><MdOutlineAddShoppingCart/></button>
       </div>
     </li>
-    </Link>
+   
   )
 }
 

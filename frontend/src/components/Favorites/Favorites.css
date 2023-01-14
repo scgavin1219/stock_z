@@ -9,6 +9,9 @@
     box-shadow: 0 10px 20px #cfcfcf;
     border-radius: 5px;
 }
+/* #favorites-container { 
+    margin: 150px 200px;
+} */
 
 .favorites-header { 
     display: flex;
@@ -18,11 +21,22 @@
 
 #favorite-item { 
     list-style: none;
-    
+
+}
+
+.favorites { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:90%
 }
 
 .purchase-info { 
     transition: all ease-in 500ms;
+    display: flex;
+    justify-content: center;
+    /* width:500px; */
 }
 
 .purchase-info:hover { 
@@ -60,3 +74,6 @@
     text-decoration: none;
 }
 
+#purachase-img { 
+    margin: 10px 50px;
+}

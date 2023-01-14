@@ -11,6 +11,7 @@ import Cart from '../Cart';
 import './Navigation.css';
 import { useState } from 'react';
 import SearchBar from './SearchBar';
+import {MdFavoriteBorder} from 'react-icons/md'
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
@@ -42,6 +43,7 @@ function Navigation() {
         <div className='nav-right'>
           <NavLink id="browse-link" to="/listings">Browse</NavLink>
           <NavLink id="about-link" to="/about">About</NavLink>
+          <NavLink id="favorite-link" to="/favorites">< MdFavoriteBorder /></NavLink>
           <Cart />
           {sessionLinks}
         </div>

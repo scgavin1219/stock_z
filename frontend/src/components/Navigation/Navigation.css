@@ -138,7 +138,8 @@ button:hover {
     color: whitesmoke;
 }
 
-#browse-link, #about-link {
+#browse-link, #about-link,
+#favorite-link {
     display: flex; 
     justify-content: center;
     font-size: 18px;
@@ -150,12 +151,14 @@ button:hover {
     transition: all ease-in 200ms;
 }
 
-#browse-link:visited, #about-link:visited {
+#browse-link:visited, #about-link:visited,
+#favorite-link {
     text-decoration: none; 
 }
 
 
-#browse-link:hover, #about-link:hover { 
+#browse-link:hover, #about-link:hover,
+#favorite-link { 
     transform: translateX(-1px);
     transform: translateY(-1px);
     font-size: 20px;
@@ -258,3 +261,8 @@ button:hover {
     background-color: whitesmoke;
     
 }
+
+#browse-link { 
+    margin-right: 30px
+}
+
