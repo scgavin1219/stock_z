@@ -12,8 +12,8 @@ function ReviewFormEdit({review, setUpdateForm}) {
     const { reviewId } = useParams()
     const { listingId } = useParams()
     // const review = useSelector(getReview(reviewId))
-    const [rating, setRating] = useState('')
-    const [textRating, setTextRating] = useState('')
+    const [rating, setRating] = useState(review.rating)
+    const [textRating, setTextRating] = useState(review.textRating)
     const [hover, setHover] = useState(null)
 
 
@@ -48,7 +48,7 @@ function ReviewFormEdit({review, setUpdateForm}) {
         <div className='review-create'>
            
             <form onSubmit={handleSubmit}>
-                 <h1 id="review-title">Update Review</h1>
+                 {/* <h1 id="review-title">Update Review</h1> */}
                   <div className='star-icons' id='star-icons'>
                  {[...Array(5)].map((star, idx) => { 
                     const ratingValue = idx + 1
@@ -58,7 +58,7 @@ function ReviewFormEdit({review, setUpdateForm}) {
                                 onClick={() => setRating(ratingValue)}
                                  />
 
-                                <FaStar className='star' color={ratingValue <= (hover || review.rating) ? "#ffc107" : "#e4e5e9" }
+                                <FaStar className='star' color={ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9" }
                                 onMouseEnter={()=>setHover(ratingValue)}
                                 onMouseLeave={() => setHover(null)} />
                             </label>
