@@ -11,7 +11,6 @@ class Api::ListingsController < ApplicationController
     end
 
     def search
-        # debugger
         query = params[:query]
         @listings = Listing.where('name ILIKE ? OR description ILIKE ? OR category ILIKE ?', "%#{query}%", "%#{query}%", "%#{query}%")
         if @listings.length > 0
@@ -19,7 +18,6 @@ class Api::ListingsController < ApplicationController
         else
             render json: ["Sorry, we did not find any results for #{query}, try another search"], status: 404
         end
-        
     end
 
 
