@@ -4,10 +4,11 @@
 
 <h2>Background</h2>
 <p>StockZ is a full stack clone of the e-commerce site called stockX. The site was
-built usy a Ruby on Rails backend, a PostgreSQL database, and a JavaScript React/REdux frontend.</p>
+built using a Ruby on Rails backend, a PostgreSQL database, and a JavaScript React/REdux frontend.</p>
 
 <p>On stockZ, users that are signed in are able to add, update, and remove items from their 
 shopping cart.</p>
+![](/frontend/src/assets/cart.gif?raw=true)
 <iframe src="https://giphy.com/embed/vGDEdzPUH3vb41gFlw" width="480" height="364" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/vGDEdzPUH3vb41gFlw">via GIPHY</a></p>
 
 <p>Users can also create, update and delete reviews that they made.</p>
@@ -29,12 +30,15 @@ shopping cart.</p>
 </ul>
 
 <h2>Code Snippets</h2>
-<h4>Conditionally Rendered Shopping Cart that closes when clicking away</h4>!
+<h4>Conditionally Rendered Shopping Cart that closes when clicking away</h4>
 ![shppingcart](https://user-images.githubusercontent.com/107864308/212503442-5242d48e-a187-4a76-8ee1-8212eada8a59.png)
+
+![](/frontend/src/assets/shppingcart.png?raw=true)
 
 
 <h4>Search Controller</h4>
 ![searchcontroller](https://user-images.githubusercontent.com/107864308/212503452-956b4ef1-3e33-44ba-9ad1-6af2814ab5fe.png)
+![](/frontend/src/assets/searchcontroller.png?raw=true)
 
 
 
