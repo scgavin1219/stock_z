@@ -192,6 +192,10 @@ button:hover {
     transition: all ease-in 200ms;
 }
 
+#profile-button { 
+    margin-left: 10px;
+}
+
 #shopping-button:hover { 
     font-size: 24px;
     color: rgb(1 99 62)
@@ -264,5 +268,28 @@ button:hover {
 
 #browse-link { 
     margin-right: 30px
+}
+
+#cartcount { 
+    /* border: 1px solid ; */
+    border-radius: 50%;
+    padding: 4px;
+    color: white;
+    background-color: #2a4e49;
+    font-size: 10px;
+    margin-left: -27px;
+    margin-top: -20px;
+    width: 10px;
+}
+
+#favoritecount { 
+    border-radius: 50%;
+    color: white;
+    background-color: #2a4e49;
+    padding: 4px;
+    font-size: 10px;
+    width: 10px;
+    margin-left: -27px;
+    margin-top: -20px
 }
 

@@ -21,6 +21,7 @@ function ListingShow() {
     const [favorite, setFavorite] = useState("")
     const [currentIdx, setCurrentIdx] = useState(0)
     const favorited = useSelector(state => state.favorites)
+    const [cartButton,setCartButton] = useState(true)
 
     useEffect(()=>{
         window.scrollTo(0, 0)

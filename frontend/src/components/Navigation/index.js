@@ -16,6 +16,16 @@ import {MdFavoriteBorder} from 'react-icons/md'
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
   const [showCart, setShowCart] = useState(false)
+  const cart = useSelector(state => state.cart)
+  // const favorites = useSelector(state => state.favorites)
+  
+  let sum = 0;
+  const cartCount = Object.values(cart).map((item, i) => { 
+  
+     sum = parseInt(sum) + parseInt(item.quantity)
+     if(i === Object.values(cart).length -1 )
+     return sum
+  })
 
   let sessionLinks;
   if (sessionUser) {
@@ -44,7 +54,9 @@ function Navigation() {
           <NavLink id="browse-link" to="/listings">Browse</NavLink>
           <NavLink id="about-link" to="/about">About</NavLink>
           <NavLink id="favorite-link" to="/favorites">< MdFavoriteBorder /></NavLink>
+          {/* <p id="favoritecount">{Object.values(favorites).length}</p> */}
           <Cart />
+          {/* { cartCount ? <p id="cartcount">{cartCount}</p> : ""}  */}
           {sessionLinks}
         </div>
       </div>
