@@ -19,14 +19,16 @@ function Navigation() {
   const cart = useSelector(state => state.cart)
   // const favorites = useSelector(state => state.favorites)
   
-  let sum = 0;
+  // let sum = 0;
 
-  const cartCount = Object.values(cart).map((item, i) => { 
-     sum = parseInt(sum) + parseInt(item.quantity)
-     if(i === Object.values(cart).length - 1 )
-     console.log(sum)
-     return sum
-  })
+  // const cartCount = Object.values(cart).map((item, i) => { 
+  //   let sums = []
+  //    sum = parseInt(sum) + parseInt(item.quantity)
+  //    sums.push(sum)
+  //    if(i === Object.values(cart).length - 1 )
+  //    console.log(sums[sums.length - 1])
+  //    return sums[sums.length - 1]
+  // })
 
   let sessionLinks;
   if (sessionUser) {
@@ -57,7 +59,7 @@ function Navigation() {
           <NavLink id="favorite-link" to="/favorites">< MdFavoriteBorder /></NavLink>
           {/* <p id="favoritecount">{Object.values(favorites).length}</p> */}
           <Cart />
-          { cartCount >= 1 ? <div id="cart-count"><p id="cartcount">{cartCount}</p></div> : ""} 
+          {/* { cartCount ? <div id="cart-count"><p id="cartcount">{cartCount}</p></div> : ""}  */}
           {sessionLinks}
         </div>
       </div>
