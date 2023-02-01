@@ -31,25 +31,38 @@ function Cart() {
     setShowCart(true)
   }
 
-  const closeCart = () => { 
-    if (!showCart) return;
-    setShowCart(false)
-  }
+  // const closeCart = () => { 
+  //   if (!showCart) return;
+  //   setShowCart(false)
+  // }
 
   let cartRef = useRef()
 
-  useEffect(()=> { 
-    document.addEventListener("mousedown", (event) => { 
-      if (!cartRef.current.contains(event.target)) {
-        setShowCart(false)
-       }
-    })
-  })
+  // useEffect(()=> { 
+  //   if (!showCart) return;
+  //   const closeCart = ()=> { 
+  //     setShowCart(false);
+  //   };
+  //   document.addEventListener('click', closeCart);
+  //   return () => document.removeEventListener("click", closeCart)
+  // }, [showCart])
+
+  // useEffect(()=> { 
+  //   document.addEventListener("mousedown", (event) => { 
+  //     if (!cartRef.current.contains(event.target)) {
+  //       setShowCart(false)
+  //      }
+  //   })
+  // })
+
+  const toggleCart = () => { 
+    showCart ? setShowCart(false) : setShowCart(true)
+  }
 
 
   return (
     <div className="cart">
-      <button id='shopping-button' onClick={openCart}>
+      <button id='shopping-button' onClick={toggleCart}>
         <AiOutlineShoppingCart />
       </button>
       <div ref={cartRef} className="cart-container">
@@ -63,7 +76,7 @@ function Cart() {
             :
             <div className="empty-cart">
               <h3>Your Cart is Empty</h3>
-              <button onClick={closeCart}>Back to Shopping</button>
+              <button onClick={toggleCart}>Back to Shopping</button>
             </div>
             }
         </>

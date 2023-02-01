@@ -273,13 +273,20 @@ button:hover {
 #cartcount { 
     /* border: 1px solid ; */
     border-radius: 50%;
-    padding: 4px;
+    padding: 4px 5px;
     color: white;
     background-color: #2a4e49;
     font-size: 10px;
     margin-left: -27px;
     margin-top: -20px;
-    width: 10px;
+    
+}
+
+#cart-count { 
+    display: flex;
+    align-items: center;
+    /* background-color: #2a4e49; */
+    border-radius: 50%;
 }
 
 #favoritecount { 
@@ -292,4 +299,6 @@ button:hover {
     margin-left: -27px;
     margin-top: -20px
 }
+
+
 
