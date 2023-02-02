@@ -13,11 +13,7 @@ import { Link }  from 'react-router-dom'
 function CartItem({item}) {
     const dispatch = useDispatch()
     const [amount, setAmount] = useState(item.quantity)
-
-    // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
     const url1 = item.photoUrls[0]
-    // const url2 = listing.photoUrls[1]
-    // const slide = [url1, url2]
 
     const handleDelete = (e) => { 
         e.preventDefault();
@@ -25,32 +21,24 @@ function CartItem({item}) {
     }
 
     useEffect(()=> { 
-      
-    }, [dispatch])
+       const payload = {
+        id: item.id,
+        user_id: item.userId,
+        listing_id: item.listingId,
+        quantity: amount
+      }
+      dispatch(updateCartItem(payload))
+    }, [amount])
 
     const handleAdd =(e) => { 
       e.preventDefault()
       setAmount(amount + 1)
-      console.log(amount)
-      const payload = {
-        id: item.id,
-        user_id: item.userId,
-        listing_id: item.listingId,
-        quantity: amount + 1
-      }
-      dispatch(updateCartItem(payload))
     }
 
     const handleMinus = (e) => { 
       e.preventDefault()
+      console.log(amount)
       amount > 1 ? setAmount(amount - 1) : dispatch(deleteCartItem(item.id))
-      const payload = { 
-        id: item.id,
-        user_id: item.userId,
-        listing_id: item.listingId,
-        quantity: amount - 1
-      }
-      dispatch(updateCartItem(payload))
     }
   
   return (
