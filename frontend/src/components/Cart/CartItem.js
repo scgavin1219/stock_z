@@ -37,7 +37,6 @@ function CartItem({item}) {
 
     const handleMinus = (e) => { 
       e.preventDefault()
-      console.log(amount)
       amount > 1 ? setAmount(amount - 1) : dispatch(deleteCartItem(item.id))
     }
   

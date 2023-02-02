@@ -31,7 +31,6 @@ function ReviewForm({setReviewForm}) {
             setReviewForm(false)
         }
     
-        console.log(textRating)
   return (
     <div className='review-form'>
         <div className='review-create'>

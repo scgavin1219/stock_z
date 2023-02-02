@@ -29,7 +29,6 @@ function PurchaseItem({item}) {
     const handleAdd =(e) => { 
       e.preventDefault()
       setAmount(amount + 1)
-      console.log(amount)
       const payload = {
         id: item.id,
         user_id: item.userId,

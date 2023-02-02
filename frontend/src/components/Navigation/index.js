@@ -25,8 +25,7 @@ function Navigation() {
     // let sums = []
      sum += item.quantity
   })
-  console.log(cartCount)
-
+ 
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
