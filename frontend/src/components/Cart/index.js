@@ -49,7 +49,7 @@ function Cart() {
 
   useEffect(()=> { 
     document.addEventListener("mousedown", (event) => { 
-      if (!cartRef.current.contains(event.target)) {
+      if (!cartRef?.current?.contains(event.target)) {
         setShowCart(false)
        }
     })
