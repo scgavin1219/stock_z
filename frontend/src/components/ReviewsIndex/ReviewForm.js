@@ -31,7 +31,7 @@ function ReviewForm({setReviewForm}) {
             setReviewForm(false)
         }
     
-
+        console.log(textRating)
   return (
     <div className='review-form'>
         <div className='review-create'>
@@ -55,8 +55,11 @@ function ReviewForm({setReviewForm}) {
                  })}
                  </div>
                     <textarea id="textarea" placeholder="Leave a Review" value={textRating} onChange={e => setTextRating(e.target.value)}></textarea>
-                
+                { textRating ? 
                 <button id="review-button">Create Review</button>
+                : 
+                <button id="review-button" disabled>Create Review</button>
+                }
             </form>
         </div>
     </div>

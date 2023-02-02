@@ -47,13 +47,13 @@ function Cart() {
   //   return () => document.removeEventListener("click", closeCart)
   // }, [showCart])
 
-  // useEffect(()=> { 
-  //   document.addEventListener("mousedown", (event) => { 
-  //     if (!cartRef.current.contains(event.target)) {
-  //       setShowCart(false)
-  //      }
-  //   })
-  // })
+  useEffect(()=> { 
+    document.addEventListener("mousedown", (event) => { 
+      if (!cartRef.current.contains(event.target)) {
+        setShowCart(false)
+       }
+    })
+  })
 
   const toggleCart = () => { 
     showCart ? setShowCart(false) : setShowCart(true)
