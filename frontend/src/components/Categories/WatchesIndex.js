@@ -9,12 +9,14 @@ import { fetchFavorites } from '../../store/favorite'
 const  WatchesIndex =() => {
     const dispatch = useDispatch();
     const listings = useSelector(getListings)
+    const sessionUser = useSelector(state => state.session.user);
 
     useEffect(() => {
         dispatch(fetchListings())
     }, [dispatch])
 
     useEffect(() => { 
+      if (!sessionUser) return;
       dispatch(fetchFavorites())
     }, [dispatch])
 

@@ -50,9 +50,6 @@ const CategoryIndexItem= ({listing}) => {
             setFavorite(true)
     }
 
-    // const image = listing.photoUrls.length ? <img src={listing.photoUrls[0]} alt="" /> : null
-    // const url = listing.photoUrls[0]
-
   return (
     <>
         <div className='product-container'>

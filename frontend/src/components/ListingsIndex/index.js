@@ -21,9 +21,10 @@ const  ListingsIndex =() => {
         if (sessionUser) dispatch(fetchFavorites())
     }, [sessionUser])
 
-    useEffect(() => { 
-      dispatch(fetchFavorites())
-    }, [sessionUser])
+    // useEffect(() => {
+    //   if (!s) 
+    //   dispatch(fetchFavorites())
+    // }, [sessionUser])
 
     if (!listings) { 
         return null
