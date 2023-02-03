@@ -1,8 +1,8 @@
 .reviews-container {
     display: flex;
     flex-direction: column;
-    margin: 20px 200px 150px;
-    min-width: 900px;
+    margin: 20px auto 150px;
+    min-width: 950px;
     width: 60vw;
     border: 2px solid lightgray;
     box-shadow: 0 10px 20px #cfcfcf;

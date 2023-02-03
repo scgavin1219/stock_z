@@ -3,9 +3,9 @@
     flex-direction: column;
     align-items: center;
     background-color: white;
-    margin: 150px 200px;
+    margin: 150px auto;
     width: 60vw;
-    min-width: 900px;
+    min-width: 950px;
     border: 2px solid lightgray;
     box-shadow: 0 10px 20px #cfcfcf;
     border-radius: 8px;

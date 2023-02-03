@@ -14,8 +14,8 @@ function Checkout() {
         </div>
         <h3>by Dylan Gavin</h3>
         <div className='thanks-box'>
-            <a href="https://github.com/scgavin1219"><img id="github-thanks" src={github} alt="github link" /></a>
-            <a href="https://www.linkedin.com/in/dylan-gavin-a9595150/"><img id ="linkedin-thanks" src={linkedIn} alt="linkedin link" /></a>
+            <a href="https://github.com/scgavin1219" target="_blank"><img id="github-thanks" src={github} alt="github link" /></a>
+            <a href="https://www.linkedin.com/in/dylan-gavin-a9595150/" target="_blank"><img id ="linkedin-thanks" src={linkedIn} alt="linkedin link" /></a>
         </div>
         <Link to="/" id="thankslink"><h1 id="continue">Continue Shopping?</h1></Link>
     </div>
