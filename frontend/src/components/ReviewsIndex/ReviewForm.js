@@ -6,6 +6,7 @@ import { createReview } from '../../store/reviews'
 import { useState } from 'react'
 import { FaStar } from 'react-icons/fa'
 import './ReviewForm.css'
+import { useEffect } from 'react'
 
 function ReviewForm({setReviewForm}) {
     const dispatch = useDispatch()
@@ -16,6 +17,20 @@ function ReviewForm({setReviewForm}) {
     const [textRating, setTextRating] = useState('')
     const [hover, setHover] = useState(null)
     const sessionUser = useSelector(state => state.session.user);
+    const reviews = useSelector(state => state.reviews )
+    const [author, setAuthor] = useState(true)
+
+    const reviewWritten = () => {
+        Object.values(reviews).forEach(review => { 
+            if (review.userId === sessionUser.id) setAuthor(false)
+            console.log(author)
+        })
+    }
+
+    useEffect(() => {
+      reviewWritten()
+    }, [dispatch])
+    
 
     const handleSubmit = (e) => { 
         e.preventDefault()
@@ -34,7 +49,6 @@ function ReviewForm({setReviewForm}) {
   return (
     <div className='review-form'>
         <div className='review-create'>
-           
             <form onSubmit={handleSubmit}>
                  <h1 id="review-title">Create Review</h1>
                  <div className='star-icons' id='star-icons'>
@@ -54,7 +68,8 @@ function ReviewForm({setReviewForm}) {
                  })}
                  </div>
                     <textarea id="textarea" placeholder="Leave a Review" value={textRating} onChange={e => setTextRating(e.target.value)}></textarea>
-                { textRating ? 
+                {author ? null : <p id="warning">can only write 1 review per listing</p>}
+                { author && textRating ? 
                 <button id="review-button">Create Review</button>
                 : 
                 <button id="review-button" disabled>Create Review</button>

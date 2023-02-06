@@ -21,6 +21,11 @@ input[type="radio"] {
     font-size: 28px;
 }
 
+#warning { 
+    color: red;
+    margin-top: 3px;
+}
+
 #star-rater { 
     width: 30px;
 }
